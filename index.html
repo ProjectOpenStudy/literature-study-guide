@@ -3,71 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>English Literature Study Materials</title>
+    <title>OpenStudy Study Materials</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body { font-family: 'Inter', sans-serif; }
     </style>
 </head>
-<body class="bg-gray-50 min-h-screen text-gray-800">
+<body class="bg-gray-50 min-h-screen text-gray-800 flex flex-col">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm border-b border-gray-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center">
+                    <span class="text-2xl font-extrabold text-indigo-600">OpenStudy</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#english" class="text-gray-600 hover:text-indigo-600 font-medium">English Literature</a>
+                    <a href="#tamil" class="text-gray-400 cursor-not-allowed font-medium">Tamil (Coming Soon)</a>
+                    <a href="#maths" class="text-gray-400 cursor-not-allowed font-medium">Mathematics (Coming Soon)</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
     <!-- Header -->
-    <header class="bg-indigo-600 text-white shadow-md py-8">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 class="text-3xl font-bold tracking-tight">📚 English Literature Study Materials</h1>
-            <p class="mt-2 text-indigo-100 text-lg">Comprehensive English-to-Tamil study notes and pronunciation guides.</p>
+    <header class="bg-indigo-600 text-white py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl font-bold tracking-tight mb-4">📚 Free Study Materials Hub</h1>
+            <p class="text-indigo-100 text-xl max-w-2xl mx-auto">High-quality, translated notes and study guides for competitive exams. Choose a subject below to download the PDFs.</p>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="bg-white shadow-xl rounded-lg overflow-hidden border border-gray-100">
-            <div class="p-8">
-                <h2 class="text-2xl font-bold text-gray-900 mb-6">Available Downloads</h2>
-                
-                <div class="grid gap-6 md:grid-cols-2">
-                    
-                    <!-- Card 1 -->
-                    <div class="border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300 flex flex-col items-start bg-gray-50">
-                        <div class="w-12 h-12 bg-red-100 text-red-600 rounded-lg flex items-center justify-center mb-4">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-lg font-bold text-gray-900 mb-2">Part 1 Study Material</h3>
-                        <p class="text-sm text-gray-500 mb-4 flex-grow">Full notes spanning early literature, Chaucer, Shakespeare, to modern classics. Includes Tamil meanings and pronunciations.</p>
-                        <a href="English_Literature_Study_Material_Tamil_English.pdf" download class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none w-full">
-                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-                            Download PDF 1
-                        </a>
-                        <a href="English_Literature_Study_Material_Tamil_English.pdf" target="_blank" class="mt-2 inline-flex items-center justify-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none w-full">
-                            Preview
-                        </a>
-                    </div>
-
-                    <!-- Card 2 -->
-                    <div class="border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300 flex flex-col items-start bg-gray-50">
-                        <div class="w-12 h-12 bg-red-100 text-red-600 rounded-lg flex items-center justify-center mb-4">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-lg font-bold text-gray-900 mb-2">Part 2 Study Material</h3>
-                        <p class="text-sm text-gray-500 mb-4 flex-grow">The second volume of the translated study guide containing continued explanations and vocabulary.</p>
-                        <a href="English_Literature_Study_Material_2_Tamil_English.pdf" download class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none w-full">
-                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-                            Download PDF 2
-                        </a>
-                        <a href="English_Literature_Study_Material_2_Tamil_English.pdf" target="_blank" class="mt-2 inline-flex items-center justify-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none w-full">
-                            Preview
-                        </a>
-                    </div>
-                    
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow">
+        
+        <!-- English Literature Category -->
+        <section id="english" class="mb-16">
+            <div class="flex items-center mb-8 border-b border-gray-200 pb-4">
+                <div class="bg-indigo-100 text-indigo-600 p-3 rounded-lg mr-4">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900">English Literature (UG TRB)</h2>
+                    <p class="text-gray-500 mt-1">Comprehensive English-to-Tamil study notes and pronunciation guides.</p>
                 </div>
             </div>
-            <div class="bg-gray-100 px-8 py-4 border-t border-gray-200">
-                <p class="text-sm text-gray-500 text-center">Prepared specifically for Tamil-speaking students learning English Literature.</p>
+
+            <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                <!-- Part 1 -->
+                <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300 flex flex-col items-start">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Part 1 Study Material</h3>
+                    <p class="text-sm text-gray-500 mb-6 flex-grow">Complete notes spanning early literature, Chaucer, Shakespeare, to modern classics. Includes Tamil meanings.</p>
+                    <div class="w-full flex space-x-2 mt-auto">
+                        <a href="English_Literature_Study_Material_Tamil_English.pdf" target="_blank" class="flex-1 inline-flex justify-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">Preview</a>
+                        <a href="English_Literature_Study_Material_Tamil_English.pdf" download class="flex-1 inline-flex justify-center items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">Download</a>
+                    </div>
+                </div>
+
+                <!-- Part 2 -->
+                <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300 flex flex-col items-start">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Part 2 Study Material</h3>
+                    <p class="text-sm text-gray-500 mb-6 flex-grow">The second volume of the translated study guide containing continued explanations and vocabulary.</p>
+                    <div class="w-full flex space-x-2 mt-auto">
+                        <a href="English_Literature_Study_Material_2_Tamil_English.pdf" target="_blank" class="flex-1 inline-flex justify-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">Preview</a>
+                        <a href="English_Literature_Study_Material_2_Tamil_English.pdf" download class="flex-1 inline-flex justify-center items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">Download</a>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
+
+        <!-- Upcoming Subjects Placeholder -->
+        <section id="other" class="mb-16 opacity-60">
+            <div class="flex items-center mb-8 border-b border-gray-200 pb-4">
+                <div class="bg-gray-200 text-gray-500 p-3 rounded-lg mr-4">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900">More Subjects Coming Soon...</h2>
+                    <p class="text-gray-500 mt-1">We are actively preparing study materials for other categories.</p>
+                </div>
+            </div>
+            
+            <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                <div class="bg-gray-50 border border-gray-200 border-dashed rounded-xl p-6 flex flex-col items-center justify-center text-center h-48">
+                    <p class="text-gray-400 font-medium">New category will appear here</p>
+                </div>
+            </div>
+        </section>
+
     </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 mt-auto">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-gray-500 text-sm">
+            <p>&copy; 2024 OpenStudy Project. Free study resources for everyone.</p>
+        </div>
+    </footer>
 </body>
 </html>
