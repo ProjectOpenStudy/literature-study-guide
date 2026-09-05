@@ -17,25 +17,7 @@
             backdrop-filter: blur(10px);
         }
     </style>
-    <script>
-        function secureAction(url, correctPassword, action) {
-            let userPassword = prompt(`🔒 This material is locked.\n\nPlease enter the password to ${action}:`);
-            if (userPassword === correctPassword) {
-                if(action === 'download') {
-                    const link = document.createElement('a');
-                    link.href = url;
-                    link.download = url.split('/').pop();
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
-                } else {
-                    window.open(url, '_blank');
-                }
-            } else if (userPassword !== null) {
-                alert("❌ Incorrect password! Access denied.");
-            }
-        }
-    </script>
+    
 </head>
 <body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
 
@@ -118,12 +100,9 @@
             <div class="flex flex-col md:flex-row items-start md:items-end justify-between mb-10 gap-4">
                 <div>
                     <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 tracking-tight">Premium Literature Guides</h2>
-                    <p class="text-gray-500 mt-2 text-lg">In-depth English to Tamil translations requiring a secure access pass.</p>
+                    <p class="text-gray-500 mt-2 text-lg">In-depth English to Tamil translations available for immediate download.</p>
                 </div>
-                <span class="inline-flex items-center gap-1.5 bg-amber-100 text-amber-800 px-4 py-1.5 rounded-full text-sm font-bold shadow-sm border border-amber-200">
-                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path></svg>
-                    Password Protected
-                </span>
+                
             </div>
 
             <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -142,12 +121,8 @@
                         <p class="text-sm text-gray-500 mb-6 leading-relaxed flex-grow">A complete 442-page guide covering early literature up to the modern era, carefully translated.</p>
                         
                         <div class="grid grid-cols-2 gap-3 mt-auto">
-                            <button onclick="secureAction('English_Literature_Study_Material_Tamil_English.pdf', '12345678', 'preview')" class="flex justify-center items-center px-4 py-2.5 border border-gray-300 text-sm font-semibold rounded-xl text-gray-700 bg-white hover:bg-gray-50 hover:text-indigo-600 transition-colors">
-                                Preview
-                            </button>
-                            <button onclick="secureAction('English_Literature_Study_Material_Tamil_English.pdf', '12345678', 'download')" class="flex justify-center items-center px-4 py-2.5 border border-transparent text-sm font-semibold rounded-xl text-white bg-gray-900 hover:bg-gray-800 transition-colors shadow-md shadow-gray-900/20">
-                                Download
-                            </button>
+                            <a href="English_Literature_Study_Material_Tamil_English.pdf" target="_blank" class="flex justify-center items-center px-4 py-2.5 border border-gray-300 text-sm font-semibold rounded-xl text-gray-700 bg-white hover:bg-gray-50 hover:text-indigo-600 transition-colors">Preview</a>
+                            <a href="English_Literature_Study_Material_Tamil_English.pdf" download class="flex justify-center items-center px-4 py-2.5 border border-transparent text-sm font-semibold rounded-xl text-white bg-gray-900 hover:bg-gray-800 transition-colors shadow-md shadow-gray-900/20">Download</a>
                         </div>
                     </div>
                 </div>
@@ -166,12 +141,8 @@
                         <p class="text-sm text-gray-500 mb-6 leading-relaxed flex-grow">The second major installment containing further vocabulary, pronunciation guides, and deep analyses.</p>
                         
                         <div class="grid grid-cols-2 gap-3 mt-auto">
-                            <button onclick="secureAction('English_Literature_Study_Material_2_Tamil_English.pdf', '12345678', 'preview')" class="flex justify-center items-center px-4 py-2.5 border border-gray-300 text-sm font-semibold rounded-xl text-gray-700 bg-white hover:bg-gray-50 hover:text-indigo-600 transition-colors">
-                                Preview
-                            </button>
-                            <button onclick="secureAction('English_Literature_Study_Material_2_Tamil_English.pdf', '12345678', 'download')" class="flex justify-center items-center px-4 py-2.5 border border-transparent text-sm font-semibold rounded-xl text-white bg-gray-900 hover:bg-gray-800 transition-colors shadow-md shadow-gray-900/20">
-                                Download
-                            </button>
+                            <a href="English_Literature_Study_Material_2_Tamil_English.pdf" target="_blank" class="flex justify-center items-center px-4 py-2.5 border border-gray-300 text-sm font-semibold rounded-xl text-gray-700 bg-white hover:bg-gray-50 hover:text-indigo-600 transition-colors">Preview</a>
+                            <a href="English_Literature_Study_Material_2_Tamil_English.pdf" download class="flex justify-center items-center px-4 py-2.5 border border-transparent text-sm font-semibold rounded-xl text-white bg-gray-900 hover:bg-gray-800 transition-colors shadow-md shadow-gray-900/20">Download</a>
                         </div>
                     </div>
                 </div>
@@ -190,12 +161,8 @@
                         <p class="text-sm text-gray-500 mb-6 leading-relaxed flex-grow">The third installment featuring comprehensive translations, new literary concepts, and more exam prep.</p>
                         
                         <div class="grid grid-cols-2 gap-3 mt-auto">
-                            <button onclick="secureAction('English_Literature_Study_Material_3_Tamil_English.pdf', '12345678', 'preview')" class="flex justify-center items-center px-4 py-2.5 border border-gray-300 text-sm font-semibold rounded-xl text-gray-700 bg-white hover:bg-gray-50 hover:text-indigo-600 transition-colors">
-                                Preview
-                            </button>
-                            <button onclick="secureAction('English_Literature_Study_Material_3_Tamil_English.pdf', '12345678', 'download')" class="flex justify-center items-center px-4 py-2.5 border border-transparent text-sm font-semibold rounded-xl text-white bg-gray-900 hover:bg-gray-800 transition-colors shadow-md shadow-gray-900/20">
-                                Download
-                            </button>
+                            <a href="English_Literature_Study_Material_3_Tamil_English.pdf" target="_blank" class="flex justify-center items-center px-4 py-2.5 border border-gray-300 text-sm font-semibold rounded-xl text-gray-700 bg-white hover:bg-gray-50 hover:text-indigo-600 transition-colors">Preview</a>
+                            <a href="English_Literature_Study_Material_3_Tamil_English.pdf" download class="flex justify-center items-center px-4 py-2.5 border border-transparent text-sm font-semibold rounded-xl text-white bg-gray-900 hover:bg-gray-800 transition-colors shadow-md shadow-gray-900/20">Download</a>
                         </div>
                     </div>
                 </div>
