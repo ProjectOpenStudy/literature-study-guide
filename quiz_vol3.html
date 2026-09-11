@@ -12,7 +12,7 @@
     .page-title:hover { color: #004494; }
     .arrow { display: inline-block; width: 25px; transition: transform 0.2s; font-size: 0.8em; }
     .arrow.open { transform: rotate(90deg); }
-    .page-content { display: none; margin-top: 15px; }
+    .page-content { display: block; margin-top: 15px; }
     
     .question-container { margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
     .question-container:last-child { border-bottom: none; }
@@ -39,7 +39,7 @@
     function toggleSection(header) {
         const content = header.nextElementSibling;
         const arrow = header.querySelector('.arrow');
-        if (content.style.display === 'none' || content.style.display === '') {
+        if (content.style.display === 'none') {
             content.style.display = 'block';
             arrow.classList.add('open');
         } else {
@@ -111,7 +111,7 @@
     <div id="content">
 
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 156 - The Revival of Romance</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 156 - The Revival of Romance</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. One important new movement was initiated when the novel began to respond to a growing interest in the...</div>
@@ -126,7 +126,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 157 - Matthew Gregory Lewis and Gothic Romance</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 157 - Matthew Gregory Lewis and Gothic Romance</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Matthew Gregory Lewis achieved a great success with his first book titled...</div>
@@ -141,7 +141,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 158 - The Age of Johnson: Verse</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 158 - The Age of Johnson: Verse</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. The history of later eighteenth-century poetry is the history of a struggle between...</div>
@@ -156,7 +156,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 159 - The Breakup of the Augustan Tradition</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 159 - The Breakup of the Augustan Tradition</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Classical poetry was mainly the product of the intelligence and was strikingly deficient in...</div>
@@ -171,7 +171,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 160 - Johnson and Goldsmith&#x27;s Poetry</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 160 - Johnson and Goldsmith&#x27;s Poetry</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. In an epoch of change, Johnson and Goldsmith held fast to the...</div>
@@ -186,7 +186,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 161 - The Reaction in Form</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 161 - The Reaction in Form</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Though conservative, Goldsmith yielded to the growing power of...</div>
@@ -201,7 +201,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 162 - The Spenserian Revival</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 162 - The Spenserian Revival</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. How many poems in the Spenserian stanza were published between 1730 and 1775?</div>
@@ -216,7 +216,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 163 - The Growth of the Love of Nature</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 163 - The Growth of the Love of Nature</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Between which two poets is the growth of a love of nature a marked feature in English poetry?</div>
@@ -231,7 +231,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 164 - The Growth of the Love of Nature (Continued)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 164 - The Growth of the Love of Nature (Continued)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Who wrote the descriptive poem in four parts called &#x27;The Seasons&#x27;?</div>
@@ -246,7 +246,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 165 - The Development of Naturalism</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 165 - The Development of Naturalism</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Which of the following was a principal object aimed at by poets of the new generation?</div>
@@ -261,7 +261,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 166 - Blake and Crabbe</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 166 - Blake and Crabbe</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Who is described as a mystic and a visionary whose effusions were inspired by the desire to restore the golden age?</div>
@@ -276,7 +276,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 167 - The Romantic Revival</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 167 - The Romantic Revival</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Which French writer described romanticism as &#x27;liberalism in literature&#x27;?</div>
@@ -291,7 +291,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 168 - The Gothic Revival</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 168 - The Gothic Revival</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Which prose fiction work&#x27;s production coincided with the conspicuous influence of the medieval revival in poetry?</div>
@@ -306,7 +306,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 169 - Thomas Chatterton and Celtic Antiquity</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 169 - Thomas Chatterton and Celtic Antiquity</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. What did Percy prefix as an introduction to the ballads in his &#x27;Reliques&#x27;?</div>
@@ -321,7 +321,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 170 - The Ossianic Poems</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 170 - The Ossianic Poems</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Which epic poem did Macpherson produce in six books in 1762?</div>
@@ -336,7 +336,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 171 - Gray, Burns, and Cowper</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 171 - Gray, Burns, and Cowper</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. The whole movement for the revival of the romantic past came to its head in which decade?</div>
@@ -351,7 +351,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 172 - Gray and Burns</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 172 - Gray and Burns</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Which poem is described as having features making it historically very important, including a churchyard scene and twilight atmosphere?</div>
@@ -366,7 +366,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 173 - Robert Burns and William Cowper</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 173 - Robert Burns and William Cowper</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Was Robert Burns considered an unlettered plowman?</div>
@@ -381,7 +381,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 174 - William Cowper&#x27;s Poetry</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 174 - William Cowper&#x27;s Poetry</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. &#x27;The Task&#x27; is often considered the poetic masterpiece of later 18th century:</div>
@@ -396,7 +396,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 175 - Christopher Smart and the Age of Johnson</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 175 - Christopher Smart and the Age of Johnson</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Where was Christopher Smart educated?</div>
@@ -411,7 +411,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 176 - Chronology of the Age of Johnson</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 176 - Chronology of the Age of Johnson</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. In what year was Johnson&#x27;s Dictionary published?</div>
@@ -426,7 +426,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 177 - Chronology of the Age of Johnson (Cont.)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 177 - Chronology of the Age of Johnson (Cont.)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. In what year was Goldsmith&#x27;s &#x27;The Vicar of Wakefield&#x27; published?</div>
@@ -441,7 +441,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 178 - Chronology to the Lyrical Ballads</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 178 - Chronology to the Lyrical Ballads</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. In what year were William Blake&#x27;s &#x27;Poetical Sketches&#x27; published?</div>
@@ -456,7 +456,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 179 - The Age of Wordsworth</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 179 - The Age of Wordsworth</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. The Age of Wordsworth covers approximately which years?</div>
@@ -471,7 +471,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 180 - Revolutionary Ideals and Literature</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 180 - Revolutionary Ideals and Literature</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Who wrote: &#x27;The genius of poetry must work out its own salvation in a man. It cannot be matured by law and precept&#x27;?</div>
@@ -486,7 +486,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 181 - Disillusionment and Wordsworth&#x27;s Youth</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 181 - Disillusionment and Wordsworth&#x27;s Youth</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Who wrote: &#x27;Bliss was it in that dawn to be alive, / But to be young was very heaven&#x27;?</div>
@@ -501,7 +501,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 182 - Wordsworth&#x27;s Life</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 182 - Wordsworth&#x27;s Life</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Who was Wordsworth&#x27;s devoted sister who lived with him as a third member of his household?</div>
@@ -516,7 +516,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 183 - Lyrical Ballads</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 183 - Lyrical Ballads</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. What event finally destroyed Wordsworth&#x27;s faith in the French cause forever?</div>
@@ -531,7 +531,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 184 - Wordsworth&#x27;s Theory of Poetry</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 184 - Wordsworth&#x27;s Theory of Poetry</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Where did Wordsworth further set forth his aims for the &#x27;Lyrical Ballads&#x27;?</div>
@@ -546,7 +546,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 185 - Characteristics of Wordsworth&#x27;s Poetry</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 185 - Characteristics of Wordsworth&#x27;s Poetry</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. If Pope is the greatest poet of the town, what is Wordsworth?</div>
@@ -561,7 +561,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 186 - Wordsworth&#x27;s Limitations and Coleridge</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 186 - Wordsworth&#x27;s Limitations and Coleridge</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Which of the following is considered one of the obvious limitations of Wordsworth&#x27;s genius?</div>
@@ -576,7 +576,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 187 - Coleridge and Scott</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 187 - Coleridge and Scott</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Which of the following is true about Coleridge&#x27;s literary work?</div>
@@ -591,7 +591,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 188 - Walter Scott&#x27;s Career</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 188 - Walter Scott&#x27;s Career</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Politically, Walter Scott was a born:</div>
@@ -606,7 +606,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 189 - Scott&#x27;s Limitations and Bowles</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 189 - Scott&#x27;s Limitations and Bowles</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Which of the following describes Scott&#x27;s limitations as a poet?</div>
@@ -621,7 +621,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 190 - Southey and Landor</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 190 - Southey and Landor</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Like Wordsworth, Southey eventually repudiated his early radical ideas and became a:</div>
@@ -636,7 +636,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 191 - Campbell and Moore</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 191 - Campbell and Moore</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Thomas Campbell&#x27;s early poem &#x27;The Pleasures of Hope&#x27; (1799) is written in which style and form?</div>
@@ -651,7 +651,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 192 - The Younger Poets</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 192 - The Younger Poets</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Did the close of the French Revolution mean the end of the revolutionary movement in European politics?</div>
@@ -666,7 +666,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 193 - Lord Byron</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 193 - Lord Byron</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Who is described as the eldest and most thoroughly representative of the three younger poets?</div>
@@ -681,7 +681,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 194 - Byron&#x27;s Poetry and Influence</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 194 - Byron&#x27;s Poetry and Influence</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Despite the apparent variety of Byron&#x27;s voluminous work, why is the final impression one of monotony?</div>
@@ -696,7 +696,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 195 - Byron&#x27;s Philosophy and Shelley&#x27;s Early Life</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 195 - Byron&#x27;s Philosophy and Shelley&#x27;s Early Life</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. What is the key-note of Byron&#x27;s philosophy?</div>
@@ -711,7 +711,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 196 - Shelley&#x27;s Poetry</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 196 - Shelley&#x27;s Poetry</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Shelley&#x27;s genius was essentially:</div>
@@ -726,7 +726,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 197 - Keats and Shelley</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 197 - Keats and Shelley</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. In Shelley&#x27;s &#x27;Prometheus Unbound&#x27;, what does the Titan symbolize?
@@ -820,7 +820,7 @@ Answer: C</div>
 </div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 198 - Keats and Minor Poets</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 198 - Keats and Minor Poets</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. What phrase did Shelley use to describe Keats due to his early death?
@@ -914,7 +914,7 @@ Answer: B</div>
 </div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 199 - Thomas Hood and Minor Poets</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 199 - Thomas Hood and Minor Poets</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Thomas Hood is perhaps chiefly remembered for what kind of poems?
@@ -1008,7 +1008,7 @@ Answer: B</div>
 </div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 200 - John Clare</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 200 - John Clare</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Who edited &#x27;Selected Poems&#x27; by John Clare?
@@ -1102,7 +1102,7 @@ Answer: C</div>
 </div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 201 - The Age of Wordsworth: General Prose</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 201 - The Age of Wordsworth: General Prose</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. What was an important feature in the history of prose literature during the Age of Wordsworth?
@@ -1196,7 +1196,7 @@ Answer: A</div>
 </div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 202 - General Prose and Edinburgh Men</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 202 - General Prose and Edinburgh Men</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. The rise of the modern review and magazine gave great encouragement to what form of writing?
@@ -1290,7 +1290,7 @@ Answer: B</div>
 </div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 203 - Jeffrey, Smith, and Wilson</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 203 - Jeffrey, Smith, and Wilson</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Which of the following is described as a limitation of Francis Jeffrey&#x27;s criticism today?
@@ -1384,7 +1384,7 @@ Answer: B</div>
 </div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 204 - De Quincey and Lockhart</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 204 - De Quincey and Lockhart</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Thomas De Quincey is considered one of our chief masters of what kind of prose?
@@ -1478,7 +1478,7 @@ Answer: D</div>
 </div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 205 - Lockhart and Charles Lamb</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 205 - Lockhart and Charles Lamb</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. What nickname was given to John Gibson Lockhart due to his special gift of sarcasm used with deadly effect?
@@ -1572,7 +1572,7 @@ Answer: D</div>
 </div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 206 - William Hazlitt, Leigh Hunt, and Cobbett</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 206 - William Hazlitt, Leigh Hunt, and Cobbett</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. William Hazlitt is a capital illustration of how the popularity of magazines turned literature into the channels of:
@@ -1666,7 +1666,7 @@ Answer: C</div>
 </div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 207 - Cobbett, Landor, Southey, Coleridge</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 207 - Cobbett, Landor, Southey, Coleridge</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Which book is considered William Cobbett&#x27;s most characteristic and of most permanent interest?
@@ -1760,7 +1760,7 @@ Answer: C</div>
 </div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 208 - The Age of Wordsworth: Historians and Philosophers</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 208 - The Age of Wordsworth: Historians and Philosophers</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. The text notes that this chapter could be extended considerably by the inclusion of writers in which fields?
@@ -1854,7 +1854,7 @@ Answer: B</div>
 </div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 209 - The Age of Wordsworth: The Novel and Scott</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 209 - The Age of Wordsworth: The Novel and Scott</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Chapter 21 focuses on which literary form during the Age of Wordsworth?
@@ -1948,7 +1948,7 @@ Answer: A</div>
 </div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 210 - Scott&#x27;s Transition to Prose</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 210 - Scott&#x27;s Transition to Prose</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. The reception accorded to which poem convinced Scott that there was a large English reading public interested in the Highlands?
@@ -2042,7 +2042,7 @@ Answer: B</div>
 </div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 211 - Characteristics of Scott&#x27;s Novels</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 211 - Characteristics of Scott&#x27;s Novels</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. How many novels and tales make up the Waverley Novels?
@@ -2136,7 +2136,7 @@ Answer: C</div>
 </div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 212 - Scott&#x27;s Style and Shortcomings</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 212 - Scott&#x27;s Style and Shortcomings</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Which of Scott&#x27;s novels is described as brilliant as a romance but totally untrustworthy as a picture of life in the middle ages due to fundamental anachronisms?
@@ -2230,7 +2230,7 @@ Answer: B</div>
 </div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 213 - Other Novelists of the Time</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 213 - Other Novelists of the Time</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Who wrote &#x27;Castle Rackrent&#x27;, &#x27;The Absentee&#x27;, and &#x27;Ormond&#x27;?
@@ -2324,7 +2324,7 @@ Answer: B</div>
 </div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 214 - Followers of Scott and Chronological Table</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 214 - Followers of Scott and Chronological Table</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. George Payne Rainsford James and William Harrison Ainsworth are mentioned as followers of Scott in what genre?
@@ -2418,7 +2418,7 @@ Answer: A</div>
 </div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 215 - Chronological Table (1812-1824)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 215 - Chronological Table (1812-1824)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. According to the chronological table, in what year was Charles Dickens born?
@@ -2512,7 +2512,7 @@ Answer: B</div>
 </div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 216 - Chronological Table (1830-1832)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 216 - Chronological Table (1830-1832)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. In what year were Tennyson&#x27;s &#x27;Poems&#x27; and Mrs. Hemans&#x27; &#x27;Songs of the Affections&#x27; published?
@@ -2606,7 +2606,7 @@ Answer: B</div>
 </div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 217 - The Age of Tennyson (1832-1887)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 217 - The Age of Tennyson (1832-1887)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Chapter 22 deals with the Age of Tennyson, covering which years?
@@ -2700,7 +2700,7 @@ Answer: B</div>
 </div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 218 - Political and Social Movements</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 218 - Political and Social Movements</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Which Reform Bill had already destroyed the political supremacy of the landed aristocracy by the start of the Victorian era?
@@ -2794,7 +2794,7 @@ Answer: B</div>
 </div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 219 - The Progress of Science</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 219 - The Progress of Science</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. During the fifty years of the Victorian Age, the progress of science kept pace with the progress of what?
@@ -2888,7 +2888,7 @@ Answer: B</div>
 </div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 220 - Counter-Movement and Tennyson</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 220 - Counter-Movement and Tennyson</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. What is an important principle of historical interpretation noted by the author regarding strong movements?
@@ -2982,7 +2982,7 @@ Answer: C</div>
 </div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 221 - Tennyson&#x27;s Works and Style</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 221 - Tennyson&#x27;s Works and Style</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Which of the following is a monodrama published by Tennyson in 1854?
@@ -3076,7 +3076,7 @@ Answer: B</div>
 </div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 222 - Tennyson&#x27;s Themes and Conservatism</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 222 - Tennyson&#x27;s Themes and Conservatism</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. In which poem did Tennyson grapple with the question of the higher education of women?
@@ -3170,7 +3170,7 @@ Answer: D</div>
 </div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 223 - Tennyson&#x27;s Thought and Browning</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 223 - Tennyson&#x27;s Thought and Browning</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Tennyson&#x27;s poetry is particularly important as a record of what life of the time?
@@ -3264,7 +3264,7 @@ Answer: B</div>
 </div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 224 - Browning&#x27;s Major Works and Method</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 224 - Browning&#x27;s Major Works and Method</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Which enormous dramatic-narrative poem in four volumes did Browning publish in 1868-69?
@@ -3358,7 +3358,7 @@ Answer: B</div>
 </div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 225 - Browning&#x27;s Message and Matthew Arnold</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 225 - Browning&#x27;s Message and Matthew Arnold</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. As a moralist and religious teacher, what did Browning preach as the central truths of his philosophy of life?
@@ -3452,7 +3452,7 @@ Answer: A</div>
 </div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 226 - Arnold, Clough, and E.B. Browning</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 226 - Arnold, Clough, and E.B. Browning</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Most of Matthew Arnold&#x27;s personal poetry is steeped in:
@@ -3546,7 +3546,7 @@ Answer: A</div>
 </div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 227 - E.B. Browning and Rossetti</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 227 - E.B. Browning and Rossetti</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Which long poem in blank verse by Elizabeth Barrett Browning might really be classed as a novel, save for its form?
@@ -3640,7 +3640,7 @@ Answer: A</div>
 </div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 228 - Christina Rossetti, Morris, and Swinburne</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 228 - Christina Rossetti, Morris, and Swinburne</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Who is the only other woman-poet in this literature who can fairly be placed beside Mrs. Browning?

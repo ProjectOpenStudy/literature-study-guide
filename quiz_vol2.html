@@ -12,7 +12,7 @@
     .page-title:hover { color: #004494; }
     .arrow { display: inline-block; width: 25px; transition: transform 0.2s; font-size: 0.8em; }
     .arrow.open { transform: rotate(90deg); }
-    .page-content { display: none; margin-top: 15px; }
+    .page-content { display: block; margin-top: 15px; }
     
     .question-container { margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
     .question-container:last-child { border-bottom: none; }
@@ -39,7 +39,7 @@
     function toggleSection(header) {
         const content = header.nextElementSibling;
         const arrow = header.querySelector('.arrow');
-        if (content.style.display === 'none' || content.style.display === '') {
+        if (content.style.display === 'none') {
             content.style.display = 'block';
             arrow.classList.add('open');
         } else {
@@ -111,7 +111,7 @@
     <div id="content">
 
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 83 - The Rise of Puritanism</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 83 - The Rise of Puritanism</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. What behavior of the upper classes helped increase the moral and social influence of Puritanism?</div>
@@ -126,7 +126,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 84 - John Milton&#x27;s Early Life</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 84 - John Milton&#x27;s Early Life</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. In what way did Milton&#x27;s work differ from strict Puritanism?</div>
@@ -141,7 +141,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 85 - Milton&#x27;s Adulthood and Early Poetry</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 85 - Milton&#x27;s Adulthood and Early Poetry</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. From 1640 onward, what cause was Milton increasingly active in supporting?</div>
@@ -156,7 +156,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 86 - Milton&#x27;s Horton Poems</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 86 - Milton&#x27;s Horton Poems</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Read in the order of their writing, what do the Horton poems show taking place in Milton&#x27;s mind?</div>
@@ -171,7 +171,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 87 - Lycidas and Milton&#x27;s Prose (Part 1)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 87 - Lycidas and Milton&#x27;s Prose (Part 1)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. What is the allegory in Milton&#x27;s &#x27;Comus&#x27; about?</div>
@@ -186,7 +186,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 88 - Areopagitica and Paradise Lost (Part 1)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 88 - Areopagitica and Paradise Lost (Part 1)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Which of Milton&#x27;s prose treatises stands apart as a great and noble work that every lover of liberty should read?</div>
@@ -201,7 +201,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 89 - Milton&#x27;s Later Poetry</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 89 - Milton&#x27;s Later Poetry</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Which of the following is NOT set forth in &#x27;Paradise Lost&#x27;?</div>
@@ -216,7 +216,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 90 - Characteristics of Milton&#x27;s Poetry</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 90 - Characteristics of Milton&#x27;s Poetry</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Which epithet is most naturally associated with Milton&#x27;s poetry?</div>
@@ -231,7 +231,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 91 - The Caroline Poets</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 91 - The Caroline Poets</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Why is it difficult to establish a satisfactory order for the writers between 1625 and 1700?</div>
@@ -246,7 +246,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 92 - Robert Herrick and the Cavalier Poets</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 92 - Robert Herrick and the Cavalier Poets</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Under what title was Robert Herrick&#x27;s religious poetry published?</div>
@@ -261,7 +261,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 93 - The Metaphysical Poets</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 93 - The Metaphysical Poets</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Who is usually regarded as the chief representative of the &#x27;metaphysical&#x27; school of poetry?</div>
@@ -276,7 +276,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 94 - Traherne and Caroline Prose (Part 1)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 94 - Traherne and Caroline Prose (Part 1)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Which slightly younger writer&#x27;s manuscripts were lost to sight for nearly two hundred years after his death?</div>
@@ -291,7 +291,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 95 - Caroline Prose (Part 2) &amp; History</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 95 - Caroline Prose (Part 2) &amp; History</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Who occupies the first place in history writing of this period with his &#x27;History of the Great Rebellion&#x27;?</div>
@@ -306,7 +306,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 96 - The Age of Dryden</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 96 - The Age of Dryden</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. What period does &#x27;The Age of Dryden&#x27; cover?</div>
@@ -321,7 +321,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 97 - The Restoration and French Influence</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 97 - The Restoration and French Influence</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. During the Restoration, what happened to poetry?</div>
@@ -336,7 +336,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 98 - Waller, Denham, and Dryden&#x27;s Early Life</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 98 - Waller, Denham, and Dryden&#x27;s Early Life</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Which two writers are commonly considered the pioneers of the &#x27;classic&#x27; school of poetry and the forerunners of Dryden?</div>
@@ -351,7 +351,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 99 - Dryden&#x27;s Career</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 99 - Dryden&#x27;s Career</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Dryden&#x27;s early poems &#x27;Heroic Stanzas on the Death of Oliver Cromwell&#x27; (1659) and &#x27;Astraea Redux&#x27; indicate what?</div>
@@ -366,7 +366,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 100 - Dryden&#x27;s Masterpieces</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 100 - Dryden&#x27;s Masterpieces</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Where do we turn to see the full exhibition of Dryden&#x27;s powers and complete emancipation from false metaphysical taste?</div>
@@ -381,7 +381,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 101 - Dryden&#x27;s Style and Samuel Butler</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 101 - Dryden&#x27;s Style and Samuel Butler</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Though lacking spiritual glow, what is Dryden&#x27;s poetry characterized by?</div>
@@ -396,7 +396,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 102 - Hudibras (Continued)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 102 - Hudibras (Continued)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. How is the remainder of &#x27;Hudibras&#x27; structured after the second part?</div>
@@ -411,7 +411,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 103 - The Rise of Modern Prose</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 103 - The Rise of Modern Prose</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. According to Matthew Arnold, what does the Restoration mark the real moment of birth for?</div>
@@ -426,7 +426,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 104 - Influences on Modern Prose and Dryden&#x27;s Role</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 104 - Influences on Modern Prose and Dryden&#x27;s Role</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. How did the changing nature of the reading public influence the new prose?</div>
@@ -441,7 +441,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 105 - Dryden&#x27;s Criticism</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 105 - Dryden&#x27;s Criticism</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Dryden&#x27;s critical work is of capital importance as a commentary upon the tastes and ideals of what rising school of literature?</div>
@@ -456,7 +456,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 106 - John Bunyan (Part 1)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 106 - John Bunyan (Part 1)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Who is the only other really great name in the prose literature of Dryden&#x27;s age?</div>
@@ -471,7 +471,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 107 - Bunyan and The Diarists</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 107 - Bunyan and The Diarists</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. If asked to name the greatest product of Puritanism in English literature, what does the text argue the choice should fall on?</div>
@@ -486,7 +486,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 108 - Drama of the Age of Dryden</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 108 - Drama of the Age of Dryden</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. The theatre of the Age of Dryden was almost wholly the creature of what?</div>
@@ -501,7 +501,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 109 - Later Dramatists &amp; Table of Events (Part 1)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 109 - Later Dramatists &amp; Table of Events (Part 1)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Which tragic poet of this period wrote &#x27;The Orphan&#x27; and &#x27;Venice Preserved&#x27;, keeping long popularity?</div>
@@ -516,7 +516,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 110 - Table of Events (Part 2)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 110 - Table of Events (Part 2)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. In what year did Oliver Cromwell die?</div>
@@ -531,7 +531,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 111 - Table of Events (Part 3)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 111 - Table of Events (Part 3)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. In what year did John Milton die?</div>
@@ -546,7 +546,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 112 - Table of Events (Part 4)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 112 - Table of Events (Part 4)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. According to the table, when did John Vanbrugh begin to write for the stage?</div>
@@ -561,7 +561,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 113 - The Age of Pope (Moral Regeneration)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 113 - The Age of Pope (Moral Regeneration)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. What period of time does &#x27;The Age of Pope&#x27; cover?</div>
@@ -576,7 +576,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 114 - Rationalism in the Age of Pope</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 114 - Rationalism in the Age of Pope</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. During the Age of Pope, any manifestation of earnestness, even in the pulpit, was regarded as dangerously suggestive of what?</div>
@@ -591,7 +591,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 115 - The Classic/Augustan Age</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 115 - The Classic/Augustan Age</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. What two alternative names are sometimes given to the Age of Pope?</div>
@@ -606,7 +606,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 116 - Characteristics of the Classical School</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 116 - Characteristics of the Classical School</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Which of the following is NOT a salient feature of classical poetry as outlined in the text?</div>
@@ -621,7 +621,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 117 - Poetic Diction and Alexander Pope&#x27;s Early Life</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 117 - Poetic Diction and Alexander Pope&#x27;s Early Life</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. What happened to language when the classic poet undertook to refashion the crude stuff of an old ballad?</div>
@@ -636,7 +636,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 118 - Pope&#x27;s Early Works and Masterpiece</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 118 - Pope&#x27;s Early Works and Masterpiece</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. How should our judgment upon Pope&#x27;s extreme irritability and peevishness be tempered?</div>
@@ -651,7 +651,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 119 - Pope&#x27;s Homer and Later Satires</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 119 - Pope&#x27;s Homer and Later Satires</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. What major translations represent the labours of Pope&#x27;s second period?</div>
@@ -666,7 +666,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 120 - Pope&#x27;s Essay on Man and Legacy</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 120 - Pope&#x27;s Essay on Man and Legacy</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. In &#x27;Essay on Man&#x27;, Pope undertakes a defense of the moral government of the universe on what optimistic postulate?</div>
@@ -681,7 +681,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 121 - Other Poets of Pope&#x27;s Era</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 121 - Other Poets of Pope&#x27;s Era</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Who wrote the famous line: &#x27;The proper study of mankind is man.&#x27;?</div>
@@ -696,7 +696,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 122 - The Age of Pope (Minor Works)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 122 - The Age of Pope (Minor Works)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Which poet of the &#x27;churchyard&#x27; school wrote the sombre production &#x27;The Grave&#x27;?</div>
@@ -711,7 +711,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 123 - Daniel Defoe&#x27;s Early Life</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 123 - Daniel Defoe&#x27;s Early Life</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Who is the first of the chief prose writers of Pope&#x27;s age discussed in chronological order?</div>
@@ -726,7 +726,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 124 - Defoe&#x27;s Fiction and Legacy</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 124 - Defoe&#x27;s Fiction and Legacy</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. What famous book did Defoe publish to take the short step from writing biographies with real names to biographies with fictitious names?</div>
@@ -741,7 +741,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 125 - Jonathan Swift&#x27;s Life</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 125 - Jonathan Swift&#x27;s Life</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Who is described as &#x27;by far the most powerful and original genius of his age&#x27;?</div>
@@ -756,7 +756,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 126 - Swift&#x27;s Satires</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 126 - Swift&#x27;s Satires</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. How does Swift use irony in his &#x27;Argument to prove that the Abolishing of Christianity... may be attended with Some Inconveniences&#x27;?</div>
@@ -771,7 +771,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 127 - Swift&#x27;s Gulliver&#x27;s Travels and Addison &amp; Steele</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 127 - Swift&#x27;s Gulliver&#x27;s Travels and Addison &amp; Steele</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. In which part of Gulliver&#x27;s Travels is the infinite littleness of man exposed?</div>
@@ -786,7 +786,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 128 - Character and Works of Addison and Steele</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 128 - Character and Works of Addison and Steele</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. How does the text describe Steele&#x27;s character?</div>
@@ -801,7 +801,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 129 - The Spectator&#x27;s Impact and Character Writing</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 129 - The Spectator&#x27;s Impact and Character Writing</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. What did Addison and Steele use to score most in advocating decency?</div>
@@ -816,7 +816,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 130 - Other Prose Writers and Drama</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 130 - Other Prose Writers and Drama</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Who is the author of the clever satire &#x27;The History of John Bull&#x27;?</div>
@@ -831,7 +831,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 131 - Sentimental and Domestic Drama</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 131 - Sentimental and Domestic Drama</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. The comedy of the time determined to purify itself from the licentiousness of...</div>
@@ -846,7 +846,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 132 - Timeline of the Age of Pope</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 132 - Timeline of the Age of Pope</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. When did Steele publish &#x27;The Tender Husband&#x27;?</div>
@@ -861,7 +861,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 133 - Timeline Continuation and Character Writing</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 133 - Timeline Continuation and Character Writing</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. When did Pope publish &#x27;Moral Essays&#x27;?</div>
@@ -876,7 +876,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 134 - The Age of Johnson (1745-1798)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 134 - The Age of Johnson (1745-1798)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. The Age of Johnson spans the years...</div>
@@ -891,7 +891,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 135 - Renaissance of Feelings and Humanitarianism</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 135 - Renaissance of Feelings and Humanitarianism</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. What is considered the one capital fact in the history of the transition period?</div>
@@ -906,7 +906,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 136 - New Ideas, Revolution, and Samuel Johnson</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 136 - New Ideas, Revolution, and Samuel Johnson</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. People became increasingly familiar with the notions of...</div>
@@ -921,7 +921,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 137 - Johnson&#x27;s Works and Life</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 137 - Johnson&#x27;s Works and Life</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. What was the name of the magazine Johnson regularly contributed parliamentary reports to?</div>
@@ -936,7 +936,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 138 - Johnson as Critic and Moralist</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 138 - Johnson as Critic and Moralist</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Who is Johnson&#x27;s hero-worshipping biographer?</div>
@@ -951,7 +951,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 139 - Johnson&#x27;s Prose and Goldsmith&#x27;s Early Life</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 139 - Johnson&#x27;s Prose and Goldsmith&#x27;s Early Life</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. What did Macaulay call Johnson&#x27;s prose style?</div>
@@ -966,7 +966,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 140 - Goldsmith&#x27;s Works and Character</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 140 - Goldsmith&#x27;s Works and Character</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Much of Goldsmith&#x27;s literary output belongs to the class popularly known as...</div>
@@ -981,7 +981,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 141 - Goldsmith&#x27;s Drama and Prose Style</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 141 - Goldsmith&#x27;s Drama and Prose Style</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Goldsmith&#x27;s comedies mark a reaction against...</div>
@@ -996,7 +996,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 142 - Historians of the Period</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 142 - Historians of the Period</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. David Hume is better known as a...</div>
@@ -1011,7 +1011,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 143 - Political Prose: Burke, Paine, Godwin</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 143 - Political Prose: Burke, Paine, Godwin</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Who is the great name in the political prose of the period?</div>
@@ -1026,7 +1026,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 144 - Letter Writers and Walpole</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 144 - Letter Writers and Walpole</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Horace Walpole&#x27;s letters are described as a lively chronicle of social doings, small talk, and...</div>
@@ -1041,7 +1041,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 145 - The Novel before Richardson</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 145 - The Novel before Richardson</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. The firm establishment and assured popularity of the novel dates from the age of...</div>
@@ -1056,7 +1056,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 146 - The Transformation of Prose Fiction</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 146 - The Transformation of Prose Fiction</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. In reaction against the prolixity and unreality of Heroic Romance, who began to cultivate a form of story marked by brevity?</div>
@@ -1071,7 +1071,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 147 - Historical Significance of the Novel</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 147 - Historical Significance of the Novel</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. The popularity of the novel coincided with the growth of a reading public where who were becoming increasingly numerous?</div>
@@ -1086,7 +1086,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 148 - Samuel Richardson and Pamela</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 148 - Samuel Richardson and Pamela</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. What was Samuel Richardson&#x27;s profession before he drifted into authorship?</div>
@@ -1101,7 +1101,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 149 - Clarissa and Richardson&#x27;s Style</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 149 - Clarissa and Richardson&#x27;s Style</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Who is the scoundrel character in &#x27;Clarissa&#x27; whose name has become proverbial?</div>
@@ -1116,7 +1116,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 150 - Henry Fielding and His Novels</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 150 - Henry Fielding and His Novels</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Who was the second of the eighteenth-century novelists and by far the greatest?</div>
@@ -1131,7 +1131,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 151 - Fielding&#x27;s Structure and Smollett</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 151 - Fielding&#x27;s Structure and Smollett</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. What was Fielding&#x27;s third great novel, published in 1751?</div>
@@ -1146,7 +1146,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 152 - Tobias Smollett&#x27;s Fiction</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 152 - Tobias Smollett&#x27;s Fiction</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. In what profession did Tobias Smollett spend some years early in his life?</div>
@@ -1161,7 +1161,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 153 - Goldsmith and Sterne</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 153 - Goldsmith and Sterne</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. What was Goldsmith&#x27;s one excursion into the field of fiction?</div>
@@ -1176,7 +1176,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 154 - Sentimentalism and Mackenzie</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 154 - Sentimentalism and Mackenzie</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Which of the following is a character in Sterne&#x27;s &#x27;Tristram Shandy&#x27;?</div>
@@ -1191,7 +1191,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 155 - Political Novels and Women Novelists</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 155 - Political Novels and Women Novelists</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. In his later life, Henry Mackenzie opposed the...</div>

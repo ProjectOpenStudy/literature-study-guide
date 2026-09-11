@@ -12,7 +12,7 @@
     .page-title:hover { color: #004494; }
     .arrow { display: inline-block; width: 25px; transition: transform 0.2s; font-size: 0.8em; }
     .arrow.open { transform: rotate(90deg); }
-    .page-content { display: none; margin-top: 15px; }
+    .page-content { display: block; margin-top: 15px; }
     
     .question-container { margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
     .question-container:last-child { border-bottom: none; }
@@ -39,7 +39,7 @@
     function toggleSection(header) {
         const content = header.nextElementSibling;
         const arrow = header.querySelector('.arrow');
-        if (content.style.display === 'none' || content.style.display === '') {
+        if (content.style.display === 'none') {
             content.style.display = 'block';
             arrow.classList.add('open');
         } else {
@@ -111,7 +111,7 @@
     <div id="content">
 
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 10 - Introductory (Part 1)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 10 - Introductory (Part 1)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. According to the text, a history of English literature is fundamentally an account of what?</div>
@@ -126,7 +126,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 11 - Introductory (Part 2)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 11 - Introductory (Part 2)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. What is the one absolutely new thing every great writer brings into the world?</div>
@@ -141,7 +141,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 12 - Introductory (Part 3)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 12 - Introductory (Part 3)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Whose movement in verse was Alexander Pope carrying to perfection?</div>
@@ -156,7 +156,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 13 - Introductory (Part 4)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 13 - Introductory (Part 4)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. According to the text, a writer&#x27;s work is largely determined by what?</div>
@@ -171,7 +171,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 14 - Introductory (Part 5)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 14 - Introductory (Part 5)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. What is the principal object of a history of English literature?</div>
@@ -186,7 +186,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 15 - Introductory (Part 6)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 15 - Introductory (Part 6)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Why is the history of English literature always divided into periods?</div>
@@ -201,7 +201,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 16 - Introductory (Conclusion)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 16 - Introductory (Conclusion)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Because the book is described as &#x27;a little book on a big subject,&#x27; how will the various questions of English literature be treated?</div>
@@ -216,7 +216,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 17 - English Literature Before Chaucer (Part 1)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 17 - English Literature Before Chaucer (Part 1)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. What are the dates given for the period &#x27;English Literature Before Chaucer&#x27;?</div>
@@ -231,7 +231,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 18 - English Literature Before Chaucer (Part 2)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 18 - English Literature Before Chaucer (Part 2)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Who is mentioned as using an early form of English some seven centuries before Chaucer?</div>
@@ -246,7 +246,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 19 - English Literature Before Chaucer (Part 3)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 19 - English Literature Before Chaucer (Part 3)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Apart from Beowulf, who are the most important surviving examples of the oldest English poetry?</div>
@@ -261,7 +261,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 20 - English Literature Before Chaucer (Part 4)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 20 - English Literature Before Chaucer (Part 4)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Despite being sacred in subject, what is Anglo-Saxon poetry full of?</div>
@@ -276,7 +276,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 21 - English Literature Before Chaucer (Part 5)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 21 - English Literature Before Chaucer (Part 5)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. What happened to English literature for about a hundred and fifty years after the Norman Conquest?</div>
@@ -291,7 +291,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 22 - The Making of the English Language</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 22 - The Making of the English Language</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Which of the following works is a versified account of scripture history and saint legends?</div>
@@ -306,7 +306,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 23 - Table of English Literature Before Chaucer</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 23 - Table of English Literature Before Chaucer</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. When were the Jutes, Saxons, and Angles settling in Britain?</div>
@@ -321,7 +321,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 24 - The Age of Chaucer (Part 1)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 24 - The Age of Chaucer (Part 1)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. During the reigns of which English kings did Chaucer live?</div>
@@ -336,7 +336,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 25 - The Age of Chaucer (Part 2)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 25 - The Age of Chaucer (Part 2)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. What was the immediate cause of the general rising of the common folk under Wat Tyler?</div>
@@ -351,7 +351,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 26 - The Age of Chaucer (Part 3)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 26 - The Age of Chaucer (Part 3)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. What third influence did much to change the current of intellectual interests in Chaucer&#x27;s age?</div>
@@ -366,7 +366,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 27 - The Age of Chaucer (Part 4)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 27 - The Age of Chaucer (Part 4)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Chaucer was brought into direct touch with Italian culture during the days of what?</div>
@@ -381,7 +381,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 28 - The Age of Chaucer (Part 5)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 28 - The Age of Chaucer (Part 5)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Which of the following is an early work of Chaucer done on French models?</div>
@@ -396,7 +396,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 29 - The Age of Chaucer (Part 6)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 29 - The Age of Chaucer (Part 6)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. What is the proposal made by Harry Bailly to the pilgrims?</div>
@@ -411,7 +411,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 30 - The Age of Chaucer (Part 7)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 30 - The Age of Chaucer (Part 7)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Which characters tell coarse farcical stories?</div>
@@ -426,7 +426,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 31 - The Age of Chaucer (Conclusion)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 31 - The Age of Chaucer (Conclusion)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Was Chaucer considered a poet of the people?</div>
@@ -441,7 +441,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 32 - Other Poets of Chaucer&#x27;s Age (Part 1)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 32 - Other Poets of Chaucer&#x27;s Age (Part 1)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. If Wyclif was &#x27;the morning star of the Reformation&#x27;, what may Chaucer be called?</div>
@@ -456,7 +456,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 33 - Other Poets of Chaucer&#x27;s Age (Part 2)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 33 - Other Poets of Chaucer&#x27;s Age (Part 2)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Where did Gower stand politically, despite his criticisms?</div>
@@ -471,7 +471,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 34 - Prose of Chaucer&#x27;s Age</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 34 - Prose of Chaucer&#x27;s Age</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. How are Chaucer&#x27;s own few prose writings described in importance?</div>
@@ -486,7 +486,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 35 - Table of the Age of Chaucer</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 35 - Table of the Age of Chaucer</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. According to the table, when was the Battle of Crecy fought?</div>
@@ -501,7 +501,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 36 - From Chaucer to Tottel&#x27;s Miscellany (Part 1)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 36 - From Chaucer to Tottel&#x27;s Miscellany (Part 1)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. What period follows the brilliant beginning made by Chaucer in English literature?</div>
@@ -516,7 +516,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 37 - Poetry of the Fifteenth Century (Part 1)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 37 - Poetry of the Fifteenth Century (Part 1)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. How was mental activity in the universities largely wasted during the fifteenth century?</div>
@@ -531,7 +531,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 38 - Poetry of the Fifteenth Century (Part 2)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 38 - Poetry of the Fifteenth Century (Part 2)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. What is the title of the long poem written by James I of Scotland?</div>
@@ -546,7 +546,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 39 - Prose of the Fifteenth Century (Part 1)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 39 - Prose of the Fifteenth Century (Part 1)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. During the 15th century, what type of literature was showing more promising work than verse?</div>
@@ -561,7 +561,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 40 - Prose of the Fifteenth Century (Part 2)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 40 - Prose of the Fifteenth Century (Part 2)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Why did Malory look back with sentimental regret while writing his book?</div>
@@ -576,7 +576,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 41 - The Revival of Learning</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 41 - The Revival of Learning</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. How did the revival of learning emancipate thought from medieval theology?</div>
@@ -591,7 +591,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 42 - Literature of the Early Renaissance in England</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 42 - Literature of the Early Renaissance in England</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Which classical work heavily influenced the description of an ideal state in More&#x27;s Utopia?</div>
@@ -606,7 +606,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 43 - Table of English Literature (1400-1557)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 43 - Table of English Literature (1400-1557)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. What topic does the author state has been omitted so far and will be covered in the next chapter?</div>
@@ -621,7 +621,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 44 - Table of English Literature (Conclusion)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 44 - Table of English Literature (Conclusion)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. During what years did Queen Mary reign?</div>
@@ -636,7 +636,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 45 - Development of Drama to 1561 (Part 1)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 45 - Development of Drama to 1561 (Part 1)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. The earliest mention of dramatic representation in England refers to a play in honor of whom?</div>
@@ -651,7 +651,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 46 - Development of Drama to 1561 (Part 2)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 46 - Development of Drama to 1561 (Part 2)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. In what century did the religious drama in England reach its height?</div>
@@ -666,7 +666,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 47 - Morality Plays and Interludes</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 47 - Morality Plays and Interludes</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Who was a prominent humorous character introduced later into morality plays, often serving as the fun-maker?</div>
@@ -681,7 +681,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 48 - The Beginnings of Regular Comedy and Tragedy</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 48 - The Beginnings of Regular Comedy and Tragedy</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Why are early experiments in play-writing (miracle/morality plays) historically important?</div>
@@ -696,7 +696,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 49 - Table of the Development of the Drama</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 49 - Table of the Development of the Drama</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. According to the table, what was the first recorded dramatic performance in England?</div>
@@ -711,7 +711,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 50 - The Age of Shakespeare (Part 1)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 50 - The Age of Shakespeare (Part 1)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. What period of time does the &#x27;Shakespearean Age&#x27; broadly cover?</div>
@@ -726,7 +726,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 51 - The Age of Shakespeare (Part 2)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 51 - The Age of Shakespeare (Part 2)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. How did the revival of learning affect the general public during this era?</div>
@@ -741,7 +741,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 52 - Elizabethan Poetry Before Spenser</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 52 - Elizabethan Poetry Before Spenser</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. How is the spirit of Shakespeare&#x27;s age described?</div>
@@ -756,7 +756,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 53 - Spenser and His Poetry</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 53 - Spenser and His Poetry</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Where did Spenser pass the remainder of his life from 1580 onward, which he viewed as a miserable exile?</div>
@@ -771,7 +771,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 54 - The Faery Queene (Part 1)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 54 - The Faery Queene (Part 1)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. To whom did Spenser explain the underlying scheme of The Faery Queene in a prefatory letter?</div>
@@ -786,7 +786,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 55 - The Faery Queene (Part 2)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 55 - The Faery Queene (Part 2)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Who represents Justice in the fifth book of The Faery Queene?</div>
@@ -801,7 +801,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 56 - Spenserian Stanza and Other Poets</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 56 - Spenserian Stanza and Other Poets</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Was the language used in The Faery Queene the actual English spoken in Spenser&#x27;s day?</div>
@@ -816,7 +816,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 57 - Other Elizabethan Poetry and John Donne</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 57 - Other Elizabethan Poetry and John Donne</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Which Italian poetic form, introduced by Wyatt and Surrey, established itself and was used by Spenser, Shakespeare, and others?</div>
@@ -831,7 +831,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 58 - Note on Poetry</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 58 - Note on Poetry</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Based on the text on page 58, what is provided on pages 76-8 of the book?</div>
@@ -846,7 +846,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 59 - The Elizabethan Romantic Drama (Part 1)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 59 - The Elizabethan Romantic Drama (Part 1)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. What term describes the quarter-century following the production of Gorboduc in English drama?</div>
@@ -861,7 +861,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 60 - Classic vs. Romantic Drama</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 60 - Classic vs. Romantic Drama</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. How does the &#x27;classic&#x27; drama treat the spheres of tragedy and comedy?</div>
@@ -876,7 +876,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 61 - Shakespeare&#x27;s Predecessors</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 61 - Shakespeare&#x27;s Predecessors</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. What did Shakespeare&#x27;s predecessors achieve for him?</div>
@@ -891,7 +891,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 62 - Lyly, Marlowe, and Shakespeare&#x27;s Early Life</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 62 - Lyly, Marlowe, and Shakespeare&#x27;s Early Life</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. John Lyly&#x27;s comedies (like Campaspe and Endymion) were written for performance at court. What did the interest in them depend on?</div>
@@ -906,7 +906,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 63 - Shakespeare&#x27;s Life (Part 2)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 63 - Shakespeare&#x27;s Life (Part 2)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. How is Shakespeare&#x27;s marriage to Anne Hathaway described?</div>
@@ -921,7 +921,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 64 - Shakespeare&#x27;s Character and Early Works</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 64 - Shakespeare&#x27;s Character and Early Works</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. What does Shakespeare&#x27;s biography prove conclusively about his character?</div>
@@ -936,7 +936,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 65 - Shakespeare&#x27;s First Two Periods</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 65 - Shakespeare&#x27;s First Two Periods</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. What years constitute Shakespeare&#x27;s First Period (the period of early and experimental work)?</div>
@@ -951,7 +951,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 66 - Shakespeare&#x27;s Last Two Periods</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 66 - Shakespeare&#x27;s Last Two Periods</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. What years constitute Shakespeare&#x27;s Third Period (the period of great tragedies and sombre comedies)?</div>
@@ -966,7 +966,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 67 - Characteristics of Shakespeare&#x27;s Works</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 67 - Characteristics of Shakespeare&#x27;s Works</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. How does Shakespeare&#x27;s body of work rank in English literature?</div>
@@ -981,7 +981,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 68 - Ben Jonson (Part 1)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 68 - Ben Jonson (Part 1)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Who is considered the most important of Shakespeare&#x27;s contemporaries in the annals of the stage?</div>
@@ -996,7 +996,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 69 - Ben Jonson (Part 2) &amp; Other Dramatists</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 69 - Ben Jonson (Part 2) &amp; Other Dramatists</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. On what idea is Jonson&#x27;s characterization based?</div>
@@ -1011,7 +1011,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 70 - End of the Drama &amp; Playhouses (Part 1)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 70 - End of the Drama &amp; Playhouses (Part 1)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Who was referred to by Charles Lamb as &#x27;the last of a great race&#x27; of dramatists, belonging to Charles I&#x27;s reign?</div>
@@ -1026,7 +1026,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 71 - Playhouses (Part 2)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 71 - Playhouses (Part 2)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. What was the shape and primary building material of these early playhouses?</div>
@@ -1041,7 +1041,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 72 - Note on the Drama</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 72 - Note on the Drama</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. According to the note on page 72, where can the Table of the Drama of the Age of Shakespeare be found?</div>
@@ -1056,7 +1056,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 73 - Prose Fiction and Romance</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 73 - Prose Fiction and Romance</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Did the Age of Shakespeare produce what we specifically call the &#x27;novel&#x27; (the long story of contemporary life)?</div>
@@ -1071,7 +1071,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 74 - Euphuism</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 74 - Euphuism</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. In the second part of Euphues, how does the protagonist describe England?</div>
@@ -1086,7 +1086,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 75 - Sidney, Lodge, Greene, and Nash</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 75 - Sidney, Lodge, Greene, and Nash</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. What famous Shakespearean quote is an example of the same fantastic pseudo-science found in Euphuism?</div>
@@ -1101,7 +1101,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 76 - Francis Bacon (Part 1)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 76 - Francis Bacon (Part 1)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Was the English literature of the Age of Shakespeare entirely a literature of the imagination?</div>
@@ -1116,7 +1116,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 77 - Francis Bacon (Part 2)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 77 - Francis Bacon (Part 2)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Despite his stated purpose of serving mankind, what did Bacon often sacrifice his ideals for in practice?</div>
@@ -1131,7 +1131,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 78 - Other Prose of the Period &amp; Tables</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 78 - Other Prose of the Period &amp; Tables</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Who wrote the vast and uncritical &#x27;History of the World&#x27; (1614)?</div>
@@ -1146,7 +1146,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 79 - Tables of the Age of Shakespeare (Part 1)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 79 - Tables of the Age of Shakespeare (Part 1)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. According to the table, what event occurred in 1576 under the Drama column?</div>
@@ -1161,7 +1161,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 80 - Tables of the Age of Shakespeare (Part 2)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 80 - Tables of the Age of Shakespeare (Part 2)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. In what year were the first three books of Spenser&#x27;s Faery Queene published?</div>
@@ -1176,7 +1176,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 81 - Tables &amp; Notes (Jacobean Period)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 81 - Tables &amp; Notes (Jacobean Period)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. What years span Shakespeare&#x27;s Fourth Period (his final period of dramatic romances)?</div>
@@ -1191,7 +1191,7 @@
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 82 - The Age of Milton and Puritanism</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 82 - The Age of Milton and Puritanism</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. What period of time does the &#x27;Age of Milton&#x27; cover in the text?</div>

@@ -12,7 +12,7 @@
     .page-title:hover { color: #004494; }
     .arrow { display: inline-block; width: 25px; transition: transform 0.2s; font-size: 0.8em; }
     .arrow.open { transform: rotate(90deg); }
-    .page-content { display: none; margin-top: 15px; }
+    .page-content { display: block; margin-top: 15px; }
     
     .question-container { margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
     .question-container:last-child { border-bottom: none; }
@@ -39,7 +39,7 @@
     function toggleSection(header) {
         const content = header.nextElementSibling;
         const arrow = header.querySelector('.arrow');
-        if (content.style.display === 'none' || content.style.display === '') {
+        if (content.style.display === 'none') {
             content.style.display = 'block';
             arrow.classList.add('open');
         } else {
@@ -111,7 +111,7 @@
     <div id="content">
 
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 229 - Swinburne and Minor Poets</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 229 - Swinburne and Minor Poets</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. It is primarily as what type of poet that Swinburne will hold his place in our literature?
@@ -205,7 +205,7 @@ Answer: A</div>
 </div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 230 - The Spasmodic School and Other Minor Poets</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 230 - The Spasmodic School and Other Minor Poets</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Upon which enormous poem does Philip James Bailey&#x27;s reputation rest?
@@ -299,7 +299,7 @@ Answer: A</div>
 </div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 231 - The Age of Tennyson: Carlyle</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 231 - The Age of Tennyson: Carlyle</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Who is described as incomparably the greatest figure in the general prose literature of his age?
@@ -393,7 +393,7 @@ Answer: B</div>
 </div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 232 - Thomas Carlyle</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 232 - Thomas Carlyle</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Which of the following works provided Carlyle with mental relief despite his acute dyspepsia?</div>
@@ -408,7 +408,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 233 - Thomas Carlyle&#x27;s Style and Philosophy</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 233 - Thomas Carlyle&#x27;s Style and Philosophy</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. How did Carlyle view the merely bookish side of literature?</div>
@@ -423,7 +423,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 234 - John Ruskin</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 234 - John Ruskin</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. In what year was John Ruskin born?</div>
@@ -438,7 +438,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 235 - John Ruskin&#x27;s Aesthetics and Philosophy</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 235 - John Ruskin&#x27;s Aesthetics and Philosophy</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Where did Ruskin spend the closing years of his life in failing health?</div>
@@ -453,7 +453,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 236 - John Ruskin and Macaulay</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 236 - John Ruskin and Macaulay</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. While Ruskin&#x27;s puritanism allied him to Carlyle, his strong romantic bias connected him with whom?</div>
@@ -468,7 +468,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 237 - Thomas Babington Macaulay</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 237 - Thomas Babington Macaulay</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. To what peerage was Thomas Babington Macaulay raised after many years of public life?</div>
@@ -483,7 +483,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 238 - Matthew Arnold</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 238 - Matthew Arnold</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Into what was Macaulay often led by his love of sweeping statements and striking contrasts?</div>
@@ -498,7 +498,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 239 - Other Prose Writers (History)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 239 - Other Prose Writers (History)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. What extraordinary gift did Matthew Arnold have in his prose writing?</div>
@@ -513,7 +513,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 240 - Aesthetic and Literary Criticism, Science</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 240 - Aesthetic and Literary Criticism, Science</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Who was the most important writer in aesthetic criticism after Ruskin, known for his highly elaborated, slowly produced style?</div>
@@ -528,7 +528,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 241 - The Novel in the Age of Tennyson</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 241 - The Novel in the Age of Tennyson</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. What form of literature became incomparably the most popular with the great and ever-increasing general reading public in the Age of Tennyson?</div>
@@ -543,7 +543,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 242 - The Victorian Novel</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 242 - The Victorian Novel</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. The Victorian novel is described as an index of the many-sided interests and conflicting elements of what age?</div>
@@ -558,7 +558,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 243 - Charles Dickens</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 243 - Charles Dickens</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Which of Dickens&#x27;s novels is said to open his second period due to its systematic attempt at a coherent plot?</div>
@@ -573,7 +573,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 244 - Dickens and Thackeray</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 244 - Dickens and Thackeray</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Through his enormous popularity, what did Dickens&#x27;s humanitarianism make him?</div>
@@ -588,7 +588,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 245 - Thackeray and George Eliot</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 245 - Thackeray and George Eliot</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Which of Thackeray&#x27;s books deals almost exclusively with the sordid and ugly aspects of life?</div>
@@ -603,7 +603,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 246 - George Eliot</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 246 - George Eliot</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. George Eliot&#x27;s work superficially resembles that of which earlier writer in its representation of men and manners in country towns?</div>
@@ -618,7 +618,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 247 - Other Novelists of the Period</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 247 - Other Novelists of the Period</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Which later novel of George Eliot is described as being almost choked by science and psychology?</div>
@@ -633,7 +633,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 248 - More Novelists of the Period</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 248 - More Novelists of the Period</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. With which writer is social purpose generally dominant in novels like Foul Play and Hard Cash, but whose best book is The Cloister and the Hearth?</div>
@@ -648,7 +648,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 249 - Late Victorian Novelists and Table</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 249 - Late Victorian Novelists and Table</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Under whose influence did Dickens reportedly change from the inorganic to the organic type of story?</div>
@@ -663,7 +663,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 250 - Table of the Age of Tennyson</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 250 - Table of the Age of Tennyson</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. In what years was Thackeray&#x27;s Vanity Fair published according to the Table?</div>
@@ -678,7 +678,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 251 - Table of the Age of Tennyson (Contd.)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 251 - Table of the Age of Tennyson (Contd.)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. According to the Table of the Age of Tennyson, in what year did Thomas Carlyle die?</div>
@@ -693,7 +693,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 252 - Epilogue to the Victorian Age</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 252 - Epilogue to the Victorian Age</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. What event in 1887 is taken as a convenient landmark to denote the virtual end of the Age of Tennyson?</div>
@@ -708,7 +708,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 253 - The Eighteen-Nineties and the Decadents</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 253 - The Eighteen-Nineties and the Decadents</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. The period of the Victorian Age at its high noon was second only to which other age?</div>
@@ -723,7 +723,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 254 - Oscar Wilde</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 254 - Oscar Wilde</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. What event in 1895 prevented a balanced appreciation of Oscar Wilde&#x27;s work at the time?</div>
@@ -738,7 +738,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 255 - Other Decadents and Hardy&#x27;s Origins</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 255 - Other Decadents and Hardy&#x27;s Origins</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Who were the artists whose drawings and paintings gave the 1890s a striking part of its typical character?</div>
@@ -753,7 +753,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 256 - Thomas Hardy&#x27;s Novels</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 256 - Thomas Hardy&#x27;s Novels</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. What was Thomas Hardy&#x27;s early training, which gave him intimate knowledge of local churches utilized in his writings?</div>
@@ -768,7 +768,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 257 - Thomas Hardy&#x27;s Genius</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 257 - Thomas Hardy&#x27;s Genius</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. What prevents Jude the Obscure from being the greatest of Hardy&#x27;s novels according to the text?</div>
@@ -783,7 +783,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 258 - Hardy&#x27;s Philosophy and The Dynasts</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 258 - Hardy&#x27;s Philosophy and The Dynasts</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Beneath the Christian veneer in Wessex, Hardy thought gratefully of the lingering presence of what?</div>
@@ -798,7 +798,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 259 - Poets of the Transition (1892-1913)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 259 - Poets of the Transition (1892-1913)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. How did Hardy feel toward the suffering caused by the clash of dynasts?</div>
@@ -813,7 +813,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 260 - Kipling, Noyes, and Thompson</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 260 - Kipling, Noyes, and Thompson</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Opinions on whose verse are described as still being in a fluid state, with some accounting him impressive and others exasperated?</div>
@@ -828,7 +828,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 261 - Housman and Bridges</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 261 - Housman and Bridges</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Which poet published only two small books of verse, A Shropshire Lad and Last Poems?</div>
@@ -843,7 +843,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 262 - Bridges and the Poetry Revival</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 262 - Bridges and the Poetry Revival</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. A legend grew up that Bridges&#x27; poetry is passionless. How does the text respond to this?</div>
@@ -858,7 +858,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 263 - Georgian Poets and Transition Dramatists</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 263 - Georgian Poets and Transition Dramatists</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Which poet began the &#x27;war of the fountain pen against the machine gun&#x27; in works like Counter Attack?</div>
@@ -873,7 +873,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 264 - George Bernard Shaw</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 264 - George Bernard Shaw</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. According to the text, what did the &#x27;efficient&#x27; dramatists (creators of &#x27;the well-made play&#x27;) neglect to take into the theatre?</div>
@@ -888,7 +888,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 265 - Shaw (Contd.) and Irish Drama</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 265 - Shaw (Contd.) and Irish Drama</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. In which play did Shaw&#x27;s conception of a Life Force merge into his larger theory of Creative Evolution?</div>
@@ -903,7 +903,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 266 - Irish Drama (Contd.) and Barrie</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 266 - Irish Drama (Contd.) and Barrie</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Who was acclaimed for two plays of contemporary town life in Ireland: Juno and the Paycock (1925) and The Plough and the Stars (1926)?</div>
@@ -918,7 +918,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 267 - Novelists of the Transition</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 267 - Novelists of the Transition</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Which play is NOT written by John Galsworthy?</div>
@@ -933,7 +933,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 268 - George Moore and Rudyard Kipling</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 268 - George Moore and Rudyard Kipling</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. George Moore&#x27;s &#x27;The Brook Kerith&#x27; deals with the legend that Jesus lived on among the:</div>
@@ -948,7 +948,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 269 - Twentieth Century Novelists</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 269 - Twentieth Century Novelists</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. After Dickens&#x27; death, the custody of tradition in the English novel was vested in:</div>
@@ -963,7 +963,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 270 - Joseph Conrad and Traditional Novelists</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 270 - Joseph Conrad and Traditional Novelists</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Joseph Conrad&#x27;s narrative method is described as:</div>
@@ -978,7 +978,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 271 - Miscellaneous Prose</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 271 - Miscellaneous Prose</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Arnold Bennett wrote a first-rate humorous novel titled:</div>
@@ -993,7 +993,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 272 - W.H. Hudson and Lytton Strachey</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 272 - W.H. Hudson and Lytton Strachey</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. W.H. Hudson&#x27;s prose was notable for its:</div>
@@ -1008,7 +1008,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 273 - Table of the Age of Hardy (Contd.)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 273 - Table of the Age of Hardy (Contd.)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. George Moore&#x27;s &#x27;Esther Waters&#x27; was published in:</div>
@@ -1023,7 +1023,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 274 - Table of the Age of Hardy (Contd.)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 274 - Table of the Age of Hardy (Contd.)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Arnold Bennett&#x27;s &#x27;The Old Wives&#x27; Tale&#x27; was published in:</div>
@@ -1038,7 +1038,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 275 - Table of the Age of Hardy (Contd.)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 275 - Table of the Age of Hardy (Contd.)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Siegfried Sassoon&#x27;s &#x27;Counter Attack&#x27; was published in:</div>
@@ -1053,7 +1053,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 276 - The Present Age</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 276 - The Present Age</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Chapter 26 deals with &#x27;The Present Age&#x27; covering the years:</div>
@@ -1068,7 +1068,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 277 - The Inter-War Years</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 277 - The Inter-War Years</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. When Thomas Hardy died in 1928, the world was still recovering from the consequences of:</div>
@@ -1083,7 +1083,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 278 - Purpose in Literature</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 278 - Purpose in Literature</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. The writings of the 1930s were as much preoccupied with the condition of:</div>
@@ -1098,7 +1098,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 279 - Gerard Manley Hopkins</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 279 - Gerard Manley Hopkins</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Gerard Manley Hopkins published how much poetry during his own lifetime?</div>
@@ -1113,7 +1113,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 280 - Hopkins&#x27;s Influence</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 280 - Hopkins&#x27;s Influence</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. The spirit of Victorian times was mostly:</div>
@@ -1128,7 +1128,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 281 - T.S. Eliot and Obscurity</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 281 - T.S. Eliot and Obscurity</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. The far-reaching influence of Hopkins after 1918 encouraged lesser minds to foster the illusion that:</div>
@@ -1143,7 +1143,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 282 - T.S. Eliot and Poetic Drama</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 282 - T.S. Eliot and Poetic Drama</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. T.S. Eliot&#x27;s &#x27;The Waste Land&#x27; presented a disturbing vision of the state of:</div>
@@ -1158,7 +1158,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 283 - Playwrights and Poets of the 1930s</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 283 - Playwrights and Poets of the 1930s</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. The illusion that audiences do not like poetry on stage was dispelled by Christopher Fry&#x27;s play:</div>
@@ -1173,7 +1173,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 284 - Dylan Thomas and the Sitwells</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 284 - Dylan Thomas and the Sitwells</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Which poet began in the 1930s and reached a larger audience mainly through his success as a radio broadcaster?</div>
@@ -1188,7 +1188,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 285 - Yeats, de la Mare, and the Novel</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 285 - Yeats, de la Mare, and the Novel</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. W.B. Yeats&#x27; progress can be assessed by comparing the simple &#x27;Lake Isle of Innisfree&#x27; with the profound:</div>
@@ -1203,7 +1203,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 286 - Virginia Woolf and Bloomsbury</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 286 - Virginia Woolf and Bloomsbury</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Virginia Woolf (Virginia Stephen) had been born into a literary household where her father was:</div>
@@ -1218,7 +1218,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 287 - Virginia Woolf and E.M. Forster</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 287 - Virginia Woolf and E.M. Forster</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. For most readers, Virginia Woolf&#x27;s easiest book is:</div>
@@ -1233,7 +1233,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 288 - James Joyce and Somerset Maugham</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 288 - James Joyce and Somerset Maugham</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. The works of James Joyce have attracted a small army of expositors and explainers, and his greatest novel is considered to be:</div>
@@ -1248,7 +1248,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 289 - Satirists and Younger Novelists</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 289 - Satirists and Younger Novelists</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. In the 1920s, Aldous Huxley appeared like a modern:</div>
@@ -1263,7 +1263,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 290 - Later Novelists and Women Writers</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 290 - Later Novelists and Women Writers</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Evelyn Waugh began as a farcical humorist in stories such as:</div>
@@ -1278,7 +1278,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 291 - The Short Story and Prose Drama</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 291 - The Short Story and Prose Drama</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. The English short story ventured into different paths in the 1920s, largely under the influence of the Russian writer:</div>
@@ -1293,7 +1293,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 292 - James Bridie and Noel Coward</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 292 - James Bridie and Noel Coward</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. James Bridie chose his themes from a more varied field than Bernard Shaw and was more restlessly:</div>
@@ -1308,7 +1308,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 293 - Noel Coward, Terence Rattigan, and J.B. Priestley</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 293 - Noel Coward, Terence Rattigan, and J.B. Priestley</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Noel Coward wrote brittle comedies about trivial leisured people, characterized by:</div>
@@ -1323,7 +1323,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 294 - Statesmen-Authors and Historians</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 294 - Statesmen-Authors and Historians</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Laurence Housman wrote &#x27;Happy and Glorious&#x27;, a series of episodes in the life of:</div>
@@ -1338,7 +1338,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 295 - Biography, Philosophy, and Travel</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 295 - Biography, Philosophy, and Travel</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. C.V. Wedgwood&#x27;s excellent biography &#x27;William the Silent&#x27; was followed by a larger history of the:</div>
@@ -1353,7 +1353,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 296 - T.E. Lawrence, Belloc, and Chesterton</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 296 - T.E. Lawrence, Belloc, and Chesterton</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. T.E. Lawrence developed remarkable gifts of military leadership when he headed the desert Arabs against:</div>
@@ -1368,7 +1368,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 297 - Chesterton, Belloc, and Chronological Table</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 297 - Chesterton, Belloc, and Chronological Table</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. &#x27;The Path to Rome&#x27; is a travel book written by:</div>
@@ -1383,7 +1383,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 298 - Table of the Present Age (Contd.)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 298 - Table of the Present Age (Contd.)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. Virginia Woolf&#x27;s &#x27;The Years&#x27; and Priestley&#x27;s &#x27;Time and the Conways&#x27; were published in:</div>
@@ -1398,7 +1398,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 299 - Table of the Present Age (Contd.)</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 299 - Table of the Present Age (Contd.)</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. James Bridie died in:</div>
@@ -1413,7 +1413,7 @@ Answer: B</div>
 <div class="hidden-answer"></div>
 </div>
 <div class="page-section">
-<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 300 - General Review of The Present Age</h2>
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow open">▶</span> Page 300 - General Review of The Present Age</h2>
 <div class="page-content">
 <div class="question-container">
 <div class="question">Q1. The period from 1930 to 1955 in English literature is often referred to as:</div>
