@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Literature MCQs - Volume 2</title>
+<style>
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f5f5f5; }
+    h1 { text-align: center; color: #333; }
+    .page-section { background-color: white; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .page-title { color: #0056b3; border-bottom: 2px solid #0056b3; padding-bottom: 5px; cursor: pointer; user-select: none; }
+    .page-title:hover { color: #004494; }
+    .arrow { display: inline-block; width: 25px; transition: transform 0.2s; font-size: 0.8em; }
+    .arrow.open { transform: rotate(90deg); }
+    .page-content { display: none; margin-top: 15px; }
+    
+    .question-container { margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
+    .question-container:last-child { border-bottom: none; }
+    .question { font-weight: bold; margin-bottom: 10px; }
+    .options { list-style-type: none; padding-left: 0; }
+    .options li { margin-bottom: 8px; }
+    label { cursor: pointer; display: block; padding: 5px; border-radius: 4px; transition: background-color 0.2s; }
+    label:hover { background-color: #f0f8ff; }
+    input[type="radio"] { margin-right: 10px; }
+    .answer-section { margin-top: 10px; }
+    .reveal-btn { background-color: #0056b3; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 14px; }
+    .reveal-btn:hover { background-color: #004494; }
+    .hidden-answer { display: none; margin-top: 10px; padding: 8px; border-radius: 4px; }
+    .correct-answer-box { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+    .incorrect-answer-box { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+    .correct-label { background-color: #d4edda; }
+    .incorrect-label { background-color: #f8d7da; }
+    
+    .controls { display: flex; justify-content: space-between; margin-bottom: 20px; position: sticky; top: 0; background: #f5f5f5; padding: 10px 0; z-index: 100; border-bottom: 1px solid #ddd; }
+    .global-btn { background-color: #28a745; color: white; border: none; padding: 10px 15px; border-radius: 4px; cursor: pointer; font-size: 16px; font-weight: bold; }
+    .global-btn:hover { background-color: #218838; }
+</style>
+<script>
+    function toggleSection(header) {
+        const content = header.nextElementSibling;
+        const arrow = header.querySelector('.arrow');
+        if (content.style.display === 'none' || content.style.display === '') {
+            content.style.display = 'block';
+            arrow.classList.add('open');
+        } else {
+            content.style.display = 'none';
+            arrow.classList.remove('open');
+        }
+    }
+
+    function checkAnswer(btn, correctAnswer) {
+        const container = btn.closest('.question-container');
+        const selected = container.querySelector('input[type="radio"]:checked');
+        const answerDiv = container.querySelector('.hidden-answer');
+        
+        answerDiv.style.display = 'block';
+        answerDiv.innerHTML = "Correct Answer: " + correctAnswer;
+        
+        if (selected) {
+            const label = selected.closest('label');
+            if (selected.value === correctAnswer) {
+                answerDiv.className = 'hidden-answer correct-answer-box';
+                answerDiv.innerHTML += " (You got it right!)";
+                label.classList.add('correct-label');
+            } else {
+                answerDiv.className = 'hidden-answer incorrect-answer-box';
+                answerDiv.innerHTML += " (You answered " + selected.value + ")";
+                label.classList.add('incorrect-label');
+                
+                // Highlight correct option
+                const allLabels = container.querySelectorAll('label');
+                allLabels.forEach(l => {
+                    const input = l.querySelector('input');
+                    if(input && input.value === correctAnswer) {
+                        l.classList.add('correct-label');
+                    }
+                });
+            }
+        } else {
+            answerDiv.className = 'hidden-answer correct-answer-box';
+        }
+    }
+    
+    function revealAll() {
+        document.querySelectorAll('.page-content').forEach(c => c.style.display = 'block');
+        document.querySelectorAll('.arrow').forEach(a => a.classList.add('open'));
+        document.querySelectorAll('.reveal-btn').forEach(btn => {
+            btn.click();
+        });
+    }
+    
+    function resetAll() {
+        document.querySelectorAll('input[type="radio"]').forEach(radio => radio.checked = false);
+        document.querySelectorAll('.hidden-answer').forEach(div => div.style.display = 'none');
+        document.querySelectorAll('label').forEach(label => {
+            label.classList.remove('correct-label');
+            label.classList.remove('incorrect-label');
+        });
+        document.querySelectorAll('.page-content').forEach(c => c.style.display = 'none');
+        document.querySelectorAll('.arrow').forEach(a => a.classList.remove('open'));
+    }
+</script>
+</head>
+<body>
+    <h1>Interactive Literature MCQs</h1>
+    <div class="controls">
+        <button class="global-btn" onclick="revealAll()">Check All Answers</button>
+        <button class="global-btn" style="background-color: #dc3545;" onclick="resetAll()">Reset All</button>
+    </div>
+    
+    <div id="content">
+
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 83 - The Rise of Puritanism</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. What behavior of the upper classes helped increase the moral and social influence of Puritanism?</div>
+<ul class="options">
+<li><label><input type="radio" name="q721" value="A"> A. Their extreme piety</label></li>
+<li><label><input type="radio" name="q721" value="B"> B. Their fast-growing flippancy and profligacy, which drew serious men to the Puritan side</label></li>
+<li><label><input type="radio" name="q721" value="C"> C. Their dedication to public education</label></li>
+<li><label><input type="radio" name="q721" value="D"> D. Their support of foreign wars</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 84 - John Milton&#x27;s Early Life</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. In what way did Milton&#x27;s work differ from strict Puritanism?</div>
+<ul class="options">
+<li><label><input type="radio" name="q731" value="A"> A. It was entirely Catholic</label></li>
+<li><label><input type="radio" name="q731" value="B"> B. The moral and religious influences of Puritanism were combined with the generous culture of the Renaissance</label></li>
+<li><label><input type="radio" name="q731" value="C"> C. He rejected religion entirely</label></li>
+<li><label><input type="radio" name="q731" value="D"> D. He wrote only about political strategy</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 85 - Milton&#x27;s Adulthood and Early Poetry</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. From 1640 onward, what cause was Milton increasingly active in supporting?</div>
+<ul class="options">
+<li><label><input type="radio" name="q741" value="A"> A. The Royalist cause</label></li>
+<li><label><input type="radio" name="q741" value="B"> B. The Puritan cause against the Royalists</label></li>
+<li><label><input type="radio" name="q741" value="C"> C. The French Revolution</label></li>
+<li><label><input type="radio" name="q741" value="D"> D. The Spanish Inquisition</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 86 - Milton&#x27;s Horton Poems</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Read in the order of their writing, what do the Horton poems show taking place in Milton&#x27;s mind?</div>
+<ul class="options">
+<li><label><input type="radio" name="q751" value="A"> A. A complete rejection of all religion</label></li>
+<li><label><input type="radio" name="q751" value="B"> B. A profound change where the Puritan element gradually gained strength until it became dominant</label></li>
+<li><label><input type="radio" name="q751" value="C"> C. A growing obsession with science</label></li>
+<li><label><input type="radio" name="q751" value="D"> D. A desire to write only prose</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 87 - Lycidas and Milton&#x27;s Prose (Part 1)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. What is the allegory in Milton&#x27;s &#x27;Comus&#x27; about?</div>
+<ul class="options">
+<li><label><input type="radio" name="q761" value="A"> A. The fall of man</label></li>
+<li><label><input type="radio" name="q761" value="B"> B. Virtue attacked by sensuality and conquering by divine aid</label></li>
+<li><label><input type="radio" name="q761" value="C"> C. The war in heaven</label></li>
+<li><label><input type="radio" name="q761" value="D"> D. Political corruption in London</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 88 - Areopagitica and Paradise Lost (Part 1)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Which of Milton&#x27;s prose treatises stands apart as a great and noble work that every lover of liberty should read?</div>
+<ul class="options">
+<li><label><input type="radio" name="q771" value="A"> A. Paradise Lost</label></li>
+<li><label><input type="radio" name="q771" value="B"> B. Areopagitica</label></li>
+<li><label><input type="radio" name="q771" value="C"> C. Comus</label></li>
+<li><label><input type="radio" name="q771" value="D"> D. The Anatomy of Wit</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 89 - Milton&#x27;s Later Poetry</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Which of the following is NOT set forth in &#x27;Paradise Lost&#x27;?</div>
+<ul class="options">
+<li><label><input type="radio" name="q781" value="A"> A. The revolt of Satan against God</label></li>
+<li><label><input type="radio" name="q781" value="B"> B. The temptation of Christ in the wilderness</label></li>
+<li><label><input type="radio" name="q781" value="C"> C. The fall of the rebel angels</label></li>
+<li><label><input type="radio" name="q781" value="D"> D. The expulsion from Eden</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 90 - Characteristics of Milton&#x27;s Poetry</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Which epithet is most naturally associated with Milton&#x27;s poetry?</div>
+<ul class="options">
+<li><label><input type="radio" name="q791" value="A"> A. Comedic</label></li>
+<li><label><input type="radio" name="q791" value="B"> B. Sublime</label></li>
+<li><label><input type="radio" name="q791" value="C"> C. Satirical</label></li>
+<li><label><input type="radio" name="q791" value="D"> D. Simplistic</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 91 - The Caroline Poets</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Why is it difficult to establish a satisfactory order for the writers between 1625 and 1700?</div>
+<ul class="options">
+<li><label><input type="radio" name="q801" value="A"> A. Because no one knows when they lived</label></li>
+<li><label><input type="radio" name="q801" value="B"> B. Because the Age of Milton and the Age of Dryden overlap in a broad way</label></li>
+<li><label><input type="radio" name="q801" value="C"> C. Because all the records were destroyed in a fire</label></li>
+<li><label><input type="radio" name="q801" value="D"> D. Because they all wrote anonymously</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 92 - Robert Herrick and the Cavalier Poets</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Under what title was Robert Herrick&#x27;s religious poetry published?</div>
+<ul class="options">
+<li><label><input type="radio" name="q811" value="A"> A. Hesperides</label></li>
+<li><label><input type="radio" name="q811" value="B"> B. Noble Numbers</label></li>
+<li><label><input type="radio" name="q811" value="C"> C. The Temple</label></li>
+<li><label><input type="radio" name="q811" value="D"> D. Religious Emblems</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 93 - The Metaphysical Poets</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Who is usually regarded as the chief representative of the &#x27;metaphysical&#x27; school of poetry?</div>
+<ul class="options">
+<li><label><input type="radio" name="q821" value="A"> A. Abraham Cowley</label></li>
+<li><label><input type="radio" name="q821" value="B"> B. John Milton</label></li>
+<li><label><input type="radio" name="q821" value="C"> C. George Herbert</label></li>
+<li><label><input type="radio" name="q821" value="D"> D. Thomas Carew</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'A')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 94 - Traherne and Caroline Prose (Part 1)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Which slightly younger writer&#x27;s manuscripts were lost to sight for nearly two hundred years after his death?</div>
+<ul class="options">
+<li><label><input type="radio" name="q831" value="A"> A. Thomas Traherne</label></li>
+<li><label><input type="radio" name="q831" value="B"> B. Abraham Cowley</label></li>
+<li><label><input type="radio" name="q831" value="C"> C. Jeremy Taylor</label></li>
+<li><label><input type="radio" name="q831" value="D"> D. Izaak Walton</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'A')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 95 - Caroline Prose (Part 2) &amp; History</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Who occupies the first place in history writing of this period with his &#x27;History of the Great Rebellion&#x27;?</div>
+<ul class="options">
+<li><label><input type="radio" name="q841" value="A"> A. Thomas Hobbes</label></li>
+<li><label><input type="radio" name="q841" value="B"> B. Edward Hyde, Earl of Clarendon</label></li>
+<li><label><input type="radio" name="q841" value="C"> C. Izaak Walton</label></li>
+<li><label><input type="radio" name="q841" value="D"> D. Richard Baxter</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 96 - The Age of Dryden</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. What period does &#x27;The Age of Dryden&#x27; cover?</div>
+<ul class="options">
+<li><label><input type="radio" name="q851" value="A"> A. 1558-1603</label></li>
+<li><label><input type="radio" name="q851" value="B"> B. 1603-1625</label></li>
+<li><label><input type="radio" name="q851" value="C"> C. 1625-1660</label></li>
+<li><label><input type="radio" name="q851" value="D"> D. 1660-1700</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'D')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 97 - The Restoration and French Influence</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. During the Restoration, what happened to poetry?</div>
+<ul class="options">
+<li><label><input type="radio" name="q861" value="A"> A. It reached its most emotional and imaginative heights</label></li>
+<li><label><input type="radio" name="q861" value="B"> B. It became prosaic, was made to do the work of prose, and judged by the standards of prose</label></li>
+<li><label><input type="radio" name="q861" value="C"> C. It was outlawed completely</label></li>
+<li><label><input type="radio" name="q861" value="D"> D. It was only written in blank verse</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 98 - Waller, Denham, and Dryden&#x27;s Early Life</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Which two writers are commonly considered the pioneers of the &#x27;classic&#x27; school of poetry and the forerunners of Dryden?</div>
+<ul class="options">
+<li><label><input type="radio" name="q871" value="A"> A. Shakespeare and Marlowe</label></li>
+<li><label><input type="radio" name="q871" value="B"> B. Edmund Waller and Sir John Denham</label></li>
+<li><label><input type="radio" name="q871" value="C"> C. Milton and Spenser</label></li>
+<li><label><input type="radio" name="q871" value="D"> D. Herrick and Lovelace</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 99 - Dryden&#x27;s Career</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Dryden&#x27;s early poems &#x27;Heroic Stanzas on the Death of Oliver Cromwell&#x27; (1659) and &#x27;Astraea Redux&#x27; indicate what?</div>
+<ul class="options">
+<li><label><input type="radio" name="q881" value="A"> A. His unwavering loyalty to the Puritans</label></li>
+<li><label><input type="radio" name="q881" value="B"> B. A rapid change of front (as he celebrated the restoration of Charles II shortly after Cromwell&#x27;s death)</label></li>
+<li><label><input type="radio" name="q881" value="C"> C. His refusal to write about politics</label></li>
+<li><label><input type="radio" name="q881" value="D"> D. His hatred of the monarchy</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 100 - Dryden&#x27;s Masterpieces</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Where do we turn to see the full exhibition of Dryden&#x27;s powers and complete emancipation from false metaphysical taste?</div>
+<ul class="options">
+<li><label><input type="radio" name="q891" value="A"> A. His early college poems</label></li>
+<li><label><input type="radio" name="q891" value="B"> B. The work of the last twenty years of his life</label></li>
+<li><label><input type="radio" name="q891" value="C"> C. His first play</label></li>
+<li><label><input type="radio" name="q891" value="D"> D. The poems he wrote at age 27</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 101 - Dryden&#x27;s Style and Samuel Butler</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Though lacking spiritual glow, what is Dryden&#x27;s poetry characterized by?</div>
+<ul class="options">
+<li><label><input type="radio" name="q901" value="A"> A. Extreme emotionalism</label></li>
+<li><label><input type="radio" name="q901" value="B"> B. Splendid intellectuality and a manly vigour of style</label></li>
+<li><label><input type="radio" name="q901" value="C"> C. Complete obscurity</label></li>
+<li><label><input type="radio" name="q901" value="D"> D. A deep love of nature</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 102 - Hudibras (Continued)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. How is the remainder of &#x27;Hudibras&#x27; structured after the second part?</div>
+<ul class="options">
+<li><label><input type="radio" name="q911" value="A"> A. A strictly organized narrative</label></li>
+<li><label><input type="radio" name="q911" value="B"> B. The story lapses and it is composed of odds and ends of epistles, digressions, and satiric tirades</label></li>
+<li><label><input type="radio" name="q911" value="C"> C. It becomes a beautiful romantic tragedy</label></li>
+<li><label><input type="radio" name="q911" value="D"> D. It turns into a scientific manual</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 103 - The Rise of Modern Prose</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. According to Matthew Arnold, what does the Restoration mark the real moment of birth for?</div>
+<ul class="options">
+<li><label><input type="radio" name="q921" value="A"> A. Modern English poetry</label></li>
+<li><label><input type="radio" name="q921" value="B"> B. Our modern English prose</label></li>
+<li><label><input type="radio" name="q921" value="C"> C. The English novel</label></li>
+<li><label><input type="radio" name="q921" value="D"> D. Shakespearean drama</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 104 - Influences on Modern Prose and Dryden&#x27;s Role</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. How did the changing nature of the reading public influence the new prose?</div>
+<ul class="options">
+<li><label><input type="radio" name="q931" value="A"> A. The public wanted harder, more pedantic books</label></li>
+<li><label><input type="radio" name="q931" value="B"> B. A new, more miscellaneous/varied public was growing up whose tastes and capacities had to be consulted</label></li>
+<li><label><input type="radio" name="q931" value="C"> C. The public completely stopped reading</label></li>
+<li><label><input type="radio" name="q931" value="D"> D. The public only wanted to read Latin</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 105 - Dryden&#x27;s Criticism</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Dryden&#x27;s critical work is of capital importance as a commentary upon the tastes and ideals of what rising school of literature?</div>
+<ul class="options">
+<li><label><input type="radio" name="q941" value="A"> A. The Romantic School</label></li>
+<li><label><input type="radio" name="q941" value="B"> B. The Classical School</label></li>
+<li><label><input type="radio" name="q941" value="C"> C. The Metaphysical School</label></li>
+<li><label><input type="radio" name="q941" value="D"> D. The Gothic School</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 106 - John Bunyan (Part 1)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Who is the only other really great name in the prose literature of Dryden&#x27;s age?</div>
+<ul class="options">
+<li><label><input type="radio" name="q951" value="A"> A. Thomas Hobbes</label></li>
+<li><label><input type="radio" name="q951" value="B"> B. John Bunyan</label></li>
+<li><label><input type="radio" name="q951" value="C"> C. Richard Baxter</label></li>
+<li><label><input type="radio" name="q951" value="D"> D. Izaak Walton</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 107 - Bunyan and The Diarists</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. If asked to name the greatest product of Puritanism in English literature, what does the text argue the choice should fall on?</div>
+<ul class="options">
+<li><label><input type="radio" name="q961" value="A"> A. Milton&#x27;s Paradise Lost</label></li>
+<li><label><input type="radio" name="q961" value="B"> B. Bunyan&#x27;s The Pilgrim&#x27;s Progress</label></li>
+<li><label><input type="radio" name="q961" value="C"> C. Foxe&#x27;s Book of Martyrs</label></li>
+<li><label><input type="radio" name="q961" value="D"> D. Baxter&#x27;s The Saints&#x27; Everlasting Rest</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 108 - Drama of the Age of Dryden</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. The theatre of the Age of Dryden was almost wholly the creature of what?</div>
+<ul class="options">
+<li><label><input type="radio" name="q971" value="A"> A. The Puritan church</label></li>
+<li><label><input type="radio" name="q971" value="B"> B. The demoralised world of fashion (reflecting the taste of its patrons)</label></li>
+<li><label><input type="radio" name="q971" value="C"> C. The working class</label></li>
+<li><label><input type="radio" name="q971" value="D"> D. The scientific community</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 109 - Later Dramatists &amp; Table of Events (Part 1)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Which tragic poet of this period wrote &#x27;The Orphan&#x27; and &#x27;Venice Preserved&#x27;, keeping long popularity?</div>
+<ul class="options">
+<li><label><input type="radio" name="q981" value="A"> A. Nathaniel Lee</label></li>
+<li><label><input type="radio" name="q981" value="B"> B. Thomas Otway</label></li>
+<li><label><input type="radio" name="q981" value="C"> C. John Dryden</label></li>
+<li><label><input type="radio" name="q981" value="D"> D. William Congreve</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 110 - Table of Events (Part 2)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. In what year did Oliver Cromwell die?</div>
+<ul class="options">
+<li><label><input type="radio" name="q991" value="A"> A. 1649</label></li>
+<li><label><input type="radio" name="q991" value="B"> B. 1653</label></li>
+<li><label><input type="radio" name="q991" value="C"> C. 1659</label></li>
+<li><label><input type="radio" name="q991" value="D"> D. 1666</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 111 - Table of Events (Part 3)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. In what year did John Milton die?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1001" value="A"> A. 1667</label></li>
+<li><label><input type="radio" name="q1001" value="B"> B. 1671</label></li>
+<li><label><input type="radio" name="q1001" value="C"> C. 1674</label></li>
+<li><label><input type="radio" name="q1001" value="D"> D. 1688</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 112 - Table of Events (Part 4)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. According to the table, when did John Vanbrugh begin to write for the stage?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1011" value="A"> A. 1660</label></li>
+<li><label><input type="radio" name="q1011" value="B"> B. 1678</label></li>
+<li><label><input type="radio" name="q1011" value="C"> C. 1697</label></li>
+<li><label><input type="radio" name="q1011" value="D"> D. 1700</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 113 - The Age of Pope (Moral Regeneration)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. What period of time does &#x27;The Age of Pope&#x27; cover?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1016" value="A"> A. 1625-1660</label></li>
+<li><label><input type="radio" name="q1016" value="B"> B. 1660-1700</label></li>
+<li><label><input type="radio" name="q1016" value="C"> C. 1700-1745</label></li>
+<li><label><input type="radio" name="q1016" value="D"> D. 1745-1798</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 114 - Rationalism in the Age of Pope</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. During the Age of Pope, any manifestation of earnestness, even in the pulpit, was regarded as dangerously suggestive of what?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1026" value="A"> A. Pure holiness</label></li>
+<li><label><input type="radio" name="q1026" value="B"> B. &#x27;Enthusiasm&#x27;, which was in shockingly bad taste</label></li>
+<li><label><input type="radio" name="q1026" value="C"> C. Divine inspiration</label></li>
+<li><label><input type="radio" name="q1026" value="D"> D. Supreme intellect</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 115 - The Classic/Augustan Age</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. What two alternative names are sometimes given to the Age of Pope?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1036" value="A"> A. The Romantic Age and the Gothic Age</label></li>
+<li><label><input type="radio" name="q1036" value="B"> B. The Classic Age and the Augustan Age</label></li>
+<li><label><input type="radio" name="q1036" value="C"> C. The Elizabethan Age and the Jacobean Age</label></li>
+<li><label><input type="radio" name="q1036" value="D"> D. The Dark Ages and the Middle Ages</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 116 - Characteristics of the Classical School</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Which of the following is NOT a salient feature of classical poetry as outlined in the text?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1046" value="A"> A. It is commonly didactic and satiric (argument, criticism, politics)</label></li>
+<li><label><input type="radio" name="q1046" value="B"> B. It is marked by a deep love of nature, landscape, and country things</label></li>
+<li><label><input type="radio" name="q1046" value="C"> C. It is the product of intelligence playing upon the surface of life</label></li>
+<li><label><input type="radio" name="q1046" value="D"> D. It is markedly deficient on the side of emotion and imagination</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 117 - Poetic Diction and Alexander Pope&#x27;s Early Life</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. What happened to language when the classic poet undertook to refashion the crude stuff of an old ballad?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1056" value="A"> A. They made it simpler and more direct</label></li>
+<li><label><input type="radio" name="q1056" value="B"> B. They substituted grandiloquent phrases and pompous circumlocutions for plain/direct expressions (e.g., &#x27;Eternal blessings on his shade attend&#x27; instead of &#x27;God rest his soul&#x27;)</label></li>
+<li><label><input type="radio" name="q1056" value="C"> C. They translated it into French</label></li>
+<li><label><input type="radio" name="q1056" value="D"> D. They refused to touch it</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 118 - Pope&#x27;s Early Works and Masterpiece</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. How should our judgment upon Pope&#x27;s extreme irritability and peevishness be tempered?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1066" value="A"> A. By recognizing that he was right about everything</label></li>
+<li><label><input type="radio" name="q1066" value="B"> B. By the recognition that it was in large measure the consequence of chronic ill-health (his life was one &#x27;long disease&#x27;)</label></li>
+<li><label><input type="radio" name="q1066" value="C"> C. By understanding that it was just an act for the public</label></li>
+<li><label><input type="radio" name="q1066" value="D"> D. By knowing he was extremely wealthy</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 119 - Pope&#x27;s Homer and Later Satires</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. What major translations represent the labours of Pope&#x27;s second period?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1076" value="A"> A. The Bible</label></li>
+<li><label><input type="radio" name="q1076" value="B"> B. The Iliad and the Odyssey (his &#x27;Homer&#x27;)</label></li>
+<li><label><input type="radio" name="q1076" value="C"> C. The Aeneid</label></li>
+<li><label><input type="radio" name="q1076" value="D"> D. The Divine Comedy</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 120 - Pope&#x27;s Essay on Man and Legacy</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. In &#x27;Essay on Man&#x27;, Pope undertakes a defense of the moral government of the universe on what optimistic postulate?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1086" value="A"> A. &#x27;All you need is love&#x27;</label></li>
+<li><label><input type="radio" name="q1086" value="B"> B. &#x27;Whatever is, is right&#x27;</label></li>
+<li><label><input type="radio" name="q1086" value="C"> C. &#x27;Life is but a dream&#x27;</label></li>
+<li><label><input type="radio" name="q1086" value="D"> D. &#x27;Man is born free, but everywhere is in chains&#x27;</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 121 - Other Poets of Pope&#x27;s Era</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Who wrote the famous line: &#x27;The proper study of mankind is man.&#x27;?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1096" value="A"> A. Francis Bacon</label></li>
+<li><label><input type="radio" name="q1096" value="B"> B. Alexander Pope</label></li>
+<li><label><input type="radio" name="q1096" value="C"> C. Thomas Hobbes</label></li>
+<li><label><input type="radio" name="q1096" value="D"> D. John Locke</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 122 - The Age of Pope (Minor Works)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Which poet of the &#x27;churchyard&#x27; school wrote the sombre production &#x27;The Grave&#x27;?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1106" value="A"> A. Robert Blair</label></li>
+<li><label><input type="radio" name="q1106" value="B"> B. William Somerville</label></li>
+<li><label><input type="radio" name="q1106" value="C"> C. Sir Samuel Garth</label></li>
+<li><label><input type="radio" name="q1106" value="D"> D. John Gay</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'A')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 123 - Daniel Defoe&#x27;s Early Life</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Who is the first of the chief prose writers of Pope&#x27;s age discussed in chronological order?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1111" value="A"> A. Jonathan Swift</label></li>
+<li><label><input type="radio" name="q1111" value="B"> B. Daniel Defoe</label></li>
+<li><label><input type="radio" name="q1111" value="C"> C. Joseph Addison</label></li>
+<li><label><input type="radio" name="q1111" value="D"> D. Richard Steele</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 124 - Defoe&#x27;s Fiction and Legacy</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. What famous book did Defoe publish to take the short step from writing biographies with real names to biographies with fictitious names?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1121" value="A"> A. Moll Flanders</label></li>
+<li><label><input type="radio" name="q1121" value="B"> B. The Life and Adventures of Robinson Crusoe</label></li>
+<li><label><input type="radio" name="q1121" value="C"> C. Captain Singleton</label></li>
+<li><label><input type="radio" name="q1121" value="D"> D. Colonel Jack</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 125 - Jonathan Swift&#x27;s Life</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Who is described as &#x27;by far the most powerful and original genius of his age&#x27;?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1131" value="A"> A. Daniel Defoe</label></li>
+<li><label><input type="radio" name="q1131" value="B"> B. Jonathan Swift</label></li>
+<li><label><input type="radio" name="q1131" value="C"> C. Alexander Pope</label></li>
+<li><label><input type="radio" name="q1131" value="D"> D. Joseph Addison</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 126 - Swift&#x27;s Satires</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. How does Swift use irony in his &#x27;Argument to prove that the Abolishing of Christianity... may be attended with Some Inconveniences&#x27;?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1141" value="A"> A. He openly praises Christianity</label></li>
+<li><label><input type="radio" name="q1141" value="B"> B. He nominally adopts a position alien from his own, proceeding gravely to pour ridicule upon the cause he is apparently supporting</label></li>
+<li><label><input type="radio" name="q1141" value="C"> C. He writes a poem about Jesus</label></li>
+<li><label><input type="radio" name="q1141" value="D"> D. He aggressively attacks the church without irony</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 127 - Swift&#x27;s Gulliver&#x27;s Travels and Addison &amp; Steele</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. In which part of Gulliver&#x27;s Travels is the infinite littleness of man exposed?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1151" value="A"> A. Lilliput</label></li>
+<li><label><input type="radio" name="q1151" value="B"> B. Brobdingnag</label></li>
+<li><label><input type="radio" name="q1151" value="C"> C. Laputa</label></li>
+<li><label><input type="radio" name="q1151" value="D"> D. Houyhnhnms</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'A')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 128 - Character and Works of Addison and Steele</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. How does the text describe Steele&#x27;s character?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1161" value="A"> A. Urbane and polished</label></li>
+<li><label><input type="radio" name="q1161" value="B"> B. Shy and self-conscious</label></li>
+<li><label><input type="radio" name="q1161" value="C"> C. Thorough Bohemian</label></li>
+<li><label><input type="radio" name="q1161" value="D"> D. Remote and austere</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 129 - The Spectator&#x27;s Impact and Character Writing</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. What did Addison and Steele use to score most in advocating decency?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1171" value="A"> A. Violence</label></li>
+<li><label><input type="radio" name="q1171" value="B"> B. Wit, humour, and satire</label></li>
+<li><label><input type="radio" name="q1171" value="C"> C. Deep philosophical arguments</label></li>
+<li><label><input type="radio" name="q1171" value="D"> D. Epic poetry</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 130 - Other Prose Writers and Drama</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Who is the author of the clever satire &#x27;The History of John Bull&#x27;?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1181" value="A"> A. Jonathan Swift</label></li>
+<li><label><input type="radio" name="q1181" value="B"> B. John Arbuthnot</label></li>
+<li><label><input type="radio" name="q1181" value="C"> C. Henry St. John</label></li>
+<li><label><input type="radio" name="q1181" value="D"> D. Francis Atterbury</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 131 - Sentimental and Domestic Drama</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. The comedy of the time determined to purify itself from the licentiousness of...</div>
+<ul class="options">
+<li><label><input type="radio" name="q1191" value="A"> A. The Elizabethan era</label></li>
+<li><label><input type="radio" name="q1191" value="B"> B. The Restoration drama</label></li>
+<li><label><input type="radio" name="q1191" value="C"> C. The Puritan drama</label></li>
+<li><label><input type="radio" name="q1191" value="D"> D. The Victorian era</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 132 - Timeline of the Age of Pope</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. When did Steele publish &#x27;The Tender Husband&#x27;?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1201" value="A"> A. 1703</label></li>
+<li><label><input type="radio" name="q1201" value="B"> B. 1705</label></li>
+<li><label><input type="radio" name="q1201" value="C"> C. 1709</label></li>
+<li><label><input type="radio" name="q1201" value="D"> D. 1713</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 133 - Timeline Continuation and Character Writing</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. When did Pope publish &#x27;Moral Essays&#x27;?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1211" value="A"> A. 1728-30</label></li>
+<li><label><input type="radio" name="q1211" value="B"> B. 1732-35</label></li>
+<li><label><input type="radio" name="q1211" value="C"> C. 1736-39</label></li>
+<li><label><input type="radio" name="q1211" value="D"> D. 1740-42</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 134 - The Age of Johnson (1745-1798)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. The Age of Johnson spans the years...</div>
+<ul class="options">
+<li><label><input type="radio" name="q1221" value="A"> A. 1700-1745</label></li>
+<li><label><input type="radio" name="q1221" value="B"> B. 1745-1798</label></li>
+<li><label><input type="radio" name="q1221" value="C"> C. 1798-1832</label></li>
+<li><label><input type="radio" name="q1221" value="D"> D. 1832-1901</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 135 - Renaissance of Feelings and Humanitarianism</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. What is considered the one capital fact in the history of the transition period?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1231" value="A"> A. The Industrial Revolution</label></li>
+<li><label><input type="radio" name="q1231" value="B"> B. The renaissance of the feelings</label></li>
+<li><label><input type="radio" name="q1231" value="C"> C. The French Revolution</label></li>
+<li><label><input type="radio" name="q1231" value="D"> D. The discovery of America</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 136 - New Ideas, Revolution, and Samuel Johnson</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. People became increasingly familiar with the notions of...</div>
+<ul class="options">
+<li><label><input type="radio" name="q1241" value="A"> A. Divine right of kings</label></li>
+<li><label><input type="radio" name="q1241" value="B"> B. Liberty, equality, and the rights of man</label></li>
+<li><label><input type="radio" name="q1241" value="C"> C. Predestination</label></li>
+<li><label><input type="radio" name="q1241" value="D"> D. Feudalism</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 137 - Johnson&#x27;s Works and Life</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. What was the name of the magazine Johnson regularly contributed parliamentary reports to?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1251" value="A"> A. The Spectator</label></li>
+<li><label><input type="radio" name="q1251" value="B"> B. Cave&#x27;s Magazine</label></li>
+<li><label><input type="radio" name="q1251" value="C"> C. The Tatler</label></li>
+<li><label><input type="radio" name="q1251" value="D"> D. The Rambler</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 138 - Johnson as Critic and Moralist</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Who is Johnson&#x27;s hero-worshipping biographer?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1261" value="A"> A. David Garrick</label></li>
+<li><label><input type="radio" name="q1261" value="B"> B. James Boswell</label></li>
+<li><label><input type="radio" name="q1261" value="C"> C. Oliver Goldsmith</label></li>
+<li><label><input type="radio" name="q1261" value="D"> D. Joshua Reynolds</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 139 - Johnson&#x27;s Prose and Goldsmith&#x27;s Early Life</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. What did Macaulay call Johnson&#x27;s prose style?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1271" value="A"> A. Augustan prose</label></li>
+<li><label><input type="radio" name="q1271" value="B"> B. Johnsonese</label></li>
+<li><label><input type="radio" name="q1271" value="C"> C. Latinized English</label></li>
+<li><label><input type="radio" name="q1271" value="D"> D. Neo-classic style</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 140 - Goldsmith&#x27;s Works and Character</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Much of Goldsmith&#x27;s literary output belongs to the class popularly known as...</div>
+<ul class="options">
+<li><label><input type="radio" name="q1281" value="A"> A. Masterpieces</label></li>
+<li><label><input type="radio" name="q1281" value="B"> B. Epics</label></li>
+<li><label><input type="radio" name="q1281" value="C"> C. &#x27;Pot-boilers&#x27;</label></li>
+<li><label><input type="radio" name="q1281" value="D"> D. Memoirs</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 141 - Goldsmith&#x27;s Drama and Prose Style</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Goldsmith&#x27;s comedies mark a reaction against...</div>
+<ul class="options">
+<li><label><input type="radio" name="q1291" value="A"> A. Heroic Tragedy</label></li>
+<li><label><input type="radio" name="q1291" value="B"> B. Sentimental Comedy</label></li>
+<li><label><input type="radio" name="q1291" value="C"> C. Farce</label></li>
+<li><label><input type="radio" name="q1291" value="D"> D. Romantic Comedy</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 142 - Historians of the Period</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. David Hume is better known as a...</div>
+<ul class="options">
+<li><label><input type="radio" name="q1301" value="A"> A. Sceptical philosopher</label></li>
+<li><label><input type="radio" name="q1301" value="B"> B. Romantic poet</label></li>
+<li><label><input type="radio" name="q1301" value="C"> C. Radical politician</label></li>
+<li><label><input type="radio" name="q1301" value="D"> D. Playwright</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'A')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 143 - Political Prose: Burke, Paine, Godwin</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Who is the great name in the political prose of the period?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1311" value="A"> A. David Hume</label></li>
+<li><label><input type="radio" name="q1311" value="B"> B. Edward Gibbon</label></li>
+<li><label><input type="radio" name="q1311" value="C"> C. Edmund Burke</label></li>
+<li><label><input type="radio" name="q1311" value="D"> D. Horace Walpole</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 144 - Letter Writers and Walpole</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Horace Walpole&#x27;s letters are described as a lively chronicle of social doings, small talk, and...</div>
+<ul class="options">
+<li><label><input type="radio" name="q1321" value="A"> A. Deep philosophy</label></li>
+<li><label><input type="radio" name="q1321" value="B"> B. Scandals</label></li>
+<li><label><input type="radio" name="q1321" value="C"> C. Religious debates</label></li>
+<li><label><input type="radio" name="q1321" value="D"> D. Economic theory</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 145 - The Novel before Richardson</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. The firm establishment and assured popularity of the novel dates from the age of...</div>
+<ul class="options">
+<li><label><input type="radio" name="q1331" value="A"> A. Dryden</label></li>
+<li><label><input type="radio" name="q1331" value="B"> B. Pope</label></li>
+<li><label><input type="radio" name="q1331" value="C"> C. Johnson</label></li>
+<li><label><input type="radio" name="q1331" value="D"> D. Wordsworth</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 146 - The Transformation of Prose Fiction</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. In reaction against the prolixity and unreality of Heroic Romance, who began to cultivate a form of story marked by brevity?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1341" value="A"> A. Jane Austen</label></li>
+<li><label><input type="radio" name="q1341" value="B"> B. Aphra Behn</label></li>
+<li><label><input type="radio" name="q1341" value="C"> C. Frances Burney</label></li>
+<li><label><input type="radio" name="q1341" value="D"> D. George Eliot</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 147 - Historical Significance of the Novel</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. The popularity of the novel coincided with the growth of a reading public where who were becoming increasingly numerous?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1351" value="A"> A. Politicians</label></li>
+<li><label><input type="radio" name="q1351" value="B"> B. Women</label></li>
+<li><label><input type="radio" name="q1351" value="C"> C. Children</label></li>
+<li><label><input type="radio" name="q1351" value="D"> D. Soldiers</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 148 - Samuel Richardson and Pamela</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. What was Samuel Richardson&#x27;s profession before he drifted into authorship?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1361" value="A"> A. Lawyer</label></li>
+<li><label><input type="radio" name="q1361" value="B"> B. Prosperous printer</label></li>
+<li><label><input type="radio" name="q1361" value="C"> C. Physician</label></li>
+<li><label><input type="radio" name="q1361" value="D"> D. Clergyman</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 149 - Clarissa and Richardson&#x27;s Style</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Who is the scoundrel character in &#x27;Clarissa&#x27; whose name has become proverbial?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1371" value="A"> A. Tom Jones</label></li>
+<li><label><input type="radio" name="q1371" value="B"> B. Lovelace</label></li>
+<li><label><input type="radio" name="q1371" value="C"> C. Blifil</label></li>
+<li><label><input type="radio" name="q1371" value="D"> D. Squire Western</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 150 - Henry Fielding and His Novels</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Who was the second of the eighteenth-century novelists and by far the greatest?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1381" value="A"> A. Tobias Smollett</label></li>
+<li><label><input type="radio" name="q1381" value="B"> B. Laurence Sterne</label></li>
+<li><label><input type="radio" name="q1381" value="C"> C. Henry Fielding</label></li>
+<li><label><input type="radio" name="q1381" value="D"> D. Oliver Goldsmith</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 151 - Fielding&#x27;s Structure and Smollett</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. What was Fielding&#x27;s third great novel, published in 1751?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1391" value="A"> A. Jonathan Wild</label></li>
+<li><label><input type="radio" name="q1391" value="B"> B. Amelia</label></li>
+<li><label><input type="radio" name="q1391" value="C"> C. Tom Jones</label></li>
+<li><label><input type="radio" name="q1391" value="D"> D. Joseph Andrews</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 152 - Tobias Smollett&#x27;s Fiction</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. In what profession did Tobias Smollett spend some years early in his life?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1401" value="A"> A. Lawyer</label></li>
+<li><label><input type="radio" name="q1401" value="B"> B. Surgeon on a man-of-war</label></li>
+<li><label><input type="radio" name="q1401" value="C"> C. Teacher</label></li>
+<li><label><input type="radio" name="q1401" value="D"> D. Actor</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 153 - Goldsmith and Sterne</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. What was Goldsmith&#x27;s one excursion into the field of fiction?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1411" value="A"> A. Amelia</label></li>
+<li><label><input type="radio" name="q1411" value="B"> B. The Vicar of Wakefield</label></li>
+<li><label><input type="radio" name="q1411" value="C"> C. Clarissa</label></li>
+<li><label><input type="radio" name="q1411" value="D"> D. Evelina</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 154 - Sentimentalism and Mackenzie</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Which of the following is a character in Sterne&#x27;s &#x27;Tristram Shandy&#x27;?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1421" value="A"> A. Dr. Primrose</label></li>
+<li><label><input type="radio" name="q1421" value="B"> B. Corporal Trim</label></li>
+<li><label><input type="radio" name="q1421" value="C"> C. Squire Western</label></li>
+<li><label><input type="radio" name="q1421" value="D"> D. Captain Sentry</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 155 - Political Novels and Women Novelists</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. In his later life, Henry Mackenzie opposed the...</div>
+<ul class="options">
+<li><label><input type="radio" name="q1431" value="A"> A. American Revolution</label></li>
+<li><label><input type="radio" name="q1431" value="B"> B. French Revolution</label></li>
+<li><label><input type="radio" name="q1431" value="C"> C. Abolition of slavery</label></li>
+<li><label><input type="radio" name="q1431" value="D"> D. Reform Bill</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+
+</body>
+</html>

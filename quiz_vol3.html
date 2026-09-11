@@ -1,0 +1,3738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Literature MCQs - Volume 3</title>
+<style>
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f5f5f5; }
+    h1 { text-align: center; color: #333; }
+    .page-section { background-color: white; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .page-title { color: #0056b3; border-bottom: 2px solid #0056b3; padding-bottom: 5px; cursor: pointer; user-select: none; }
+    .page-title:hover { color: #004494; }
+    .arrow { display: inline-block; width: 25px; transition: transform 0.2s; font-size: 0.8em; }
+    .arrow.open { transform: rotate(90deg); }
+    .page-content { display: none; margin-top: 15px; }
+    
+    .question-container { margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
+    .question-container:last-child { border-bottom: none; }
+    .question { font-weight: bold; margin-bottom: 10px; }
+    .options { list-style-type: none; padding-left: 0; }
+    .options li { margin-bottom: 8px; }
+    label { cursor: pointer; display: block; padding: 5px; border-radius: 4px; transition: background-color 0.2s; }
+    label:hover { background-color: #f0f8ff; }
+    input[type="radio"] { margin-right: 10px; }
+    .answer-section { margin-top: 10px; }
+    .reveal-btn { background-color: #0056b3; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 14px; }
+    .reveal-btn:hover { background-color: #004494; }
+    .hidden-answer { display: none; margin-top: 10px; padding: 8px; border-radius: 4px; }
+    .correct-answer-box { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+    .incorrect-answer-box { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+    .correct-label { background-color: #d4edda; }
+    .incorrect-label { background-color: #f8d7da; }
+    
+    .controls { display: flex; justify-content: space-between; margin-bottom: 20px; position: sticky; top: 0; background: #f5f5f5; padding: 10px 0; z-index: 100; border-bottom: 1px solid #ddd; }
+    .global-btn { background-color: #28a745; color: white; border: none; padding: 10px 15px; border-radius: 4px; cursor: pointer; font-size: 16px; font-weight: bold; }
+    .global-btn:hover { background-color: #218838; }
+</style>
+<script>
+    function toggleSection(header) {
+        const content = header.nextElementSibling;
+        const arrow = header.querySelector('.arrow');
+        if (content.style.display === 'none' || content.style.display === '') {
+            content.style.display = 'block';
+            arrow.classList.add('open');
+        } else {
+            content.style.display = 'none';
+            arrow.classList.remove('open');
+        }
+    }
+
+    function checkAnswer(btn, correctAnswer) {
+        const container = btn.closest('.question-container');
+        const selected = container.querySelector('input[type="radio"]:checked');
+        const answerDiv = container.querySelector('.hidden-answer');
+        
+        answerDiv.style.display = 'block';
+        answerDiv.innerHTML = "Correct Answer: " + correctAnswer;
+        
+        if (selected) {
+            const label = selected.closest('label');
+            if (selected.value === correctAnswer) {
+                answerDiv.className = 'hidden-answer correct-answer-box';
+                answerDiv.innerHTML += " (You got it right!)";
+                label.classList.add('correct-label');
+            } else {
+                answerDiv.className = 'hidden-answer incorrect-answer-box';
+                answerDiv.innerHTML += " (You answered " + selected.value + ")";
+                label.classList.add('incorrect-label');
+                
+                // Highlight correct option
+                const allLabels = container.querySelectorAll('label');
+                allLabels.forEach(l => {
+                    const input = l.querySelector('input');
+                    if(input && input.value === correctAnswer) {
+                        l.classList.add('correct-label');
+                    }
+                });
+            }
+        } else {
+            answerDiv.className = 'hidden-answer correct-answer-box';
+        }
+    }
+    
+    function revealAll() {
+        document.querySelectorAll('.page-content').forEach(c => c.style.display = 'block');
+        document.querySelectorAll('.arrow').forEach(a => a.classList.add('open'));
+        document.querySelectorAll('.reveal-btn').forEach(btn => {
+            btn.click();
+        });
+    }
+    
+    function resetAll() {
+        document.querySelectorAll('input[type="radio"]').forEach(radio => radio.checked = false);
+        document.querySelectorAll('.hidden-answer').forEach(div => div.style.display = 'none');
+        document.querySelectorAll('label').forEach(label => {
+            label.classList.remove('correct-label');
+            label.classList.remove('incorrect-label');
+        });
+        document.querySelectorAll('.page-content').forEach(c => c.style.display = 'none');
+        document.querySelectorAll('.arrow').forEach(a => a.classList.remove('open'));
+    }
+</script>
+</head>
+<body>
+    <h1>Interactive Literature MCQs</h1>
+    <div class="controls">
+        <button class="global-btn" onclick="revealAll()">Check All Answers</button>
+        <button class="global-btn" style="background-color: #dc3545;" onclick="resetAll()">Reset All</button>
+    </div>
+    
+    <div id="content">
+
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 156 - The Revival of Romance</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. One important new movement was initiated when the novel began to respond to a growing interest in the...</div>
+<ul class="options">
+<li><label><input type="radio" name="q1441" value="A"> A. Renaissance</label></li>
+<li><label><input type="radio" name="q1441" value="B"> B. Middle ages</label></li>
+<li><label><input type="radio" name="q1441" value="C"> C. Classical era</label></li>
+<li><label><input type="radio" name="q1441" value="D"> D. Industrial age</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 157 - Matthew Gregory Lewis and Gothic Romance</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Matthew Gregory Lewis achieved a great success with his first book titled...</div>
+<ul class="options">
+<li><label><input type="radio" name="q1451" value="A"> A. The Castle of Otranto</label></li>
+<li><label><input type="radio" name="q1451" value="B"> B. The Mysteries of Udolpho</label></li>
+<li><label><input type="radio" name="q1451" value="C"> C. Ambrosio, or The Monk</label></li>
+<li><label><input type="radio" name="q1451" value="D"> D. The Italian</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 158 - The Age of Johnson: Verse</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. The history of later eighteenth-century poetry is the history of a struggle between...</div>
+<ul class="options">
+<li><label><input type="radio" name="q1461" value="A"> A. Poetry and prose</label></li>
+<li><label><input type="radio" name="q1461" value="B"> B. Old and new</label></li>
+<li><label><input type="radio" name="q1461" value="C"> C. Town and country</label></li>
+<li><label><input type="radio" name="q1461" value="D"> D. Religion and science</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 159 - The Breakup of the Augustan Tradition</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Classical poetry was mainly the product of the intelligence and was strikingly deficient in...</div>
+<ul class="options">
+<li><label><input type="radio" name="q1471" value="A"> A. Satire</label></li>
+<li><label><input type="radio" name="q1471" value="B"> B. Rhyme</label></li>
+<li><label><input type="radio" name="q1471" value="C"> C. Emotion and imagination</label></li>
+<li><label><input type="radio" name="q1471" value="D"> D. Political references</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 160 - Johnson and Goldsmith&#x27;s Poetry</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. In an epoch of change, Johnson and Goldsmith held fast to the...</div>
+<ul class="options">
+<li><label><input type="radio" name="q1481" value="A"> A. Distant future</label></li>
+<li><label><input type="radio" name="q1481" value="B"> B. Medieval past</label></li>
+<li><label><input type="radio" name="q1481" value="C"> C. Immediate past</label></li>
+<li><label><input type="radio" name="q1481" value="D"> D. Renaissance era</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 161 - The Reaction in Form</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Though conservative, Goldsmith yielded to the growing power of...</div>
+<ul class="options">
+<li><label><input type="radio" name="q1491" value="A"> A. Mysticism</label></li>
+<li><label><input type="radio" name="q1491" value="B"> B. Sentimentalism</label></li>
+<li><label><input type="radio" name="q1491" value="C"> C. Rationalism</label></li>
+<li><label><input type="radio" name="q1491" value="D"> D. Gothicism</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 162 - The Spenserian Revival</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. How many poems in the Spenserian stanza were published between 1730 and 1775?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1501" value="A"> A. Over 20</label></li>
+<li><label><input type="radio" name="q1501" value="B"> B. Over 30</label></li>
+<li><label><input type="radio" name="q1501" value="C"> C. Over 40</label></li>
+<li><label><input type="radio" name="q1501" value="D"> D. Over 50</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'D')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 163 - The Growth of the Love of Nature</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Between which two poets is the growth of a love of nature a marked feature in English poetry?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1511" value="A"> A. Dryden and Pope</label></li>
+<li><label><input type="radio" name="q1511" value="B"> B. Pope and Wordsworth</label></li>
+<li><label><input type="radio" name="q1511" value="C"> C. Wordsworth and Keats</label></li>
+<li><label><input type="radio" name="q1511" value="D"> D. Milton and Dryden</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 164 - The Growth of the Love of Nature (Continued)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Who wrote the descriptive poem in four parts called &#x27;The Seasons&#x27;?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1521" value="A"> A. Allan Ramsay</label></li>
+<li><label><input type="radio" name="q1521" value="B"> B. James Thomson</label></li>
+<li><label><input type="radio" name="q1521" value="C"> C. John Dyer</label></li>
+<li><label><input type="radio" name="q1521" value="D"> D. William Collins</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 165 - The Development of Naturalism</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Which of the following was a principal object aimed at by poets of the new generation?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1531" value="A"> A. Greater complexity in passions described</label></li>
+<li><label><input type="radio" name="q1531" value="B"> B. Greater simplicity in the language employed</label></li>
+<li><label><input type="radio" name="q1531" value="C"> C. Reverting to Latinized vocabulary</label></li>
+<li><label><input type="radio" name="q1531" value="D"> D. Writing strictly in closed couplets</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 166 - Blake and Crabbe</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Who is described as a mystic and a visionary whose effusions were inspired by the desire to restore the golden age?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1541" value="A"> A. William Cowper</label></li>
+<li><label><input type="radio" name="q1541" value="B"> B. William Blake</label></li>
+<li><label><input type="radio" name="q1541" value="C"> C. George Crabbe</label></li>
+<li><label><input type="radio" name="q1541" value="D"> D. Robert Burns</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 167 - The Romantic Revival</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Which French writer described romanticism as &#x27;liberalism in literature&#x27;?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1551" value="A"> A. Voltaire</label></li>
+<li><label><input type="radio" name="q1551" value="B"> B. Jean-Jacques Rousseau</label></li>
+<li><label><input type="radio" name="q1551" value="C"> C. Victor Hugo</label></li>
+<li><label><input type="radio" name="q1551" value="D"> D. Émile Zola</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 168 - The Gothic Revival</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Which prose fiction work&#x27;s production coincided with the conspicuous influence of the medieval revival in poetry?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1561" value="A"> A. The Mysteries of Udolpho</label></li>
+<li><label><input type="radio" name="q1561" value="B"> B. The Castle of Otranto</label></li>
+<li><label><input type="radio" name="q1561" value="C"> C. Robinson Crusoe</label></li>
+<li><label><input type="radio" name="q1561" value="D"> D. Gulliver&#x27;s Travels</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 169 - Thomas Chatterton and Celtic Antiquity</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. What did Percy prefix as an introduction to the ballads in his &#x27;Reliques&#x27;?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1571" value="A"> A. An Essay on Gothic Architecture</label></li>
+<li><label><input type="radio" name="q1571" value="B"> B. An Essay on the Ancient Minstrels</label></li>
+<li><label><input type="radio" name="q1571" value="C"> C. A Treatise on Romanticism</label></li>
+<li><label><input type="radio" name="q1571" value="D"> D. A History of Chivalry</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 170 - The Ossianic Poems</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Which epic poem did Macpherson produce in six books in 1762?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1581" value="A"> A. Temora</label></li>
+<li><label><input type="radio" name="q1581" value="B"> B. Fingal</label></li>
+<li><label><input type="radio" name="q1581" value="C"> C. Aella</label></li>
+<li><label><input type="radio" name="q1581" value="D"> D. Beowulf</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 171 - Gray, Burns, and Cowper</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. The whole movement for the revival of the romantic past came to its head in which decade?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1591" value="A"> A. 1720-1730</label></li>
+<li><label><input type="radio" name="q1591" value="B"> B. 1740-1750</label></li>
+<li><label><input type="radio" name="q1591" value="C"> C. 1760-1770</label></li>
+<li><label><input type="radio" name="q1591" value="D"> D. 1780-1790</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 172 - Gray and Burns</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Which poem is described as having features making it historically very important, including a churchyard scene and twilight atmosphere?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1601" value="A"> A. The Deserted Village</label></li>
+<li><label><input type="radio" name="q1601" value="B"> B. The Task</label></li>
+<li><label><input type="radio" name="q1601" value="C"> C. Elegy written in a Country Churchyard</label></li>
+<li><label><input type="radio" name="q1601" value="D"> D. The Cotter&#x27;s Saturday Night</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 173 - Robert Burns and William Cowper</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Was Robert Burns considered an unlettered plowman?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1611" value="A"> A. Yes, he could barely read or write</label></li>
+<li><label><input type="radio" name="q1611" value="B"> B. No, he read widely and critically</label></li>
+<li><label><input type="radio" name="q1611" value="C"> C. Yes, he relied entirely on oral tradition</label></li>
+<li><label><input type="radio" name="q1611" value="D"> D. No, he was a university professor</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 174 - William Cowper&#x27;s Poetry</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. &#x27;The Task&#x27; is often considered the poetic masterpiece of later 18th century:</div>
+<ul class="options">
+<li><label><input type="radio" name="q1621" value="A"> A. Rationalism</label></li>
+<li><label><input type="radio" name="q1621" value="B"> B. Evangelicalism</label></li>
+<li><label><input type="radio" name="q1621" value="C"> C. Catholicism</label></li>
+<li><label><input type="radio" name="q1621" value="D"> D. Romanticism</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 175 - Christopher Smart and the Age of Johnson</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Where was Christopher Smart educated?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1631" value="A"> A. Oxford</label></li>
+<li><label><input type="radio" name="q1631" value="B"> B. Cambridge</label></li>
+<li><label><input type="radio" name="q1631" value="C"> C. Edinburgh</label></li>
+<li><label><input type="radio" name="q1631" value="D"> D. Dublin</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 176 - Chronology of the Age of Johnson</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. In what year was Johnson&#x27;s Dictionary published?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1641" value="A"> A. 1751</label></li>
+<li><label><input type="radio" name="q1641" value="B"> B. 1755</label></li>
+<li><label><input type="radio" name="q1641" value="C"> C. 1759</label></li>
+<li><label><input type="radio" name="q1641" value="D"> D. 1765</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 177 - Chronology of the Age of Johnson (Cont.)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. In what year was Goldsmith&#x27;s &#x27;The Vicar of Wakefield&#x27; published?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1651" value="A"> A. 1764</label></li>
+<li><label><input type="radio" name="q1651" value="B"> B. 1766</label></li>
+<li><label><input type="radio" name="q1651" value="C"> C. 1770</label></li>
+<li><label><input type="radio" name="q1651" value="D"> D. 1773</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 178 - Chronology to the Lyrical Ballads</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. In what year were William Blake&#x27;s &#x27;Poetical Sketches&#x27; published?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1661" value="A"> A. 1783</label></li>
+<li><label><input type="radio" name="q1661" value="B"> B. 1786</label></li>
+<li><label><input type="radio" name="q1661" value="C"> C. 1789</label></li>
+<li><label><input type="radio" name="q1661" value="D"> D. 1794</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'A')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 179 - The Age of Wordsworth</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. The Age of Wordsworth covers approximately which years?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1671" value="A"> A. 1740-1798</label></li>
+<li><label><input type="radio" name="q1671" value="B"> B. 1798-1832</label></li>
+<li><label><input type="radio" name="q1671" value="C"> C. 1832-1850</label></li>
+<li><label><input type="radio" name="q1671" value="D"> D. 1789-1815</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 180 - Revolutionary Ideals and Literature</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Who wrote: &#x27;The genius of poetry must work out its own salvation in a man. It cannot be matured by law and precept&#x27;?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1681" value="A"> A. Alexander Pope</label></li>
+<li><label><input type="radio" name="q1681" value="B"> B. John Keats</label></li>
+<li><label><input type="radio" name="q1681" value="C"> C. William Wordsworth</label></li>
+<li><label><input type="radio" name="q1681" value="D"> D. Lord Jeffrey</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 181 - Disillusionment and Wordsworth&#x27;s Youth</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Who wrote: &#x27;Bliss was it in that dawn to be alive, / But to be young was very heaven&#x27;?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1691" value="A"> A. Samuel Taylor Coleridge</label></li>
+<li><label><input type="radio" name="q1691" value="B"> B. Lord Byron</label></li>
+<li><label><input type="radio" name="q1691" value="C"> C. William Wordsworth</label></li>
+<li><label><input type="radio" name="q1691" value="D"> D. Percy Bysshe Shelley</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 182 - Wordsworth&#x27;s Life</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Who was Wordsworth&#x27;s devoted sister who lived with him as a third member of his household?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1701" value="A"> A. Mary</label></li>
+<li><label><input type="radio" name="q1701" value="B"> B. Dorothy</label></li>
+<li><label><input type="radio" name="q1701" value="C"> C. Elizabeth</label></li>
+<li><label><input type="radio" name="q1701" value="D"> D. Jane</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 183 - Lyrical Ballads</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. What event finally destroyed Wordsworth&#x27;s faith in the French cause forever?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1711" value="A"> A. The outbreak of war between France and England</label></li>
+<li><label><input type="radio" name="q1711" value="B"> B. The Terror</label></li>
+<li><label><input type="radio" name="q1711" value="C"> C. The fall of Robespierre</label></li>
+<li><label><input type="radio" name="q1711" value="D"> D. The rise of Napoleon and the events which followed</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'D')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 184 - Wordsworth&#x27;s Theory of Poetry</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Where did Wordsworth further set forth his aims for the &#x27;Lyrical Ballads&#x27;?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1721" value="A"> A. In the preface to the first edition</label></li>
+<li><label><input type="radio" name="q1721" value="B"> B. In the preface to the second edition</label></li>
+<li><label><input type="radio" name="q1721" value="C"> C. In a letter to Coleridge</label></li>
+<li><label><input type="radio" name="q1721" value="D"> D. In his poem &#x27;The Prelude&#x27;</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 185 - Characteristics of Wordsworth&#x27;s Poetry</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. If Pope is the greatest poet of the town, what is Wordsworth?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1731" value="A"> A. The greatest poet of the sea</label></li>
+<li><label><input type="radio" name="q1731" value="B"> B. The greatest poet of the country and natural life</label></li>
+<li><label><input type="radio" name="q1731" value="C"> C. The greatest poet of war</label></li>
+<li><label><input type="radio" name="q1731" value="D"> D. The greatest poet of medieval chivalry</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 186 - Wordsworth&#x27;s Limitations and Coleridge</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Which of the following is considered one of the obvious limitations of Wordsworth&#x27;s genius?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1741" value="A"> A. He had no humor and little passion</label></li>
+<li><label><input type="radio" name="q1741" value="B"> B. He was too obsessed with urban life</label></li>
+<li><label><input type="radio" name="q1741" value="C"> C. He wrote entirely in prose</label></li>
+<li><label><input type="radio" name="q1741" value="D"> D. He relied too heavily on classical mythology</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'A')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 187 - Coleridge and Scott</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Which of the following is true about Coleridge&#x27;s literary work?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1751" value="A"> A. He wrote hundreds of completed epics</label></li>
+<li><label><input type="radio" name="q1751" value="B"> B. All his work is fragmentary</label></li>
+<li><label><input type="radio" name="q1751" value="C"> C. He only wrote prose</label></li>
+<li><label><input type="radio" name="q1751" value="D"> D. He never wrote literary criticism</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 188 - Walter Scott&#x27;s Career</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Politically, Walter Scott was a born:</div>
+<ul class="options">
+<li><label><input type="radio" name="q1761" value="A"> A. Radical</label></li>
+<li><label><input type="radio" name="q1761" value="B"> B. Liberal</label></li>
+<li><label><input type="radio" name="q1761" value="C"> C. Tory</label></li>
+<li><label><input type="radio" name="q1761" value="D"> D. Whig</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 189 - Scott&#x27;s Limitations and Bowles</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Which of the following describes Scott&#x27;s limitations as a poet?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1771" value="A"> A. He has no ability to describe landscape</label></li>
+<li><label><input type="radio" name="q1771" value="B"> B. He rarely takes the reader beneath the surface of things and carries no weight of thought</label></li>
+<li><label><input type="radio" name="q1771" value="C"> C. He is too mystical and obscure</label></li>
+<li><label><input type="radio" name="q1771" value="D"> D. His stories are extremely boring and lack action</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 190 - Southey and Landor</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Like Wordsworth, Southey eventually repudiated his early radical ideas and became a:</div>
+<ul class="options">
+<li><label><input type="radio" name="q1781" value="A"> A. Radical Socialist</label></li>
+<li><label><input type="radio" name="q1781" value="B"> B. Whig</label></li>
+<li><label><input type="radio" name="q1781" value="C"> C. Tory of the Tories</label></li>
+<li><label><input type="radio" name="q1781" value="D"> D. French sympathizer</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 191 - Campbell and Moore</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Thomas Campbell&#x27;s early poem &#x27;The Pleasures of Hope&#x27; (1799) is written in which style and form?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1791" value="A"> A. Blank verse with romantic diction</label></li>
+<li><label><input type="radio" name="q1791" value="B"> B. The closed couplet of the outgoing Augustan school</label></li>
+<li><label><input type="radio" name="q1791" value="C"> C. Spenserian stanza</label></li>
+<li><label><input type="radio" name="q1791" value="D"> D. Free verse</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 192 - The Younger Poets</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Did the close of the French Revolution mean the end of the revolutionary movement in European politics?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1801" value="A"> A. Yes, all discontent completely ceased</label></li>
+<li><label><input type="radio" name="q1801" value="B"> B. No, the people of Europe had been aroused and repeated disturbances occurred</label></li>
+<li><label><input type="radio" name="q1801" value="C"> C. Yes, because a perfect democracy was established</label></li>
+<li><label><input type="radio" name="q1801" value="D"> D. No, because the monarchy was permanently restored everywhere without opposition</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 193 - Lord Byron</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Who is described as the eldest and most thoroughly representative of the three younger poets?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1811" value="A"> A. Percy Bysshe Shelley</label></li>
+<li><label><input type="radio" name="q1811" value="B"> B. John Keats</label></li>
+<li><label><input type="radio" name="q1811" value="C"> C. George Gordon, Lord Byron</label></li>
+<li><label><input type="radio" name="q1811" value="D"> D. Thomas Moore</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 194 - Byron&#x27;s Poetry and Influence</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Despite the apparent variety of Byron&#x27;s voluminous work, why is the final impression one of monotony?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1821" value="A"> A. He used the exact same meter for every poem</label></li>
+<li><label><input type="radio" name="q1821" value="B"> B. He only wrote about the sea</label></li>
+<li><label><input type="radio" name="q1821" value="C"> C. He was a supreme egotist and rarely travelled outside himself</label></li>
+<li><label><input type="radio" name="q1821" value="D"> D. He copied all his plots from Shakespeare</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 195 - Byron&#x27;s Philosophy and Shelley&#x27;s Early Life</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. What is the key-note of Byron&#x27;s philosophy?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1831" value="A"> A. God is love</label></li>
+<li><label><input type="radio" name="q1831" value="B"> B. Vanity of vanities (blank negation)</label></li>
+<li><label><input type="radio" name="q1831" value="C"> C. Progress is inevitable</label></li>
+<li><label><input type="radio" name="q1831" value="D"> D. The rights of man</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 196 - Shelley&#x27;s Poetry</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Shelley&#x27;s genius was essentially:</div>
+<ul class="options">
+<li><label><input type="radio" name="q1841" value="A"> A. Dramatic</label></li>
+<li><label><input type="radio" name="q1841" value="B"> B. Lyrical</label></li>
+<li><label><input type="radio" name="q1841" value="C"> C. Satirical</label></li>
+<li><label><input type="radio" name="q1841" value="D"> D. Didactic</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 197 - Keats and Shelley</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. In Shelley&#x27;s &#x27;Prometheus Unbound&#x27;, what does the Titan symbolize?
+A. The prototype of mankind in its long struggle against despotism
+B. The beauty of the Greek past
+C. The exhaustion of revolutionary impulses
+D. The forces of nature
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q2. Who represents the forces of despotism in &#x27;Prometheus Unbound&#x27;?
+A. Prometheus
+B. Jupiter
+C. Endymion
+D. Apollo
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q3. John Keats was the last and youngest of which group?
+A. The early Augustan poets
+B. The later revolutionary group
+C. The pre-Raphaelite brotherhood
+D. The Cavalier poets
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q4. Unlike Byron and Shelley, what was Keats&#x27;s attitude towards his time?
+A. He was a stormy rebel
+B. He was a humanitarian reformer
+C. He had an almost complete detachment
+D. He was deeply involved in politics
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q5. How did Keats conceive of poetry?
+A. As the vehicle of philosophy
+B. As religious teaching
+C. As the incarnation of beauty
+D. As a tool for social reform
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q6. Which poem opens with &#x27;A thing of beauty is a joy for ever&#x27;?
+A. Lamia
+B. Hyperion
+C. Endymion
+D. The Eve of St. Agnes
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q7. Instead of looking to the future land of promise like Shelley, where did Keats seek imaginative escape?
+A. The past of Greek mythology and medieval romance
+B. The industrial cities of England
+C. The philosophical texts of Germany
+D. The scientific discoveries of his age
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q8. Which of the following is a fragmentary poem by Keats?
+A. Endymion
+B. Hyperion
+C. Lamia
+D. Isabella
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q9. How did Keats&#x27;s treatment of nature differ from Wordsworth&#x27;s and Shelley&#x27;s?
+A. It was full of spiritual messages and meanings
+B. It was purely scientific and analytical
+C. There was nothing mystical in it; he loved it for its sensuous beauty
+D. He disliked nature and preferred urban settings
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 198 - Keats and Minor Poets</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. What phrase did Shelley use to describe Keats due to his early death?
+A. A stormy rebel
+B. One of the inheritors of unfulfilled renown
+C. The incarnation of beauty
+D. A willing martyr
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q2. Which of the following odes is NOT mentioned as being in Keats&#x27;s volume of 1819?
+A. To Autumn
+B. To a Nightingale
+C. On a Grecian Urn
+D. To Melancholy
+Answer: D</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q3. On the side of form and style, how is Keats described?
+A. The most classical of the romantic poets
+B. The most romantic of the romantic poets
+C. The most realistic of his generation
+D. A strict follower of Hellenic temperance
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q4. Which poetic form did Keats reject, following the lead of Leigh Hunt?
+A. Blank verse
+B. Spenserian stanza
+C. The classic couplet
+D. The sonnet
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q5. Historically, Keats represents the exhaustion of impulses generated by what event?
+A. The Industrial Revolution
+B. The Renaissance
+C. The social upheaval of the Revolution
+D. The Restoration
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q6. Who wrote the &#x27;Story of Rimini&#x27; (1816)?
+A. James Henry Leigh Hunt
+B. Thomas Hood
+C. John Hamilton Reynolds
+D. Winthrop Mackworth Praed
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q7. What innovation did Leigh Hunt introduce in the &#x27;Story of Rimini&#x27;?
+A. The rejection of the classic couplet in favor of a freer form
+B. The invention of the dramatic monologue
+C. The first use of free verse
+D. The revival of the epic poem
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q8. In which early poem of Keats was freedom carried to a degree of licence that Hunt disapproved?
+A. Hyperion
+B. Lamia
+C. Endymion
+D. The Eve of St. Agnes
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q9. Which poet married a sister of Keats&#x27;s intimate friend, John Hamilton Reynolds?
+A. James Henry Leigh Hunt
+B. Thomas or Tom Hood
+C. Percy Bysshe Shelley
+D. Lord Byron
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 199 - Thomas Hood and Minor Poets</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Thomas Hood is perhaps chiefly remembered for what kind of poems?
+A. Epic narratives
+B. Humorous poems, mastering verbal wit and punning
+C. Political satires
+D. Philosophical epics
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q2. Which of the following is a ballad or lyric by Thomas Hood?
+A. The Song of the Shirt
+B. Ingoldsby Legends
+C. The Bride&#x27;s Tragedy
+D. Story of Rimini
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q3. Which poem by Hood is described as a masterpiece in the gruesome grotesque?
+A. The Bridge of Sighs
+B. Miss Kilmansegg
+C. Fair Inez
+D. The Haunted House
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q4. Who is the author of &#x27;Ingoldsby Legends&#x27;?
+A. Winthrop Mackworth Praed
+B. Richard Harris Barham
+C. Thomas Lovell Beddoes
+D. John Clare
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q5. &#x27;Ingoldsby Legends&#x27; is a burlesque development of what trend made popular by Scott?
+A. Classicism
+B. Realism
+C. Mediaevalism
+D. Hellenism
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q6. Who wrote &#x27;The Bride&#x27;s Tragedy&#x27; and &#x27;Death&#x27;s Jest-Book&#x27;?
+A. Thomas Lovell Beddoes
+B. Winthrop Mackworth Praed
+C. Letitia Elizabeth Landon
+D. Felicia Dorothea Hemans
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q7. Beddoes&#x27; work represents a strange revival of what spirit?
+A. The romantic optimism of the 19th century
+B. The morbid and fantastic spirit of the later Elizabethan drama
+C. The strict rules of Augustan poetry
+D. The simplicity of early ballads
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q8. Letitia Elizabeth Landon was commonly known by what initials?
+A. L.E.D.
+B. L.E.L.
+C. L.E.M.
+D. L.E.S.
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q9. John Clare was known as the last of which type of poets?
+A. The aristocratic poets
+B. The peasant poets
+C. The Cavalier poets
+D. The metaphysical poets
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 200 - John Clare</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Who edited &#x27;Selected Poems&#x27; by John Clare?
+A. William Wordsworth
+B. Grigson
+C. Leigh Hunt
+D. Thomas Hood
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q2. In what year was Grigson&#x27;s edition of &#x27;Selected Poems&#x27; published?
+A. 1821
+B. 1950
+C. 1949
+D. 1850
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q3. What is the title of the 1949 collection edited by Grigson?
+A. The Peasant Poet
+B. Poems of Clare&#x27;s Madness
+C. Rural Life in England
+D. The Madhouse Poems
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q4. John Clare&#x27;s works represented in the 1950 volume were written during:
+A. His travels in Italy
+B. His lifetime
+C. The Augustan age
+D. The late 18th century
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q5. Which editor is credited with collecting both &#x27;Selected Poems&#x27; and &#x27;Poems of Clare&#x27;s Madness&#x27;?
+A. Lockhart
+B. Grigson
+C. Jeffrey
+D. Brougham
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q6. &#x27;Poems of Clare&#x27;s Madness&#x27; was published in which year?
+A. 1949
+B. 1950
+C. 1899
+D. 1832
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q7. John Clare&#x27;s poetry in these collections is notable for:
+A. Being mostly prose
+B. Reflecting his life experiences including his time of madness
+C. Discussing urban industrialization
+D. Focusing on classical Greek myths
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q8. The publication of &#x27;Poems of Clare&#x27;s Madness&#x27; highlights what aspect of Clare&#x27;s life?
+A. His political career
+B. His academic achievements
+C. His period of insanity
+D. His wealth
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q9. In these two collections, Grigson brings attention to the work of which poet?
+A. John Keats
+B. Thomas Hood
+C. John Clare
+D. Lord Byron
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 201 - The Age of Wordsworth: General Prose</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. What was an important feature in the history of prose literature during the Age of Wordsworth?
+A. The decline of the novel
+B. The rise of the modern review and magazine
+C. The disappearance of drama
+D. The start of serialized poetry
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q2. When was the Edinburgh Review established?
+A. 1802
+B. 1817
+C. 1824
+D. 1830
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q3. The Edinburgh Review was established by men of letters associated with which political party?
+A. The Tory party
+B. The Whig party
+C. The Labour party
+D. The Liberal party
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q4. Which of the following was NOT a founder of the Edinburgh Review?
+A. Jeffrey
+B. Brougham
+C. Sydney Smith
+D. William Gifford
+Answer: D</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q5. Which publication was started as a Tory counterblast to the Edinburgh Review?
+A. The London Magazine
+B. Fraser&#x27;s
+C. The Quarterly
+D. Blackwood&#x27;s Edinburgh Magazine
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q6. Who was the first editor of the Quarterly?
+A. William Gifford
+B. Lockhart
+C. Wilson
+D. Hogg
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q7. Who succeeded William Gifford as the editor of the Quarterly in 1824?
+A. Brougham
+B. Scott&#x27;s son-in-law, Lockhart
+C. Charles Lamb
+D. William Hazlitt
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q8. Blackwood&#x27;s Edinburgh Magazine was launched in what year?
+A. 1809
+B. 1802
+C. 1817
+D. 1830
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q9. Which magazine included Lamb, Hazlitt, and De Quincey among its early contributors?
+A. The London Magazine
+B. The Edinburgh Review
+C. Fraser&#x27;s
+D. The Quarterly
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 202 - General Prose and Edinburgh Men</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. The rise of the modern review and magazine gave great encouragement to what form of writing?
+A. The epic poem
+B. Essay-writing
+C. The dramatic monologue
+D. The three-volume novel
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q2. The literature of criticism divided critics of the age into which two groups?
+A. The conservative/classical and the radical/romantic
+B. The optimists and the pessimists
+C. The realists and the naturalists
+D. The political and the philosophical
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q3. How is the prose of the eighteenth century (like that of Addison and Goldsmith) characterized?
+A. It lacked lucidity and charm
+B. It had strong passion and deep feeling
+C. It had lucidity, grace, and charm, but lacked variety, warmth, and color
+D. It was highly complex and deeply structural
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q4. What did the romantic movement bring to prose?
+A. A return to strict classical rules
+B. A complete lack of emotion
+C. Strong passion, deep feeling, and a love of variety, warmth, and color
+D. A purely scientific and analytical approach
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q5. The new movement in prose was partly connected with a revival of interest in which authors?
+A. The early Augustan authors
+B. The pre-Augustan authors
+C. The contemporary French authors
+D. The ancient Roman authors
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q6. The prose writers of this era are grouped into three categories. Which is NOT one of these?
+A. The Edinburgh men
+B. The London men
+C. The Lake District men
+D. Miscellaneous writers falling under neither head
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q7. Who was called by his admirers the &#x27;Archcritic&#x27; and by his victims &#x27;Judge Jeffrey&#x27;?
+A. Francis Jeffrey
+B. Sydney Smith
+C. John Wilson
+D. John Gibson Lockhart
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q8. To which periodical did Francis Jeffrey contribute some 200 articles?
+A. The Quarterly
+B. Blackwood&#x27;s Edinburgh Magazine
+C. The Edinburgh Review
+D. The London Magazine
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q9. The nickname &#x27;Judge Jeffrey&#x27; references a notorious &#x27;bloody judge&#x27; of which century?
+A. The sixteenth century
+B. The seventeenth century
+C. The eighteenth century
+D. The nineteenth century
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 203 - Jeffrey, Smith, and Wilson</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Which of the following is described as a limitation of Francis Jeffrey&#x27;s criticism today?
+A. He had too much sympathy for the romantics
+B. He lacked breadth of sympathy and flexibility of judgment
+C. He focused too much on subject-matter and neglected form
+D. He was too deeply concerned with the large human aspects of literature
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q2. Who was an exceedingly clever clergyman better known for his witticisms than his literature?
+A. Francis Jeffrey
+B. John Wilson
+C. Sydney Smith
+D. Thomas De Quincey
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q3. What is the title of Sydney Smith&#x27;s brilliant satire on the Irish question (1807)?
+A. Noctes Ambrosianae
+B. Peter Plymley&#x27;s Letters
+C. Murder considered as one of the Fine Arts
+D. The Bride&#x27;s Tragedy
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q4. Why are Sydney Smith&#x27;s writings now little read?
+A. They are too complex to understand
+B. They deal mostly with dead abuses and forgotten controversies
+C. They are written in difficult Latin
+D. They lack humor and are too serious
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q5. Which &#x27;Blackwood&#x27;s man&#x27; was famous under the pen-name of Christopher North?
+A. Thomas De Quincey
+B. John Gibson Lockhart
+C. John Wilson
+D. Sydney Smith
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q6. Which position did John Wilson hold while also being a devotee of the prize ring?
+A. Editor of the Edinburgh Review
+B. Professor of Moral Philosophy in the University of Edinburgh
+C. Prime Minister
+D. Poet Laureate
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q7. What is considered John Wilson&#x27;s best work?
+A. Noctes Ambrosianae
+B. Peter Plymley&#x27;s Letters
+C. Confessions of an English Opium Eater
+D. The English Mail Coach
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q8. In what format are the &#x27;Noctes Ambrosianae&#x27; written?
+A. Formal essays
+B. Dialogues
+C. Epic poetry
+D. Tragic drama
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q9. What makes &#x27;Noctes Ambrosianae&#x27; difficult for the southern reader to appreciate today?
+A. Their heavy use of Latin
+B. Their broad Scotch language and largely local/temporary interest
+C. Their lack of humor and dash
+D. Their focus on deep theological arguments
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 204 - De Quincey and Lockhart</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Thomas De Quincey is considered one of our chief masters of what kind of prose?
+A. Augustan rational prose
+B. Romantic impassioned prose
+C. Scientific descriptive prose
+D. Neoclassical satire
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q2. Which of the following is NOT listed as a defect in De Quincey&#x27;s writing?
+A. A habit of abusing his extraordinary learning
+B. Sinking into obscurity and pedantry
+C. Lacking any sense of humor
+D. Indulging in huge unwieldy digressions
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q3. In which work did De Quincey achieve remarkable success combining grim humor with the horrible?
+A. The English Mail Coach
+B. Dream Fugue
+C. Murder considered as one of the Fine Arts
+D. Joan of Arc
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q4. By what work will Thomas De Quincey always be best remembered?
+A. Confessions of an English Opium Eater
+B. Life of Scott
+C. The English Comic Writers
+D. Spanish Ballads
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q5. Which writer acts as a connecting link between Edinburgh and London, editing the Quarterly from 1826?
+A. Thomas De Quincey
+B. John Gibson Lockhart
+C. Charles Lamb
+D. William Hazlitt
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q6. Who wrote the powerful study of a good man&#x27;s sin and remorse in the novel &#x27;Adam Blair&#x27;?
+A. John Wilson
+B. Thomas De Quincey
+C. John Gibson Lockhart
+D. Charles Lamb
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q7. What is Lockhart&#x27;s principal title to fame?
+A. His Life of Burns
+B. His Spanish Ballads
+C. His magnificent Life of Scott
+D. His novel Adam Blair
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q8. Lockhart was romantic with Scott and sympathized with Wordsworth, but how did he treat the younger generation (Shelley, Keats, Tennyson)?
+A. With great admiration
+B. With indifference
+C. With hostility
+D. By imitating their style
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q9. Lockhart is known to have written an almost equally savage criticism of whose 1833 volume in the Quarterly?
+A. John Keats
+B. Percy Bysshe Shelley
+C. Lord Byron
+D. Alfred Tennyson
+Answer: D</div>
+<ul class="options">
+</ul>
+</div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 205 - Lockhart and Charles Lamb</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. What nickname was given to John Gibson Lockhart due to his special gift of sarcasm used with deadly effect?
+A. The Serpent
+B. The Scorpion
+C. Judge Jeffrey
+D. The Archcritic
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q2. Who is described as &#x27;first among these in our affections&#x27; when discussing the London men?
+A. William Hazlitt
+B. Leigh Hunt
+C. Charles Lamb
+D. Thomas De Quincey
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q3. According to Southey, whose memory &#x27;will retain its fragrance as long as the best spice expended on the Pharaohs&#x27;?
+A. Charles Lamb
+B. John Keats
+C. Percy Bysshe Shelley
+D. William Wordsworth
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q4. What is the most widely-known portion of Charles Lamb&#x27;s work?
+A. Tales from Shakespeare
+B. John Woodvil
+C. Essays of Elia
+D. Specimens of English Dramatic Poets
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q5. In his essays, Charles Lamb is compared to which other great egotist writer?
+A. Francis Bacon
+B. Michel de Montaigne
+C. Samuel Johnson
+D. Thomas Browne
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q6. How is Charles Lamb&#x27;s unique blending of tenderness and quaint fancies described?
+A. Swiftian
+B. Lambish
+C. Byronic
+D. Shakespearian
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q7. Lamb&#x27;s romanticism was largely retrospective and nourished itself on the literature of which age?
+A. The Augustan age
+B. The pre-Augustan age (Elizabethan and 17th century)
+C. The Middle Ages
+D. The Romantic revival in Germany
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q8. Which work by Lamb did much to spread the knowledge of older English playwrights?
+A. John Woodvil
+B. Tales from Shakespeare
+C. Essays of Elia
+D. Specimens of English Dramatic Poets
+Answer: D</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q9. Lamb&#x27;s style is flavored by constant contact with his favorite writers. Which of the following is NOT one of them?
+A. Burton
+B. Fuller
+C. Sir Thomas Browne
+D. Alexander Pope
+Answer: D</div>
+<ul class="options">
+</ul>
+</div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 206 - William Hazlitt, Leigh Hunt, and Cobbett</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. William Hazlitt is a capital illustration of how the popularity of magazines turned literature into the channels of:
+A. Novel-writing
+B. Epic poetry
+C. Journalism
+D. Scientific treatises
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q2. Hazlitt&#x27;s fine catholicity enabled him to do justice to the romantic school without being unjust to which other group?
+A. The pre-Raphaelites
+B. The Augustans
+C. The Metaphysicals
+D. The Victorians
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q3. Which of the following is NOT one of Hazlitt&#x27;s collections of lectures or essays?
+A. Characters of Shakespeare&#x27;s Plays
+B. The English Poets
+C. The Dramatic Literature of the Age of Elizabeth
+D. Specimens of English Dramatic Poets
+Answer: D</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q4. Because of his insight, discrimination, and sureness of taste and touch, what has Hazlitt been called?
+A. The Scorpion
+B. Judge Jeffrey
+C. The critic&#x27;s critic
+D. The Archcritic
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q5. What limitation is noted about Hazlitt&#x27;s criticism?
+A. It is too deeply focused on historical backgrounds
+B. It makes no attempt to connect the author with the life and spirit of his age
+C. It heavily relies on Latin and Greek sources
+D. It is too romantic and rejects all classical literature
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q6. Leigh Hunt is included among the periodical prose writers, but what did he lack that made his books largely fragmentary?
+A. The power of sustained effort
+B. Basic literacy skills
+C. Knowledge of pre-Augustan writers
+D. Connections with magazine publishers
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q7. What quality does Leigh Hunt&#x27;s genius possess, according to the text?
+A. A heavy, moralistic tone
+B. A butterfly quality
+C. A scorpion-like sarcasm
+D. A deep philosophical rigor
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q8. Which book of Leigh Hunt&#x27;s did Thomas Carlyle call &#x27;a pious, ingenious, altogether human and worthy book&#x27;?
+A. Story of Rimini
+B. The English Comic Writers
+C. His Autobiography
+D. His essays on Keats
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q9. Who was the coarse, vigorous, independent political reformer, journalist, and pamphleteer mentioned at the end of the page?
+A. Charles Lamb
+B. Thomas De Quincey
+C. William Cobbett
+D. John Gibson Lockhart
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 207 - Cobbett, Landor, Southey, Coleridge</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Which book is considered William Cobbett&#x27;s most characteristic and of most permanent interest?
+A. Imaginary Conversations
+B. Rural Rides
+C. English Grammar
+D. The Pentameron
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q2. Why is Cobbett&#x27;s &#x27;English Grammar&#x27; considered unique among grammars?
+A. It is written entirely in verse
+B. It is thoroughly entertaining
+C. It includes no rules
+D. It is written in broad Scotch
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q3. Who is presented as an antithesis to Cobbett in almost every conceivable particular?
+A. Walter Savage Landor
+B. Robert Southey
+C. Samuel Taylor Coleridge
+D. Thomas De Quincey
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q4. Landor is unsurpassed in which style of prose writing?
+A. Vernacular and colloquial
+B. Severe, sententious, sculpturesque
+C. Passionate and rhetorical
+D. Easy-going and irresponsible
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q5. What is the title of Landor&#x27;s principal prose work consisting of dialogues between great characters of the past?
+A. Rural Rides
+B. Biographia Literaria
+C. Imaginary Conversations
+D. Peter Plymley&#x27;s Letters
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q6. Which of the following works is a tale of the golden age of Athens told in letters by Landor?
+A. The Citation of William Shakespeare
+B. The Pentameron
+C. Pericles and Aspasia
+D. Life of Nelson
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q7. The &#x27;Pentameron&#x27; is a series of dialogues between which two historical figures?
+A. Pericles and Aspasia
+B. Petrarch and Boccaccio
+C. Dante and Beatrice
+D. Shakespeare and Jonson
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q8. What is Robert Southey&#x27;s prose masterpiece?
+A. Life of Scott
+B. Life of Nelson
+C. Rural Rides
+D. Biographia Literaria
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q9. Which prose work by Coleridge is rambling and unequal but contains profound analytical and interpretative power?
+A. Imaginary Conversations
+B. Rural Rides
+C. Biographia Literaria
+D. Table Talk
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 208 - The Age of Wordsworth: Historians and Philosophers</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. The text notes that this chapter could be extended considerably by the inclusion of writers in which fields?
+A. Science and mathematics
+B. History and philosophy
+C. Astronomy and geography
+D. Law and medicine
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q2. During the period discussed, many writers did excellent work in history and philosophy. How does the author choose to handle them?
+A. By providing a detailed catalogue of their names
+B. By analyzing their major works in depth
+C. By excluding them from discussion here
+D. By devoting a separate chapter to them
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q3. What reason does the author give for not discussing the historical and philosophical writers?
+A. Their works are lost
+B. This is not the place to discuss the value of their contributions to their special subjects
+C. They are not considered part of English literature
+D. Their works were written in Latin
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q4. How does the author view a &#x27;mere catalogue of their names and writings&#x27;?
+A. As highly beneficial to students
+B. As a necessary evil
+C. As serving no useful purpose
+D. As the best way to summarize the era
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q5. The omission of historians and philosophers indicates the book&#x27;s primary focus is on:
+A. General literature (poetry, fiction, essays, criticism)
+B. Political theory
+C. Hard sciences
+D. Theological debates
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q6. The decision not to list the philosophers and historians is a matter of:
+A. Ignorance
+B. Space constraints and narrative focus
+C. Censorship
+D. Academic disagreement
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q7. While the romantic era produced great poetry and essays, it is implied that it also produced substantial work in:
+A. Greek drama
+B. History and philosophy
+C. Modern physics
+D. Classical sculpture
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q8. The phrase &#x27;contributions to the literature of their special subjects&#x27; suggests that:
+A. Their writing is only technical
+B. They are important in their fields but may not belong in a general literary history
+C. They were bad writers
+D. They were mostly novelists in disguise
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q9. The author skips these writers to maintain the flow of the book towards which upcoming topic in the next chapter?
+A. The Augustan Age
+B. The Novel in the Age of Wordsworth
+C. The Victorian Drama
+D. The Renaissance
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 209 - The Age of Wordsworth: The Novel and Scott</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Chapter 21 focuses on which literary form during the Age of Wordsworth?
+A. The Epic Poem
+B. The Essay
+C. The Novel
+D. The Drama
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q2. For how long did Sir Walter Scott enjoy great success as a writer of romances in verse before turning to prose fiction?
+A. Five years
+B. Ten years
+C. Fifteen years
+D. Twenty years
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q3. Which of the following is given as a reason for Scott turning from verse to prose romance?
+A. He lost his ability to write rhyming verse
+B. The original vein he had opened up was getting exhausted
+C. The government banned verse romances
+D. He wanted to write history books instead
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q4. Whose sudden rise threatened the supremacy Scott had long enjoyed in poetry?
+A. Keats
+B. Shelley
+C. Wordsworth
+D. Byron
+Answer: D</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q5. With which work in 1814 did Scott strike out definitely into a new line of prose fiction?
+A. Rokeby
+B. Waverley
+C. The Lay of the Last Minstrel
+D. The Lady of the Lake
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q6. Which of Scott&#x27;s later narrative poems is described as &#x27;to all intents and purposes a novel in verse&#x27;?
+A. The Lay of the Last Minstrel
+B. Marmion
+C. Rokeby
+D. The Lord of the Isles
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q7. In &#x27;Rokeby&#x27;, what did Scott perceive about the focus of the interest for the first time?
+A. It centered on character rather than incident
+B. It centered entirely on incident
+C. It was purely historical facts
+D. It was based on supernatural elements
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q8. How did verse function for Scott&#x27;s powers when writing &#x27;Rokeby&#x27;?
+A. As a perfect medium
+B. As an aid
+C. As a hindrance
+D. As an inspiration
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q9. Before writing Waverley, Scott had entertained the ambitious desire of composing a tale of chivalry in the style of which book?
+A. The Castle of Otranto
+B. Robinson Crusoe
+C. Pamela
+D. Tom Jones
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 210 - Scott&#x27;s Transition to Prose</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. The reception accorded to which poem convinced Scott that there was a large English reading public interested in the Highlands?
+A. The Lay of the Last Minstrel
+B. Rokeby
+C. The Lady of the Lake
+D. Marmion
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q2. Whose &#x27;Irish Tales&#x27; gave Scott a fresh stimulus to write a prose romance?
+A. Jane Austen&#x27;s
+B. Fanny Burney&#x27;s
+C. Maria Edgeworth&#x27;s
+D. Mary Shelley&#x27;s
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q3. What particularly struck Scott about Maria Edgeworth&#x27;s Irish Tales?
+A. Their supernatural elements
+B. Their detailed pictures of the characters and manners of the Irish people
+C. Their strict classical structure
+D. Their deep philosophical digressions
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q4. What did Scott aim to do for Scotland inspired by Maria Edgeworth?
+A. Write epic poetry about its ancient kings
+B. What Miss Edgeworth had done for Ireland
+C. Write a comprehensive political history
+D. Create a dictionary of the Scottish dialect
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q5. How did Scott accidentally rediscover the draft of the first chapters of Waverley?
+A. While moving houses
+B. While hunting in a drawer for some fishing tackle
+C. A friend found it and sent it to him
+D. He found it in an old book of poetry
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q6. How long did it take Scott to complete Waverley after finding the draft?
+A. Three weeks
+B. Three months
+C. A year
+D. Three days
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q7. Scott&#x27;s work in fiction represents the amalgamation of the 18th century historical romance and what else?
+A. The 18th century essay
+B. The 18th century novel of manners
+C. The 17th century epic
+D. The Gothic horror story
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q8. What unique combination of interests did Waverley bring together for the first time?
+A. Romance and realism
+B. Philosophy and science
+C. Politics and economics
+D. Poetry and drama
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q9. What did Scott do for the story of manners for the first time?
+A. Set it in a futuristic framework
+B. Set it in an historical framework
+C. Wrote it entirely in dialect
+D. Combined it with fairy tales
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 211 - Characteristics of Scott&#x27;s Novels</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. How many novels and tales make up the Waverley Novels?
+A. Twenty-seven novels and five tales
+B. Twenty novels and ten tales
+C. Thirty novels and two tales
+D. Fifteen novels and fifteen tales
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q2. The Waverley Novels were the result of how many years of extraordinary creative activity?
+A. Ten years
+B. Eighteen years
+C. Twenty-five years
+D. Thirty years
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q3. Which century does &#x27;Count Robert of Paris&#x27; cover?
+A. Eleventh century
+B. Twelfth century
+C. Fourteenth century
+D. Fifteenth century
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q4. &#x27;Ivanhoe&#x27; and &#x27;The Talisman&#x27; are set in which century?
+A. Eleventh century
+B. Twelfth century
+C. Fourteenth century
+D. Fifteenth century
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q5. In which setting is Scott always at his best?
+A. Medieval England
+B. The Scotland of the 17th and 18th centuries
+C. 15th century France
+D. 11th century Byzantium
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q6. What is Scott&#x27;s regular practice in his historical novels regarding the hero?
+A. The hero is always a famous historical king
+B. The hero is a private individual whose fortunes become involved in great public movements
+C. The hero is a mythological figure
+D. The hero never interacts with real historical events
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q7. In &#x27;Waverley&#x27;, the hero Edward Waverley gets entangled in which historical event?
+A. The Wars of the Roses
+B. The Jacobite rising of 1745
+C. The French Revolution
+D. The English Civil War
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q8. What famous historical figure does Edward Waverley meet in the novel?
+A. Queen Elizabeth I
+B. The Young Pretender
+C. Oliver Cromwell
+D. Richard the Lionheart
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q9. Who noted that Scott&#x27;s novels taught all men that bygone ages were filled by living men, not by abstractions?
+A. Jeffrey
+B. Hazlitt
+C. Carlyle
+D. Macaulay
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 212 - Scott&#x27;s Style and Shortcomings</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Which of Scott&#x27;s novels is described as brilliant as a romance but totally untrustworthy as a picture of life in the middle ages due to fundamental anachronisms?
+A. Waverley
+B. Rob Roy
+C. Ivanhoe
+D. The Antiquary
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q2. How is Scott&#x27;s method of characterization described in contrast to the modern psychological novelist?
+A. He indulges in elaborate analysis
+B. He paints in broad, bold outlines with a big brush
+C. He uses stream of consciousness
+D. He avoids characterizing people completely
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q3. With which kind of characters does Scott achieve remarkable success?
+A. Complex psychological cases
+B. Tragic aristocratic heroes
+C. Simple characters drawn directly from Scottish life
+D. Foreign royalty
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q4. Which strong passions are the notable exception to Scott&#x27;s lack of power over the stronger passions?
+A. Romantic love and jealousy
+B. Greed and ambition
+C. Patriotism and loyalty
+D. Religious fanaticism
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q5. How is Scott&#x27;s humor characterized?
+A. Bitter and sarcastic
+B. Racy, full-blooded, and always genial and wholesome
+C. Dark and macabre
+D. Intellectual and dry
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q6. What does the text note about Scott&#x27;s general treatment of life?
+A. He had profound spiritual insight and grasp
+B. He takes the reader deep beneath the surface of things
+C. His lack of spiritual insight and grasp gives us little more than the external panorama of history
+D. He focused too heavily on philosophical debates
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q7. Despite his shortcomings, what qualities ensure permanence in Scott&#x27;s literature?
+A. His delicate lyrical poetry
+B. Creative energy, touch with large currents of human life, and a manly, robust sound
+C. His precise historical accuracy
+D. His psychological depth
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q8. According to the text, Scott was marvelously successful in reproducing at least the externals of the periods he described and breathing life into:
+A. The dead poets
+B. The dry bones of history
+C. The mythological gods
+D. The scientific discoveries
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q9. Did Scott write his novels slowly and meticulously?
+A. Yes, he spent years revising each one
+B. No, he wrote rapidly and often carelessly
+C. He dictated them slowly to an amanuensis
+D. He relied on ghostwriters
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 213 - Other Novelists of the Time</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Who wrote &#x27;Castle Rackrent&#x27;, &#x27;The Absentee&#x27;, and &#x27;Ormond&#x27;?
+A. Susan Edmonstone Ferrier
+B. Maria Edgeworth
+C. Jane Austen
+D. Mary Shelley
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q2. Susan Edmonstone Ferrier was a clever painter of characters and manners from which country?
+A. Ireland
+B. England
+C. Scotland
+D. Wales
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q3. Which of the following works was NOT written by Jane Austen?
+A. Sense and Sensibility
+B. Pride and Prejudice
+C. Marriage
+D. Mansfield Park
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q4. Jane Austen achieved an even level of perfection because she never ventured beyond:
+A. Her own experience and powers
+B. The historical records of her time
+C. The Gothic tradition
+D. The political events of London
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q5. Jane Austen&#x27;s books are characterized by their lack of:
+A. Everyday occurrences
+B. The elements of great passion and strong action
+C. Subtle humor
+D. Life-like characterization
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q6. Who carried on the wildest traditions of the romance of fantasy and horror with &#x27;Melmoth the Wanderer&#x27;?
+A. Charles Robert Maturin
+B. Theodore Hook
+C. John Galt
+D. Thomas Love Peacock
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q7. Who was considered one of the fun-makers of his generation, producing loosely written novels that greatly amused the public?
+A. John Galt
+B. Theodore Hook
+C. Thomas Love Peacock
+D. William Harrison Ainsworth
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q8. John Galt&#x27;s &#x27;Annals of the Parish&#x27; contains admirable pictures of contemporary life in:
+A. Ireland
+B. London
+C. Scotland
+D. Paris
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q9. For Thomas Love Peacock, fiction became the vehicle of:
+A. Gothic horror
+B. Witty satiric commentary
+C. Deep psychological analysis
+D. Religious instruction
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 214 - Followers of Scott and Chronological Table</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. George Payne Rainsford James and William Harrison Ainsworth are mentioned as followers of Scott in what genre?
+A. The domestic novel
+B. The psychological thriller
+C. The historical romance
+D. Satiric commentary
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q2. Which novel by William Harrison Ainsworth gives a wonderfully vivid description of London during the Plague and the Great Fire?
+A. Henry Masterton
+B. Richelieu
+C. Old Saint Paul&#x27;s
+D. The Tower of London
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q3. According to the chronological table, in what year was &#x27;Lyrical Ballads&#x27; published?
+A. 1789
+B. 1798
+C. 1800
+D. 1802
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q4. In what year did William Cowper die, as noted in the table?
+A. 1798
+B. 1799
+C. 1800
+D. 1802
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q5. The Edinburgh Review was founded in which year?
+A. 1800
+B. 1802
+C. 1809
+D. 1817
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q6. Maria Edgeworth&#x27;s &#x27;Castle Rackrent&#x27; was published in:
+A. 1798
+B. 1800
+C. 1804
+D. 1811
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q7. In what year did Byron&#x27;s &#x27;Hours of Idleness&#x27; appear?
+A. 1805
+B. 1807
+C. 1809
+D. 1812
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q8. The Quarterly Review was founded in what year?
+A. 1802
+B. 1807
+C. 1809
+D. 1817
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q9. Jane Austen&#x27;s &#x27;Sense and Sensibility&#x27; was published in which year?
+A. 1811
+B. 1812
+C. 1814
+D. 1817
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 215 - Chronological Table (1812-1824)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. According to the chronological table, in what year was Charles Dickens born?
+A. 1809
+B. 1811
+C. 1812
+D. 1820
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q2. Shelley&#x27;s &#x27;Queen Mab&#x27; was published in which year?
+A. 1813
+B. 1816
+C. 1820
+D. 1821
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q3. Sir Walter Scott&#x27;s novel &#x27;Waverley&#x27; was published in:
+A. 1812
+B. 1813
+C. 1814
+D. 1816
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q4. Which poem by Wordsworth is listed as being published in 1814?
+A. Lyrical Ballads
+B. The Excursion
+C. Christabel
+D. Alastor
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q5. In what year did Jane Austen die?
+A. 1814
+B. 1816
+C. 1817
+D. 1820
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q6. Blackwood&#x27;s Edinburgh Magazine and the London Magazine were both founded in what year?
+A. 1809
+B. 1817
+C. 1820
+D. 1824
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q7. Keats&#x27;s first poems were published in what year?
+A. 1816
+B. 1817
+C. 1818
+D. 1820
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q8. George Eliot was born in which year?
+A. 1811
+B. 1812
+C. 1819
+D. 1820
+Answer: D</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q9. Which two major poets both died between 1821 and 1824 according to this page of the table?
+A. Wordsworth and Coleridge
+B. Keats and Shelley
+C. Byron and Scott
+D. Crabbe and Keats
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 216 - Chronological Table (1830-1832)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. In what year were Tennyson&#x27;s &#x27;Poems&#x27; and Mrs. Hemans&#x27; &#x27;Songs of the Affections&#x27; published?
+A. 1824
+B. 1830
+C. 1831
+D. 1832
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q2. Moore&#x27;s &#x27;Life of Byron&#x27; was published in:
+A. 1824
+B. 1830
+C. 1832
+D. 1833
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q3. Which of Browning&#x27;s early works is listed as being published in 1831 and 1833?
+A. Pauline
+B. Sordello
+C. Paracelsus
+D. Strafford
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q4. Which poet is noted as dying in 1832 alongside Sir Walter Scott?
+A. George Crabbe
+B. Lord Byron
+C. William Wordsworth
+D. Samuel Taylor Coleridge
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q5. Sir Walter Scott&#x27;s death occurred in what year?
+A. 1824
+B. 1830
+C. 1832
+D. 1850
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q6. The publication of Tennyson&#x27;s &#x27;Poems&#x27; in 1830 marked the early career of a major poet of which upcoming era?
+A. The Augustan era
+B. The Romantic era
+C. The Victorian era
+D. The Edwardian era
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q7. The timeline of this chapter effectively ends around the year:
+A. 1815
+B. 1824
+C. 1832
+D. 1850
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q8. The juxtaposition of Scott&#x27;s death and Tennyson/Browning&#x27;s first publications illustrates:
+A. The end of prose
+B. The transition from the Romantic to the Victorian literary period
+C. The end of all romantic writing
+D. A dark age in English literature
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q9. Which table column is Moore&#x27;s &#x27;Life of Byron&#x27; listed under?
+A. Verse
+B. General Prose
+C. The Novel
+D. Drama
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 217 - The Age of Tennyson (1832-1887)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Chapter 22 deals with the Age of Tennyson, covering which years?
+A. 1798-1832
+B. 1832-1887
+C. 1887-1914
+D. 1850-1900
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q2. The period called the Age of Tennyson corresponds very closely in general history with which era?
+A. The Elizabethan Age
+B. The Augustan Age
+C. The Victorian Age
+D. The Romantic Age
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q3. Queen Victoria ascended the throne in what year?
+A. 1832
+B. 1837
+C. 1850
+D. 1887
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q4. Which year is taken as marking the close of the Age of Tennyson in this survey?
+A. 1887 (the year of Victoria&#x27;s jubilee)
+B. 1901 (the year of Victoria&#x27;s death)
+C. 1892 (the year of Tennyson&#x27;s death)
+D. 1850 (the year Tennyson became Laureate)
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q5. How does the author describe the literature of the Age of Tennyson?
+A. Monotonous and purely classical
+B. Wonderfully rich and varied in personal quality
+C. Highly imitative of the Augustans
+D. Lacking in all social awareness
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q6. The literature of the Age of Tennyson everywhere embodies the spirit of:
+A. The French Revolution
+B. Victorian England
+C. The Renaissance
+D. The Protestant Reformation
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q7. The Victorian Age was an era of surprising change along many lines. What makes its literature unique?
+A. It was written exclusively by women
+B. It could not conceivably have been produced at any other time in history
+C. It rejected the printing press
+D. It focused only on the medieval past
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q8. The enormous complexity of the Victorian period makes what impossible within brief limits?
+A. Exhaustive analysis
+B. Reading the poetry
+C. Naming the authors
+D. Understanding the language
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q9. Which two spheres are identified as containing the great dominant movements of the time?
+A. Military and naval
+B. Political/social and intellectual
+C. Artistic and musical
+D. Agricultural and industrial
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 218 - Political and Social Movements</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Which Reform Bill had already destroyed the political supremacy of the landed aristocracy by the start of the Victorian era?
+A. The Reform Bill of 1867
+B. The Reform Bill of 1884
+C. The Reform Bill of 1832
+D. The Reform Bill of 1918
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q2. Why did the Reform Bill of 1832 fail to satisfy those pushing for a radical measure?
+A. It left the greater part of the laboring classes still un-enfranchised
+B. It abolished the monarchy
+C. It gave too much power to the King
+D. It banned trade unions
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q3. What great popular movement kept England in a state of political unrest for some ten years?
+A. Luddism
+B. Chartism
+C. Jacobitism
+D. Methodism
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q4. What term is used to describe the widespread misery of the 1840s?
+A. The roaring forties
+B. The hungry forties
+C. The golden forties
+D. The bleak forties
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q5. The first decade of the Queen&#x27;s reign is described as an anxious time, but it stirred the social consciousness and gave impetus to:
+A. Imperial conquests
+B. Philanthropic energy and the spirit of humanitarianism
+C. The rise of the slave trade
+D. Military dictatorship
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q6. The repeal of which laws ushered in an era of much improved industrial conditions?
+A. The Poor Laws
+B. The Navigation Acts
+C. The Corn Laws
+D. The Test Acts
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q7. After what year did the Chartist movement die out?
+A. 1832
+B. 1837
+C. 1848
+D. 1867
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q8. Tennyson sang the praises of England as a &#x27;crown&#x27;d republic&#x27; due to what peaceful revolution?
+A. The execution of Charles I
+B. The Reform Bills of 1867 and 1884-85
+C. The Glorious Revolution of 1688
+D. The French Revolution
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q9. Beyond any other period in history, the Victorian Age was an age of:
+A. Epic poetry and tragedy
+B. Social interests and practical ideals
+C. Extreme political apathy
+D. Pure aestheticism
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 219 - The Progress of Science</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. During the fifty years of the Victorian Age, the progress of science kept pace with the progress of what?
+A. Monarchy
+B. Democracy
+C. Feudalism
+D. Romanticism
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q2. How did the amount of positive knowledge added during this time compare to previous eras?
+A. It was less than the Renaissance
+B. It matched the Augustan age
+C. It was far more than in all the preceding eighteen centuries
+D. It declined significantly
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q3. How were the facts and speculations of experts spread to the public at large?
+A. By wandering minstrels
+B. Through popular education, newspapers, magazines, and cheap books
+C. Through royal decrees
+D. By traveling theatre troupes
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q4. What is identified as the greatest of all modern generalizations?
+A. The theory of relativity
+B. The doctrine of evolution
+C. The germ theory of disease
+D. The laws of thermodynamics
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q5. Which three names are specially associated with the doctrine of evolution in this text?
+A. Newton, Galileo, Kepler
+B. Darwin, Wallace, and Herbert Spencer
+C. Lyell, Faraday, Maxwell
+D. Huxley, Tyndall, Kelvin
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q6. What was the consequence of the rapid progress and popularization of knowledge on thought?
+A. Universal peace and religious harmony
+B. A vast upheaval in thought and shaking of the ancient intellectual order
+C. A return to medieval scholasticism
+D. The complete abandonment of science
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q7. The Victorian Age was marked throughout by the prominence of which spirit?
+A. Unquestioning religious faith
+B. Inquiry, criticism, scepticism, and spiritual struggle
+C. Absolute political conformity
+D. Classical mythology
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q8. The analytical and critical habit of mind fostered by science resulted in a marked development of what in literature?
+A. Realism
+B. Fantasy
+C. Epic tragedy
+D. Pure romanticism
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q9. Which mechanical agencies are mentioned as breaking down barriers between town and country, and nation and nation?
+A. The printing press and the telescope
+B. The railway, the steamship, and the telegraph
+C. The automobile and the airplane
+D. The spinning jenny and the power loom
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 220 - Counter-Movement and Tennyson</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. What is an important principle of historical interpretation noted by the author regarding strong movements?
+A. They always last forever
+B. They always set up a counter-movement
+C. They eventually destroy society
+D. They only happen in political spheres
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q2. The great counter-movement in the Age of Tennyson was against the domination of:
+A. Poetry
+B. Democracy
+C. Science
+D. The monarchy
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q3. Science tended to materialism alike in thought and in life. How did a great deal of Victorian literature respond?
+A. By fully embracing materialism
+B. By desiring to check this tendency and proclaim the eternal value of spiritual things
+C. By ignoring science completely
+D. By returning to Latin and Greek
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q4. What was the prompting motive of the romantic revival during the Victorian era?
+A. A love for modern materialistic civilization
+B. Dissatisfaction with the ugliness of modern materialistic civilization
+C. A desire to write purely political pamphlets
+D. The intention to replace the novel with verse
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q5. In the end, the romantic spirit combined with the spirit of what, assuming a practical character?
+A. Social reform
+B. Scientific inquiry
+C. Classical translation
+D. Utilitarianism
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q6. Who are identified as the two chief poets of the Age of Tennyson?
+A. Keats and Shelley
+B. Tennyson and Browning
+C. Wordsworth and Coleridge
+D. Swinburne and Rossetti
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q7. In what year was Alfred Tennyson born?
+A. 1798
+B. 1809
+C. 1832
+D. 1850
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q8. In 1829, Tennyson won the Chancellor&#x27;s medal at Cambridge for a poem on what subject?
+A. Timbuctoo
+B. King Arthur
+C. Prometheus
+D. Waterloo
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q9. In what year did Tennyson become poet Laureate?
+A. 1832
+B. 1842
+C. 1850
+D. 1884
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 221 - Tennyson&#x27;s Works and Style</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Which of the following is a monodrama published by Tennyson in 1854?
+A. The Princess
+B. Maud
+C. Enoch Arden
+D. In Memoriam
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q2. What overarching subject occupied Tennyson&#x27;s attention for many years, culminating in a series of Idylls?
+A. The Greek gods
+B. The story of Arthur and the Round Table
+C. The history of the Roman Empire
+D. The life of Christ
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q3. For upwards of a decade, Tennyson devoted his energies mainly to which new field?
+A. The novel
+B. The essay
+C. The drama
+D. Political journalism
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q4. Which of the following is one of Tennyson&#x27;s historical plays?
+A. King John
+B. Becket
+C. The Tempest
+D. Strafford
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q5. According to Tennyson&#x27;s directions, which superb lyric is always printed as the last poem in any complete edition of his works?
+A. The Ancient Sage
+B. Vastness
+C. Akbar&#x27;s Dream
+D. Crossing the Bar
+Answer: D</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q6. Tennyson is considered perhaps the most conscientious and accomplished poetic artist in English literature after which poet?
+A. Chaucer
+B. Shakespeare
+C. Milton
+D. Pope
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q7. What was Tennyson&#x27;s relationship to his age from a strictly historical point of view?
+A. He was completely detached from it
+B. He was highly critical of all its movements
+C. He was the most thoroughly representative poet of his age
+D. He was largely ignored during his lifetime
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q8. To whom is Tennyson compared regarding his representative status for his respective era?
+A. Spenser to the England of Elizabeth
+B. Chaucer to the Middle Ages
+C. Milton to the Puritan Age
+D. Pope to the Augustan Age
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q9. The extraordinary diversity of Tennyson&#x27;s work is typical of the strongly marked what of his age?
+A. Realism
+B. Eclecticism
+C. Absolutism
+D. Puritanism
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 222 - Tennyson&#x27;s Themes and Conservatism</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. In which poem did Tennyson grapple with the question of the higher education of women?
+A. Maud
+B. The Princess
+C. Enoch Arden
+D. The May Queen
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q2. &#x27;Maud&#x27; quivers with the patriotic passion associated with which war?
+A. The Napoleonic Wars
+B. The Crimean War
+C. The Boer War
+D. The American Civil War
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q3. In the &#x27;Idylls of the King&#x27;, what did Tennyson do with the old medieval story?
+A. He translated it directly into Latin
+B. He turned it into a parable bearing upon contemporary life
+C. He converted it into a comedy
+D. He replaced all the characters with Greek gods
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q4. Politically and socially, Tennyson stands out as the poetic exponent of the cautious spirit of:
+A. Revolutionary radicalism
+B. Victorian liberalism
+C. Jacobite conservatism
+D. Anarchism
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q5. Tennyson held tenaciously to the great heritage of English tradition and was firmly opposed to:
+A. Law and order
+B. The progress of mankind
+C. &#x27;Raw haste&#x27; and rash experiments
+D. The monarchy
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q6. Which famous line is from Tennyson&#x27;s poetry about change?
+A. &#x27;A thing of beauty is a joy forever&#x27;
+B. &#x27;The old order changeth, yielding place to new&#x27;
+C. &#x27;Water, water, everywhere&#x27;
+D. &#x27;To be, or not to be&#x27;
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q7. In the poem cited, why does God fulfill himself in many ways?
+A. To confuse mankind
+B. Lest one good custom should corrupt the world
+C. To punish the wicked
+D. To show his absolute power
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q8. Despite being a recluse and an aristocrat, Tennyson was profoundly interested in:
+A. Royal genealogy
+B. Common people and common things
+C. Collecting rare medieval manuscripts
+D. Traveling to foreign countries
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q9. Which of the following poems by Tennyson is NOT mentioned as dealing with common people and things?
+A. The May Queen
+B. Enoch Arden
+C. Dora
+D. The Ancient Sage
+Answer: D</div>
+<ul class="options">
+</ul>
+</div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 223 - Tennyson&#x27;s Thought and Browning</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Tennyson&#x27;s poetry is particularly important as a record of what life of the time?
+A. Economic life
+B. Intellectual and spiritual life
+C. Military life
+D. Agricultural life
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q2. In which poem may we best read of the Victorian century&#x27;s great conflict of doubt and faith?
+A. The Ancient Sage
+B. In Memoriam
+C. Enoch Arden
+D. Maud
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q3. How did Tennyson&#x27;s view of nature differ from Wordsworth&#x27;s?
+A. He saw it with the eye of a scientist as well as a poet
+B. He ignored its beauty entirely
+C. He thought it was merely an illusion
+D. He found no minute details to describe
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q4. What aspect of nature disturbed Tennyson&#x27;s thought?
+A. Its lack of color
+B. Its indifference and cruelty in the cosmic struggle
+C. Its excessive harmony
+D. Its artificiality
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q5. Tennyson&#x27;s persistent belief in evolution helped him look forward to:
+A. The destruction of the earth
+B. The return of the Middle Ages
+C. The &#x27;one far-off divine event to which the whole creation moves&#x27;
+D. The victory of pure materialism
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q6. Robert Browning was born in what year?
+A. 1809
+B. 1812
+C. 1832
+D. 1850
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q7. What was the title of Browning&#x27;s first published work in 1833?
+A. Paracelsus
+B. Pauline
+C. Strafford
+D. Sordello
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q8. In 1837, which tragedy by Browning was produced at Covent Garden by Macready?
+A. The Cenci
+B. Remorse
+C. Strafford
+D. Othello
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q9. In 1846, Robert Browning married which poet?
+A. Mary Shelley
+B. Elizabeth Barrett
+C. Christina Rossetti
+D. Felicia Hemans
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 224 - Browning&#x27;s Major Works and Method</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Which enormous dramatic-narrative poem in four volumes did Browning publish in 1868-69?
+A. The Ring and the Book
+B. Dramatis Personae
+C. Men and Women
+D. Asolando
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q2. What was the title of Browning&#x27;s last volume, published on the very day he died in 1889?
+A. Paracelsus
+B. The Ring and the Book
+C. Asolando
+D. Bells and Pomegranates
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q3. How is Browning&#x27;s style contrasted with Tennyson&#x27;s?
+A. Browning was much more smooth and polished
+B. Browning was bold, rugged, and altogether unconventional
+C. Browning used strict classical meter exclusively
+D. Browning never used dramatic forms
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q4. A common criticism of Browning&#x27;s later work is that it is:
+A. Too simplistic and childish
+B. Prolix, ill-digested, and marred by harshness and obscurity
+C. An exact imitation of Shakespeare
+D. Completely lacking in any philosophical meaning
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q5. Browning&#x27;s genius was essentially:
+A. Lyrical
+B. Dramatic
+C. Epic
+D. Satirical
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q6. Rather than the world of action, where was Browning&#x27;s interest centered?
+A. In the natural landscape
+B. In the moral and spiritual forces and conflicts of individual men and women
+C. In abstract mathematical theories
+D. In political economy
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q7. What was Browning&#x27;s characteristic art-form, which he used more effectively than any other poet?
+A. The regular stage-play
+B. The detached speech, or dramatic monologue
+C. The Spenserian stanza
+D. The Petrarchan sonnet
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q8. In his dramatic monologues, how does Browning typically reveal a character?
+A. By dissecting him from the outside as an ordinary novelist would
+B. By making him reveal his innermost secrets through his own utterances, usually at a critical moment
+C. By having a chorus explain his actions
+D. By strictly describing only his physical appearance
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q9. Which two qualities are noted as main features of Browning&#x27;s poetry?
+A. Perfect rhyme and pastoral settings
+B. Psychological insight and analytical subtlety
+C. Scientific realism and cold logic
+D. Melancholy and despair
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 225 - Browning&#x27;s Message and Matthew Arnold</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. As a moralist and religious teacher, what did Browning preach as the central truths of his philosophy of life?
+A. God and immortality
+B. Scientific materialism and evolution
+C. Agnosticism and doubt
+D. Social revolution
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q2. Browning&#x27;s poetry was a protest against scientific materialism and also against:
+A. The use of dramatic monologues
+B. The optimistic faith of the age
+C. The pessimistic mood engendered by current philosophy
+D. The teaching of the church
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q3. The melancholy, hesitating spirit so often expressed by Tennyson is:
+A. Imitated perfectly by Browning
+B. Absent from Browning&#x27;s verse, who retained a robustly optimistic faith
+C. The exact theme of &#x27;The Ring and the Book&#x27;
+D. What makes Browning a classicist
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q4. &#x27;Hope hard in the subtle thing that&#x27;s spirit,&#x27; was the note of whose message?
+A. Tennyson
+B. Matthew Arnold
+C. Browning
+D. Arthur Hugh Clough
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q5. Which of Browning&#x27;s characters says: &#x27;God&#x27;s in His heaven - all&#x27;s right with the world&#x27;?
+A. Sordello
+B. Pippa
+C. Paracelsus
+D. Strafford
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q6. Who is suggested as holding the third place among poets of the Victorian Age, after Tennyson and Browning?
+A. Matthew Arnold
+B. Arthur Hugh Clough
+C. Dante Gabriel Rossetti
+D. Swinburne
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q7. By sympathy and training, Matthew Arnold was a thorough:
+A. Romantic
+B. Classicist
+C. Realist
+D. Pre-Raphaelite
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q8. Matthew Arnold believed that all really great poetry is:
+A. Subjective poetry of self-expression
+B. Impersonal or objective poetry (like drama and epic)
+C. Satirical poetry
+D. Lyrical poetry
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q9. Which of the following is one of Matthew Arnold&#x27;s ambitious objective poems?
+A. Sohrab and Rustum
+B. Maud
+C. The Ring and the Book
+D. Men and Women
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 226 - Arnold, Clough, and E.B. Browning</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Most of Matthew Arnold&#x27;s personal poetry is steeped in:
+A. The robust optimism of Browning
+B. The melancholy spirit of an era of transition
+C. A joyful celebration of nature
+D. Fierce political satire
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q2. The lines &#x27;Wandering between two worlds, one dead, / The other powerless to be born&#x27; are from which of Arnold&#x27;s poems?
+A. Empedocles on Etna
+B. Stanzas from the Grande Chartreuse
+C. Thyrsis
+D. Balder Dead
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q3. How is Arnold&#x27;s poetic style described?
+A. Cold and clear, with fine restraint and sculpturesque purity
+B. Lush, ornate, and highly musical
+C. Bold, rugged, and unconventional
+D. Spasmodic and overly emotional
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q4. &#x27;Thyrsis&#x27; is Matthew Arnold&#x27;s noble monody on the death of which friend and spiritual kinsman?
+A. Arthur Henry Hallam
+B. Arthur Hugh Clough
+C. Robert Browning
+D. Lord Tennyson
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q5. Which delightful longer poem by Arthur Hugh Clough deserves to be better known?
+A. The Bothie of Tober-na-Vuolich
+B. Casa Guidi Windows
+C. Aurora Leigh
+D. Sordello
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q6. Who holds the position as the most considerable and vigorous of all women-writers of verse of this period?
+A. Christina Rossetti
+B. Emily Bronte
+C. Elizabeth Barrett Browning
+D. Jane Austen
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q7. What was one of Elizabeth Barrett Browning&#x27;s main faults as a writer?
+A. She wrote too little and too slowly
+B. She lacked the faculty of self-criticism and frequently exhibited over-wrought emotionalism
+C. She adhered too strictly to classical rules
+D. Her poetry was completely devoid of emotion
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q8. Elizabeth Barrett Browning&#x27;s poetry sometimes degenerates into:
+A. Dry philosophical debate
+B. Downright gush and hysterics
+C. Complex mathematical formulas
+D. Purely objective epics
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q9. At her best, what redeeming qualities does Elizabeth Barrett Browning exhibit?
+A. Noble sincerity, genuine passion, and undeniable power over language
+B. Cold clarity and sculpturesque purity
+C. Subtle psychological analysis and dramatic monologue mastery
+D. A complete detachment from human suffering
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 227 - E.B. Browning and Rossetti</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Which long poem in blank verse by Elizabeth Barrett Browning might really be classed as a novel, save for its form?
+A. The Cry of the Children
+B. Casa Guidi Windows
+C. Aurora Leigh
+D. Sonnets from the Portuguese
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q2. Unlike Matthew Arnold, Mrs. Browning believed that it should be one chief aim of the poet to:
+A. Imitate Greek tragedies
+B. Meet the age face to face
+C. Escape completely into the past
+D. Write only in Latin
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q3. In which series of sonnets did Mrs. Browning enshrine her love, creating a masterpiece of love-poetry?
+A. The House of Life
+B. Sonnets from the Portuguese
+C. Modern Love
+D. Astrophil and Stella
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q4. Dante Gabriel Rossetti is the leading figure in which artistic movement?
+A. Pre-Raphaelitism
+B. Imagism
+C. The Spasmodic School
+D. The Lake School
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q5. How is Dante Gabriel Rossetti described in relation to his time, using Mr. Hall Caine&#x27;s language?
+A. A progressive visionary
+B. An anachronism in these days
+C. A scientific rationalist
+D. The voice of Victorian industry
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q6. The real home of Rossetti&#x27;s imagination was not 19th-century London, but:
+A. Ancient Rome
+B. The Florence of Dante&#x27;s era
+C. Medieval Paris
+D. The Scottish Highlands
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q7. Despite the deeply Catholic atmosphere of his poetry, what were Rossetti&#x27;s actual intellectual convictions?
+A. He was a devout Catholic
+B. He was an evangelical Protestant
+C. He was an agnostic
+D. He was a staunch Puritan
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q8. In which poetic form did Rossetti excel when dealing with situations of tragic intensity?
+A. The dramatic monologue
+B. The blank verse epic
+C. The ballad
+D. The mock-heroic
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q9. Which of the following is a poem by Dante Gabriel Rossetti?
+A. The Blessed Damozel
+B. Aurora Leigh
+C. Casa Guidi Windows
+D. Sordello
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 228 - Christina Rossetti, Morris, and Swinburne</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Who is the only other woman-poet in this literature who can fairly be placed beside Mrs. Browning?
+A. Emily Bronte
+B. Christina Georgina Rossetti
+C. George Eliot
+D. Felicia Hemans
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q2. Christina Rossetti&#x27;s work is characterized by:
+A. Satirical humor and political commentary
+B. Deep religious feeling, a pronounced strain of mysticism, and much metrical charm
+C. Cold classicism and objective epic forms
+D. Detailed descriptions of industrial life
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q3. Through which poet is the main line of Rossetti&#x27;s influence and romanticism traced?
+A. Algernon Charles Swinburne
+B. Matthew Arnold
+C. William Morris
+D. James Thomson
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q4. Which of the following is an early work by William Morris?
+A. The Earthly Paradise
+B. Atalanta in Calydon
+C. The White Ship
+D. Sister Helen
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q5. Under the influence of Ruskin and a revulsion from modern commercialism, what political ideology did William Morris adopt?
+A. Conservatism
+B. Socialism
+C. Anarchism
+D. Imperialism
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q6. How did Morris once describe himself early in his career?
+A. A scorpion
+B. The idle singer of an empty day
+C. The poetic exponent of liberalism
+D. A wandering minstrel
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q7. Which poet was the last to die of the great race of Victorian poets?
+A. Robert Browning
+B. Lord Tennyson
+C. Algernon Charles Swinburne
+D. William Morris
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q8. Swinburne&#x27;s &#x27;Atalanta in Calydon&#x27; and &#x27;Erechtheus&#x27; rank among the finest attempts to revive which form?
+A. The medieval mystery play
+B. The English sonnet sequence
+C. The pure classic form of Greek tragedy
+D. The Italian epic
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q9. Swinburne wrote an English dramatic trilogy about which historical figure?
+A. Mary Stuart
+B. Queen Elizabeth
+C. Joan of Arc
+D. Cleopatra
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+</div>
+
+</body>
+</html>

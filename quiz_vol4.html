@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Literature MCQs - Volume 4</title>
+<style>
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f5f5f5; }
+    h1 { text-align: center; color: #333; }
+    .page-section { background-color: white; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .page-title { color: #0056b3; border-bottom: 2px solid #0056b3; padding-bottom: 5px; cursor: pointer; user-select: none; }
+    .page-title:hover { color: #004494; }
+    .arrow { display: inline-block; width: 25px; transition: transform 0.2s; font-size: 0.8em; }
+    .arrow.open { transform: rotate(90deg); }
+    .page-content { display: none; margin-top: 15px; }
+    
+    .question-container { margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
+    .question-container:last-child { border-bottom: none; }
+    .question { font-weight: bold; margin-bottom: 10px; }
+    .options { list-style-type: none; padding-left: 0; }
+    .options li { margin-bottom: 8px; }
+    label { cursor: pointer; display: block; padding: 5px; border-radius: 4px; transition: background-color 0.2s; }
+    label:hover { background-color: #f0f8ff; }
+    input[type="radio"] { margin-right: 10px; }
+    .answer-section { margin-top: 10px; }
+    .reveal-btn { background-color: #0056b3; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 14px; }
+    .reveal-btn:hover { background-color: #004494; }
+    .hidden-answer { display: none; margin-top: 10px; padding: 8px; border-radius: 4px; }
+    .correct-answer-box { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+    .incorrect-answer-box { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+    .correct-label { background-color: #d4edda; }
+    .incorrect-label { background-color: #f8d7da; }
+    
+    .controls { display: flex; justify-content: space-between; margin-bottom: 20px; position: sticky; top: 0; background: #f5f5f5; padding: 10px 0; z-index: 100; border-bottom: 1px solid #ddd; }
+    .global-btn { background-color: #28a745; color: white; border: none; padding: 10px 15px; border-radius: 4px; cursor: pointer; font-size: 16px; font-weight: bold; }
+    .global-btn:hover { background-color: #218838; }
+</style>
+<script>
+    function toggleSection(header) {
+        const content = header.nextElementSibling;
+        const arrow = header.querySelector('.arrow');
+        if (content.style.display === 'none' || content.style.display === '') {
+            content.style.display = 'block';
+            arrow.classList.add('open');
+        } else {
+            content.style.display = 'none';
+            arrow.classList.remove('open');
+        }
+    }
+
+    function checkAnswer(btn, correctAnswer) {
+        const container = btn.closest('.question-container');
+        const selected = container.querySelector('input[type="radio"]:checked');
+        const answerDiv = container.querySelector('.hidden-answer');
+        
+        answerDiv.style.display = 'block';
+        answerDiv.innerHTML = "Correct Answer: " + correctAnswer;
+        
+        if (selected) {
+            const label = selected.closest('label');
+            if (selected.value === correctAnswer) {
+                answerDiv.className = 'hidden-answer correct-answer-box';
+                answerDiv.innerHTML += " (You got it right!)";
+                label.classList.add('correct-label');
+            } else {
+                answerDiv.className = 'hidden-answer incorrect-answer-box';
+                answerDiv.innerHTML += " (You answered " + selected.value + ")";
+                label.classList.add('incorrect-label');
+                
+                // Highlight correct option
+                const allLabels = container.querySelectorAll('label');
+                allLabels.forEach(l => {
+                    const input = l.querySelector('input');
+                    if(input && input.value === correctAnswer) {
+                        l.classList.add('correct-label');
+                    }
+                });
+            }
+        } else {
+            answerDiv.className = 'hidden-answer correct-answer-box';
+        }
+    }
+    
+    function revealAll() {
+        document.querySelectorAll('.page-content').forEach(c => c.style.display = 'block');
+        document.querySelectorAll('.arrow').forEach(a => a.classList.add('open'));
+        document.querySelectorAll('.reveal-btn').forEach(btn => {
+            btn.click();
+        });
+    }
+    
+    function resetAll() {
+        document.querySelectorAll('input[type="radio"]').forEach(radio => radio.checked = false);
+        document.querySelectorAll('.hidden-answer').forEach(div => div.style.display = 'none');
+        document.querySelectorAll('label').forEach(label => {
+            label.classList.remove('correct-label');
+            label.classList.remove('incorrect-label');
+        });
+        document.querySelectorAll('.page-content').forEach(c => c.style.display = 'none');
+        document.querySelectorAll('.arrow').forEach(a => a.classList.remove('open'));
+    }
+</script>
+</head>
+<body>
+    <h1>Interactive Literature MCQs</h1>
+    <div class="controls">
+        <button class="global-btn" onclick="revealAll()">Check All Answers</button>
+        <button class="global-btn" style="background-color: #dc3545;" onclick="resetAll()">Reset All</button>
+    </div>
+    
+    <div id="content">
+
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 229 - Swinburne and Minor Poets</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. It is primarily as what type of poet that Swinburne will hold his place in our literature?
+A. An epic poet
+B. A dramatist
+C. A lyrist
+D. A satirist
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q2. What was a frequent snare for Swinburne in his poetry?
+A. His excessive political conservatism
+B. His fondness for mere verbal effects
+C. His inability to write in meter
+D. His strict adherence to realism
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q3. Which of the following works is a romantic comedy by Sir Henry Taylor?
+A. Philip van Artevelde
+B. The Virgin Widow, or A Sicilian Summer
+C. The Quest of the Sangraal
+D. Proverbial Philosophy
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q4. Robert Stephen Hawker was the extremely eccentric vicar of Morwenstow in which English county?
+A. Devon
+B. Yorkshire
+C. Cornwall
+D. Kent
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q5. What is considered Robert Stephen Hawker&#x27;s finest poem, full of the genuine spirit of medieval adventure?
+A. The Quest of the Sangraal
+B. Idylls of the King
+C. The Earthly Paradise
+D. Tristram of Lyonesse
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q6. Who produced the famous free translation, or paraphrase, of the Rubaiyat of Omar Khayyam?
+A. Sir Henry Taylor
+B. Robert Stephen Hawker
+C. Edward FitzGerald
+D. Martin Farquhar Tupper
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q7. In which century did the original Persian astronomer-poet, Omar Khayyam, live?
+A. The ninth century
+B. The eleventh century
+C. The thirteenth century
+D. The fifteenth century
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q8. Did Edward FitzGerald&#x27;s translation of the Rubaiyat achieve immediate success?
+A. Yes, it was an instant bestseller
+B. No, it had little success at first, but gradually won its way
+C. It was completely ignored until the 20th century
+D. It was banned upon publication
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q9. Who was the author of the highly didactic collection &#x27;Proverbial Philosophy&#x27;?
+A. Martin Farquhar Tupper
+B. Edward FitzGerald
+C. Robert Stephen Hawker
+D. Sir Henry Taylor
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 230 - The Spasmodic School and Other Minor Poets</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Upon which enormous poem does Philip James Bailey&#x27;s reputation rest?
+A. The Earthly Paradise
+B. Festus
+C. The Roman
+D. Balder
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q2. &#x27;Festus&#x27; was commonly regarded as the principal agency in fostering which school of poetry?
+A. The Lake School
+B. The Pre-Raphaelite Brotherhood
+C. The Spasmodic School
+D. The Parnassian School
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q3. How did Tennyson sum up Philip James Bailey&#x27;s &#x27;Festus&#x27;?
+A. As the greatest poem of the century
+B. As a dull poem containing many grand things
+C. As completely devoid of merit
+D. As an exact copy of &#x27;Paradise Lost&#x27;
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q4. Which two writers are given as examples of exploded reputations from the spasmodic school?
+A. Dante Gabriel Rossetti and William Morris
+B. Sydney Dobell and Alexander Smith
+C. Matthew Arnold and Arthur Hugh Clough
+D. James Thomson and Edward FitzGerald
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q5. James Thomson is known for which poem of pessimism and blank despair?
+A. Balder
+B. Life Drama
+C. The City of Dreadful Night
+D. The Roman
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q6. Lord Macaulay won fame with which stirring work of poetry?
+A. Lost Tales of Miletus
+B. Lays of Ancient Rome
+C. King Arthur
+D. The Spanish Gypsy
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q7. Which versatile author wrote the romantic epic &#x27;King Arthur&#x27; and &#x27;Lost Tales of Miletus&#x27;?
+A. Lord Macaulay
+B. Lord Lytton
+C. Thackeray
+D. Kingsley
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q8. The author notes that George Eliot&#x27;s poetry is considerable in quantity, but lacking in what?
+A. Intellectual qualities
+B. Moral qualities
+C. Real poetic inspiration
+D. Correct grammar
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q9. Which of the following is a poetic work by George Eliot?
+A. The Legend of Jubal
+B. The Saint&#x27;s Tragedy
+C. Andromeda
+D. Life Drama
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 231 - The Age of Tennyson: Carlyle</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Who is described as incomparably the greatest figure in the general prose literature of his age?
+A. John Ruskin
+B. Thomas Carlyle
+C. Matthew Arnold
+D. Lord Macaulay
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q2. In what year was Thomas Carlyle born?
+A. 1795
+B. 1800
+C. 1809
+D. 1812
+Answer: A</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q3. What was the occupation of Thomas Carlyle&#x27;s father?
+A. A clergyman
+B. A stonemason
+C. A schoolmaster
+D. A wealthy landowner
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q4. Thomas Carlyle sprang straight from the rugged peasantry of which country?
+A. Ireland
+B. Wales
+C. Scotland
+D. England
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q5. Which strict religious doctrine in which he was bred left a lasting impression on Carlyle&#x27;s mind?
+A. Methodism
+B. Roman Catholicism
+C. The old Calvinism
+D. Anglicanism
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q6. At which university did Thomas Carlyle matriculate in 1809?
+A. Oxford University
+B. Cambridge University
+C. Edinburgh University
+D. Glasgow University
+Answer: C</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q7. What was Carlyle&#x27;s parents&#x27; original design for his career?
+A. That he should become a doctor
+B. That he should enter the Scottish Church
+C. That he should be a lawyer
+D. That he should join the military
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q8. Why did Carlyle find it impossible to enter the Scottish Church?
+A. He lacked the necessary funds for training
+B. Radical changes in his religious views made it impossible
+C. He failed his university exams
+D. He was drafted into the army
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+<div class="question-container">
+<div class="question">Q9. What phrase is used to describe the period when Carlyle was striving vainly to recover his lost belief?
+A. The dark night of the soul
+B. The howling wilderness of infidelity
+C. The slough of despond
+D. The valley of the shadow of death
+Answer: B</div>
+<ul class="options">
+</ul>
+</div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 232 - Thomas Carlyle</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Which of the following works provided Carlyle with mental relief despite his acute dyspepsia?</div>
+<ul class="options">
+<li><label><input type="radio" name="q2166" value="A"> A. The French Revolution</label></li>
+<li><label><input type="radio" name="q2166" value="B"> B. Sartor Resartus</label></li>
+<li><label><input type="radio" name="q2166" value="C"> C. Past and Present</label></li>
+<li><label><input type="radio" name="q2166" value="D"> D. Heroes and Hero-Worship</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 233 - Thomas Carlyle&#x27;s Style and Philosophy</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. How did Carlyle view the merely bookish side of literature?</div>
+<ul class="options">
+<li><label><input type="radio" name="q2176" value="A"> A. He highly admired it</label></li>
+<li><label><input type="radio" name="q2176" value="B"> B. He had no patience with it</label></li>
+<li><label><input type="radio" name="q2176" value="C"> C. He considered it the highest art form</label></li>
+<li><label><input type="radio" name="q2176" value="D"> D. He tried to master it</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 234 - John Ruskin</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. In what year was John Ruskin born?</div>
+<ul class="options">
+<li><label><input type="radio" name="q2186" value="A"> A. 1800</label></li>
+<li><label><input type="radio" name="q2186" value="B"> B. 1819</label></li>
+<li><label><input type="radio" name="q2186" value="C"> C. 1825</label></li>
+<li><label><input type="radio" name="q2186" value="D"> D. 1834</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 235 - John Ruskin&#x27;s Aesthetics and Philosophy</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Where did Ruskin spend the closing years of his life in failing health?</div>
+<ul class="options">
+<li><label><input type="radio" name="q2196" value="A"> A. Ecclefechan</label></li>
+<li><label><input type="radio" name="q2196" value="B"> B. Coniston Water, in the Lake District</label></li>
+<li><label><input type="radio" name="q2196" value="C"> C. Craigenputtoch</label></li>
+<li><label><input type="radio" name="q2196" value="D"> D. London</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 236 - John Ruskin and Macaulay</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. While Ruskin&#x27;s puritanism allied him to Carlyle, his strong romantic bias connected him with whom?</div>
+<ul class="options">
+<li><label><input type="radio" name="q2206" value="A"> A. William Morris</label></li>
+<li><label><input type="radio" name="q2206" value="B"> B. Walter Scott</label></li>
+<li><label><input type="radio" name="q2206" value="C"> C. William Wordsworth</label></li>
+<li><label><input type="radio" name="q2206" value="D"> D. John Keats</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 237 - Thomas Babington Macaulay</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. To what peerage was Thomas Babington Macaulay raised after many years of public life?</div>
+<ul class="options">
+<li><label><input type="radio" name="q2216" value="A"> A. Baron Rothley</label></li>
+<li><label><input type="radio" name="q2216" value="B"> B. Baron Macaulay of Rothley</label></li>
+<li><label><input type="radio" name="q2216" value="C"> C. Earl of Rothley</label></li>
+<li><label><input type="radio" name="q2216" value="D"> D. Viscount Macaulay</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 238 - Matthew Arnold</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Into what was Macaulay often led by his love of sweeping statements and striking contrasts?</div>
+<ul class="options">
+<li><label><input type="radio" name="q2226" value="A"> A. Deep philosophical truths</label></li>
+<li><label><input type="radio" name="q2226" value="B"> B. Obscurity</label></li>
+<li><label><input type="radio" name="q2226" value="C"> C. Inaccuracy</label></li>
+<li><label><input type="radio" name="q2226" value="D"> D. Unpopularity</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 239 - Other Prose Writers (History)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. What extraordinary gift did Matthew Arnold have in his prose writing?</div>
+<ul class="options">
+<li><label><input type="radio" name="q2236" value="A"> A. Creating complex philosophical systems</label></li>
+<li><label><input type="radio" name="q2236" value="B"> B. Crystallising his ideas in telling and memorable phrases</label></li>
+<li><label><input type="radio" name="q2236" value="C"> C. Writing highly elaborated and artificial historical texts</label></li>
+<li><label><input type="radio" name="q2236" value="D"> D. Detailed scientific observation</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 240 - Aesthetic and Literary Criticism, Science</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Who was the most important writer in aesthetic criticism after Ruskin, known for his highly elaborated, slowly produced style?</div>
+<ul class="options">
+<li><label><input type="radio" name="q2246" value="A"> A. John Addington Symonds</label></li>
+<li><label><input type="radio" name="q2246" value="B"> B. Walter Horatio Pater</label></li>
+<li><label><input type="radio" name="q2246" value="C"> C. Algernon Charles Swinburne</label></li>
+<li><label><input type="radio" name="q2246" value="D"> D. Sir Leslie Stephen</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 241 - The Novel in the Age of Tennyson</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. What form of literature became incomparably the most popular with the great and ever-increasing general reading public in the Age of Tennyson?</div>
+<ul class="options">
+<li><label><input type="radio" name="q2256" value="A"> A. The epic poem</label></li>
+<li><label><input type="radio" name="q2256" value="B"> B. The essay</label></li>
+<li><label><input type="radio" name="q2256" value="C"> C. Prose fiction (the novel)</label></li>
+<li><label><input type="radio" name="q2256" value="D"> D. The lyric</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 242 - The Victorian Novel</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. The Victorian novel is described as an index of the many-sided interests and conflicting elements of what age?</div>
+<ul class="options">
+<li><label><input type="radio" name="q2266" value="A"> A. The Elizabethan age</label></li>
+<li><label><input type="radio" name="q2266" value="B"> B. The Romantic age</label></li>
+<li><label><input type="radio" name="q2266" value="C"> C. The Victorian age</label></li>
+<li><label><input type="radio" name="q2266" value="D"> D. The Modern age</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 243 - Charles Dickens</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Which of Dickens&#x27;s novels is said to open his second period due to its systematic attempt at a coherent plot?</div>
+<ul class="options">
+<li><label><input type="radio" name="q2276" value="A"> A. Pickwick Papers</label></li>
+<li><label><input type="radio" name="q2276" value="B"> B. David Copperfield</label></li>
+<li><label><input type="radio" name="q2276" value="C"> C. Bleak House</label></li>
+<li><label><input type="radio" name="q2276" value="D"> D. Oliver Twist</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 244 - Dickens and Thackeray</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Through his enormous popularity, what did Dickens&#x27;s humanitarianism make him?</div>
+<ul class="options">
+<li><label><input type="radio" name="q2286" value="A"> A. A wealthy aristocrat</label></li>
+<li><label><input type="radio" name="q2286" value="B"> B. One of the greatest social reformers of his age</label></li>
+<li><label><input type="radio" name="q2286" value="C"> C. A member of Parliament</label></li>
+<li><label><input type="radio" name="q2286" value="D"> D. A religious leader</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 245 - Thackeray and George Eliot</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Which of Thackeray&#x27;s books deals almost exclusively with the sordid and ugly aspects of life?</div>
+<ul class="options">
+<li><label><input type="radio" name="q2296" value="A"> A. Vanity Fair</label></li>
+<li><label><input type="radio" name="q2296" value="B"> B. The Newcomes</label></li>
+<li><label><input type="radio" name="q2296" value="C"> C. Barry Lyndon</label></li>
+<li><label><input type="radio" name="q2296" value="D"> D. Henry Esmond</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 246 - George Eliot</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. George Eliot&#x27;s work superficially resembles that of which earlier writer in its representation of men and manners in country towns?</div>
+<ul class="options">
+<li><label><input type="radio" name="q2306" value="A"> A. Charlotte Brontë</label></li>
+<li><label><input type="radio" name="q2306" value="B"> B. Jane Austen</label></li>
+<li><label><input type="radio" name="q2306" value="C"> C. Ann Radcliffe</label></li>
+<li><label><input type="radio" name="q2306" value="D"> D. Fanny Burney</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 247 - Other Novelists of the Period</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Which later novel of George Eliot is described as being almost choked by science and psychology?</div>
+<ul class="options">
+<li><label><input type="radio" name="q2316" value="A"> A. Adam Bede</label></li>
+<li><label><input type="radio" name="q2316" value="B"> B. The Mill on the Floss</label></li>
+<li><label><input type="radio" name="q2316" value="C"> C. Middlemarch</label></li>
+<li><label><input type="radio" name="q2316" value="D"> D. Daniel Deronda</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'D')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 248 - More Novelists of the Period</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. With which writer is social purpose generally dominant in novels like Foul Play and Hard Cash, but whose best book is The Cloister and the Hearth?</div>
+<ul class="options">
+<li><label><input type="radio" name="q2326" value="A"> A. Charles Kingsley</label></li>
+<li><label><input type="radio" name="q2326" value="B"> B. Charles Reade</label></li>
+<li><label><input type="radio" name="q2326" value="C"> C. Henry Kingsley</label></li>
+<li><label><input type="radio" name="q2326" value="D"> D. Wilkie Collins</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 249 - Late Victorian Novelists and Table</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Under whose influence did Dickens reportedly change from the inorganic to the organic type of story?</div>
+<ul class="options">
+<li><label><input type="radio" name="q2336" value="A"> A. Thackeray</label></li>
+<li><label><input type="radio" name="q2336" value="B"> B. George Eliot</label></li>
+<li><label><input type="radio" name="q2336" value="C"> C. Wilkie Collins</label></li>
+<li><label><input type="radio" name="q2336" value="D"> D. Charles Reade</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 250 - Table of the Age of Tennyson</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. In what years was Thackeray&#x27;s Vanity Fair published according to the Table?</div>
+<ul class="options">
+<li><label><input type="radio" name="q2346" value="A"> A. 1837-38</label></li>
+<li><label><input type="radio" name="q2346" value="B"> B. 1843</label></li>
+<li><label><input type="radio" name="q2346" value="C"> C. 1847-48</label></li>
+<li><label><input type="radio" name="q2346" value="D"> D. 1850</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 251 - Table of the Age of Tennyson (Contd.)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. According to the Table of the Age of Tennyson, in what year did Thomas Carlyle die?</div>
+<ul class="options">
+<li><label><input type="radio" name="q2356" value="A"> A. 1880</label></li>
+<li><label><input type="radio" name="q2356" value="B"> B. 1881</label></li>
+<li><label><input type="radio" name="q2356" value="C"> C. 1882</label></li>
+<li><label><input type="radio" name="q2356" value="D"> D. 1888</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 252 - Epilogue to the Victorian Age</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. What event in 1887 is taken as a convenient landmark to denote the virtual end of the Age of Tennyson?</div>
+<ul class="options">
+<li><label><input type="radio" name="q2366" value="A"> A. The death of Robert Browning</label></li>
+<li><label><input type="radio" name="q2366" value="B"> B. The first jubilee of Queen Victoria</label></li>
+<li><label><input type="radio" name="q2366" value="C"> C. The publication of The Yellow Book</label></li>
+<li><label><input type="radio" name="q2366" value="D"> D. The death of Thomas Carlyle</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 253 - The Eighteen-Nineties and the Decadents</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. The period of the Victorian Age at its high noon was second only to which other age?</div>
+<ul class="options">
+<li><label><input type="radio" name="q2376" value="A"> A. The Augustan Age</label></li>
+<li><label><input type="radio" name="q2376" value="B"> B. The Romantic Age</label></li>
+<li><label><input type="radio" name="q2376" value="C"> C. The Elizabethan Age</label></li>
+<li><label><input type="radio" name="q2376" value="D"> D. The Restoration Age</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 254 - Oscar Wilde</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. What event in 1895 prevented a balanced appreciation of Oscar Wilde&#x27;s work at the time?</div>
+<ul class="options">
+<li><label><input type="radio" name="q2386" value="A"> A. His sudden death</label></li>
+<li><label><input type="radio" name="q2386" value="B"> B. His exile to France</label></li>
+<li><label><input type="radio" name="q2386" value="C"> C. His arrest, trial, and sentence to Reading Gaol</label></li>
+<li><label><input type="radio" name="q2386" value="D"> D. His winning of the Nobel Prize</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 255 - Other Decadents and Hardy&#x27;s Origins</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Who were the artists whose drawings and paintings gave the 1890s a striking part of its typical character?</div>
+<ul class="options">
+<li><label><input type="radio" name="q2396" value="A"> A. Ruskin and Turner</label></li>
+<li><label><input type="radio" name="q2396" value="B"> B. Aubrey Beardsley and Charles Conder</label></li>
+<li><label><input type="radio" name="q2396" value="C"> C. Hunt and Millais</label></li>
+<li><label><input type="radio" name="q2396" value="D"> D. Rossetti and Morris</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 256 - Thomas Hardy&#x27;s Novels</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. What was Thomas Hardy&#x27;s early training, which gave him intimate knowledge of local churches utilized in his writings?</div>
+<ul class="options">
+<li><label><input type="radio" name="q2406" value="A"> A. A lawyer</label></li>
+<li><label><input type="radio" name="q2406" value="B"> B. A doctor</label></li>
+<li><label><input type="radio" name="q2406" value="C"> C. An architect</label></li>
+<li><label><input type="radio" name="q2406" value="D"> D. A teacher</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 257 - Thomas Hardy&#x27;s Genius</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. What prevents Jude the Obscure from being the greatest of Hardy&#x27;s novels according to the text?</div>
+<ul class="options">
+<li><label><input type="radio" name="q2416" value="A"> A. Its lack of detailed character descriptions</label></li>
+<li><label><input type="radio" name="q2416" value="B"> B. The characters&#x27; lack of spiritual resilience and inability to stand erect and hit destiny full in the face</label></li>
+<li><label><input type="radio" name="q2416" value="C"> C. Its setting outside of Wessex</label></li>
+<li><label><input type="radio" name="q2416" value="D"> D. The complete lack of humor</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 258 - Hardy&#x27;s Philosophy and The Dynasts</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Beneath the Christian veneer in Wessex, Hardy thought gratefully of the lingering presence of what?</div>
+<ul class="options">
+<li><label><input type="radio" name="q2426" value="A"> A. Roman Catholicism</label></li>
+<li><label><input type="radio" name="q2426" value="B"> B. Simple paganism</label></li>
+<li><label><input type="radio" name="q2426" value="C"> C. Protestant work ethic</label></li>
+<li><label><input type="radio" name="q2426" value="D"> D. Stoic philosophy</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 259 - Poets of the Transition (1892-1913)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. How did Hardy feel toward the suffering caused by the clash of dynasts?</div>
+<ul class="options">
+<li><label><input type="radio" name="q2436" value="A"> A. He was indifferent</label></li>
+<li><label><input type="radio" name="q2436" value="B"> B. He had terribly acute pity and agonized in the agony of others</label></li>
+<li><label><input type="radio" name="q2436" value="C"> C. He thought it was necessary for progress</label></li>
+<li><label><input type="radio" name="q2436" value="D"> D. He viewed it strictly as a historian</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 260 - Kipling, Noyes, and Thompson</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Opinions on whose verse are described as still being in a fluid state, with some accounting him impressive and others exasperated?</div>
+<ul class="options">
+<li><label><input type="radio" name="q2446" value="A"> A. W. E. Henley</label></li>
+<li><label><input type="radio" name="q2446" value="B"> B. Rudyard Kipling</label></li>
+<li><label><input type="radio" name="q2446" value="C"> C. Alfred Noyes</label></li>
+<li><label><input type="radio" name="q2446" value="D"> D. William Watson</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 261 - Housman and Bridges</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Which poet published only two small books of verse, A Shropshire Lad and Last Poems?</div>
+<ul class="options">
+<li><label><input type="radio" name="q2456" value="A"> A. Robert Bridges</label></li>
+<li><label><input type="radio" name="q2456" value="B"> B. Francis Thompson</label></li>
+<li><label><input type="radio" name="q2456" value="C"> C. A. E. Housman</label></li>
+<li><label><input type="radio" name="q2456" value="D"> D. W. E. Henley</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 262 - Bridges and the Poetry Revival</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. A legend grew up that Bridges&#x27; poetry is passionless. How does the text respond to this?</div>
+<ul class="options">
+<li><label><input type="radio" name="q2466" value="A"> A. It entirely agrees with the legend</label></li>
+<li><label><input type="radio" name="q2466" value="B"> B. It states that his poetry is not passionless, though it does not throb with undisciplined emotion</label></li>
+<li><label><input type="radio" name="q2466" value="C"> C. It suggests his poetry is only passionate in his earlier works</label></li>
+<li><label><input type="radio" name="q2466" value="D"> D. It claims his poetry is overly emotional</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 263 - Georgian Poets and Transition Dramatists</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Which poet began the &#x27;war of the fountain pen against the machine gun&#x27; in works like Counter Attack?</div>
+<ul class="options">
+<li><label><input type="radio" name="q2476" value="A"> A. Julian Grenfell</label></li>
+<li><label><input type="radio" name="q2476" value="B"> B. Siegfried Sassoon</label></li>
+<li><label><input type="radio" name="q2476" value="C"> C. Rupert Brooke</label></li>
+<li><label><input type="radio" name="q2476" value="D"> D. John Masefield</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 264 - George Bernard Shaw</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. According to the text, what did the &#x27;efficient&#x27; dramatists (creators of &#x27;the well-made play&#x27;) neglect to take into the theatre?</div>
+<ul class="options">
+<li><label><input type="radio" name="q2486" value="A"> A. Comedy</label></li>
+<li><label><input type="radio" name="q2486" value="B"> B. Life</label></li>
+<li><label><input type="radio" name="q2486" value="C"> C. Scenery</label></li>
+<li><label><input type="radio" name="q2486" value="D"> D. Music</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 265 - Shaw (Contd.) and Irish Drama</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. In which play did Shaw&#x27;s conception of a Life Force merge into his larger theory of Creative Evolution?</div>
+<ul class="options">
+<li><label><input type="radio" name="q2496" value="A"> A. Heartbreak House</label></li>
+<li><label><input type="radio" name="q2496" value="B"> B. Saint Joan</label></li>
+<li><label><input type="radio" name="q2496" value="C"> C. Back to Methuselah</label></li>
+<li><label><input type="radio" name="q2496" value="D"> D. The Doctor&#x27;s Dilemma</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 266 - Irish Drama (Contd.) and Barrie</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Who was acclaimed for two plays of contemporary town life in Ireland: Juno and the Paycock (1925) and The Plough and the Stars (1926)?</div>
+<ul class="options">
+<li><label><input type="radio" name="q2506" value="A"> A. J. M. Synge</label></li>
+<li><label><input type="radio" name="q2506" value="B"> B. Sean O&#x27;Casey</label></li>
+<li><label><input type="radio" name="q2506" value="C"> C. Lady Gregory</label></li>
+<li><label><input type="radio" name="q2506" value="D"> D. W. B. Yeats</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 267 - Novelists of the Transition</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Which play is NOT written by John Galsworthy?</div>
+<ul class="options">
+<li><label><input type="radio" name="q2516" value="A"> A. Strife</label></li>
+<li><label><input type="radio" name="q2516" value="B"> B. The Silver Box</label></li>
+<li><label><input type="radio" name="q2516" value="C"> C. The Voysey Inheritance</label></li>
+<li><label><input type="radio" name="q2516" value="D"> D. The Skin Game</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 268 - George Moore and Rudyard Kipling</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. George Moore&#x27;s &#x27;The Brook Kerith&#x27; deals with the legend that Jesus lived on among the:</div>
+<ul class="options">
+<li><label><input type="radio" name="q2526" value="A"> A. Pharisees</label></li>
+<li><label><input type="radio" name="q2526" value="B"> B. Essene monastic community</label></li>
+<li><label><input type="radio" name="q2526" value="C"> C. Romans</label></li>
+<li><label><input type="radio" name="q2526" value="D"> D. Sadducees</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 269 - Twentieth Century Novelists</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. After Dickens&#x27; death, the custody of tradition in the English novel was vested in:</div>
+<ul class="options">
+<li><label><input type="radio" name="q2536" value="A"> A. Meredith and Hardy</label></li>
+<li><label><input type="radio" name="q2536" value="B"> B. Wells and Conrad</label></li>
+<li><label><input type="radio" name="q2536" value="C"> C. Bennett and Galsworthy</label></li>
+<li><label><input type="radio" name="q2536" value="D"> D. Moore and Gissing</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'A')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 270 - Joseph Conrad and Traditional Novelists</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Joseph Conrad&#x27;s narrative method is described as:</div>
+<ul class="options">
+<li><label><input type="radio" name="q2546" value="A"> A. Simple and straightforward</label></li>
+<li><label><input type="radio" name="q2546" value="B"> B. Peculiarly involved and sometimes perplexing</label></li>
+<li><label><input type="radio" name="q2546" value="C"> C. Entirely episodic</label></li>
+<li><label><input type="radio" name="q2546" value="D"> D. Strictly chronological</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 271 - Miscellaneous Prose</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Arnold Bennett wrote a first-rate humorous novel titled:</div>
+<ul class="options">
+<li><label><input type="radio" name="q2556" value="A"> A. Buried Alive</label></li>
+<li><label><input type="radio" name="q2556" value="B"> B. The Great Adventure</label></li>
+<li><label><input type="radio" name="q2556" value="C"> C. Over Bemerton&#x27;s</label></li>
+<li><label><input type="radio" name="q2556" value="D"> D. Joseph Vance</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'A')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 272 - W.H. Hudson and Lytton Strachey</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. W.H. Hudson&#x27;s prose was notable for its:</div>
+<ul class="options">
+<li><label><input type="radio" name="q2566" value="A"> A. Lyrical ecstasy</label></li>
+<li><label><input type="radio" name="q2566" value="B"> B. Cool clarity</label></li>
+<li><label><input type="radio" name="q2566" value="C"> C. Complex verbosity</label></li>
+<li><label><input type="radio" name="q2566" value="D"> D. Rugged brutality</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 273 - Table of the Age of Hardy (Contd.)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. George Moore&#x27;s &#x27;Esther Waters&#x27; was published in:</div>
+<ul class="options">
+<li><label><input type="radio" name="q2576" value="A"> A. 1891</label></li>
+<li><label><input type="radio" name="q2576" value="B"> B. 1894</label></li>
+<li><label><input type="radio" name="q2576" value="C"> C. 1896</label></li>
+<li><label><input type="radio" name="q2576" value="D"> D. 1898</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 274 - Table of the Age of Hardy (Contd.)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Arnold Bennett&#x27;s &#x27;The Old Wives&#x27; Tale&#x27; was published in:</div>
+<ul class="options">
+<li><label><input type="radio" name="q2586" value="A"> A. 1906</label></li>
+<li><label><input type="radio" name="q2586" value="B"> B. 1908</label></li>
+<li><label><input type="radio" name="q2586" value="C"> C. 1909</label></li>
+<li><label><input type="radio" name="q2586" value="D"> D. 1911</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 275 - Table of the Age of Hardy (Contd.)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Siegfried Sassoon&#x27;s &#x27;Counter Attack&#x27; was published in:</div>
+<ul class="options">
+<li><label><input type="radio" name="q2596" value="A"> A. 1917</label></li>
+<li><label><input type="radio" name="q2596" value="B"> B. 1918</label></li>
+<li><label><input type="radio" name="q2596" value="C"> C. 1919</label></li>
+<li><label><input type="radio" name="q2596" value="D"> D. 1920</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 276 - The Present Age</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Chapter 26 deals with &#x27;The Present Age&#x27; covering the years:</div>
+<ul class="options">
+<li><label><input type="radio" name="q2606" value="A"> A. 1910-1940</label></li>
+<li><label><input type="radio" name="q2606" value="B"> B. 1920-1950</label></li>
+<li><label><input type="radio" name="q2606" value="C"> C. 1930-1955</label></li>
+<li><label><input type="radio" name="q2606" value="D"> D. 1945-1960</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 277 - The Inter-War Years</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. When Thomas Hardy died in 1928, the world was still recovering from the consequences of:</div>
+<ul class="options">
+<li><label><input type="radio" name="q2616" value="A"> A. The Boer War</label></li>
+<li><label><input type="radio" name="q2616" value="B"> B. The first World War</label></li>
+<li><label><input type="radio" name="q2616" value="C"> C. The Crimean War</label></li>
+<li><label><input type="radio" name="q2616" value="D"> D. The French Revolution</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 278 - Purpose in Literature</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. The writings of the 1930s were as much preoccupied with the condition of:</div>
+<ul class="options">
+<li><label><input type="radio" name="q2626" value="A"> A. The whole world</label></li>
+<li><label><input type="radio" name="q2626" value="B"> B. Just England</label></li>
+<li><label><input type="radio" name="q2626" value="C"> C. The rural countryside</label></li>
+<li><label><input type="radio" name="q2626" value="D"> D. The industrial cities only</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'A')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 279 - Gerard Manley Hopkins</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Gerard Manley Hopkins published how much poetry during his own lifetime?</div>
+<ul class="options">
+<li><label><input type="radio" name="q2636" value="A"> A. Several volumes</label></li>
+<li><label><input type="radio" name="q2636" value="B"> B. Nothing</label></li>
+<li><label><input type="radio" name="q2636" value="C"> C. One famous epic</label></li>
+<li><label><input type="radio" name="q2636" value="D"> D. A few anthologies</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 280 - Hopkins&#x27;s Influence</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. The spirit of Victorian times was mostly:</div>
+<ul class="options">
+<li><label><input type="radio" name="q2646" value="A"> A. At variance with Hopkins&#x27;s own spirit</label></li>
+<li><label><input type="radio" name="q2646" value="B"> B. Deeply appreciative of complex spiritual probing</label></li>
+<li><label><input type="radio" name="q2646" value="C"> C. Identical to Hopkins&#x27;s worldview</label></li>
+<li><label><input type="radio" name="q2646" value="D"> D. Entirely devoid of religion</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'A')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 281 - T.S. Eliot and Obscurity</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. The far-reaching influence of Hopkins after 1918 encouraged lesser minds to foster the illusion that:</div>
+<ul class="options">
+<li><label><input type="radio" name="q2656" value="A"> A. Clarity is superior to obscurity</label></li>
+<li><label><input type="radio" name="q2656" value="B"> B. Clarity is inferior to obscurity</label></li>
+<li><label><input type="radio" name="q2656" value="C"> C. Poetry must be politically engaged</label></li>
+<li><label><input type="radio" name="q2656" value="D"> D. Form does not matter</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 282 - T.S. Eliot and Poetic Drama</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. T.S. Eliot&#x27;s &#x27;The Waste Land&#x27; presented a disturbing vision of the state of:</div>
+<ul class="options">
+<li><label><input type="radio" name="q2666" value="A"> A. The ancient world</label></li>
+<li><label><input type="radio" name="q2666" value="B"> B. The contemporary world</label></li>
+<li><label><input type="radio" name="q2666" value="C"> C. The future world</label></li>
+<li><label><input type="radio" name="q2666" value="D"> D. The Victorian world</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 283 - Playwrights and Poets of the 1930s</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. The illusion that audiences do not like poetry on stage was dispelled by Christopher Fry&#x27;s play:</div>
+<ul class="options">
+<li><label><input type="radio" name="q2676" value="A"> A. The Boy With a Cart</label></li>
+<li><label><input type="radio" name="q2676" value="B"> B. A Sleep of Prisoners</label></li>
+<li><label><input type="radio" name="q2676" value="C"> C. The Lady&#x27;s Not For Burning</label></li>
+<li><label><input type="radio" name="q2676" value="D"> D. The Dark is Light Enough</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 284 - Dylan Thomas and the Sitwells</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Which poet began in the 1930s and reached a larger audience mainly through his success as a radio broadcaster?</div>
+<ul class="options">
+<li><label><input type="radio" name="q2686" value="A"> A. Stephen Spender</label></li>
+<li><label><input type="radio" name="q2686" value="B"> B. Dylan Thomas</label></li>
+<li><label><input type="radio" name="q2686" value="C"> C. W.H. Auden</label></li>
+<li><label><input type="radio" name="q2686" value="D"> D. C. Day Lewis</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 285 - Yeats, de la Mare, and the Novel</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. W.B. Yeats&#x27; progress can be assessed by comparing the simple &#x27;Lake Isle of Innisfree&#x27; with the profound:</div>
+<ul class="options">
+<li><label><input type="radio" name="q2696" value="A"> A. The Waste Land</label></li>
+<li><label><input type="radio" name="q2696" value="B"> B. Byzantium</label></li>
+<li><label><input type="radio" name="q2696" value="C"> C. Ash Wednesday</label></li>
+<li><label><input type="radio" name="q2696" value="D"> D. The Dark is Light Enough</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 286 - Virginia Woolf and Bloomsbury</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Virginia Woolf (Virginia Stephen) had been born into a literary household where her father was:</div>
+<ul class="options">
+<li><label><input type="radio" name="q2706" value="A"> A. Leonard Woolf</label></li>
+<li><label><input type="radio" name="q2706" value="B"> B. Sir Leslie Stephen</label></li>
+<li><label><input type="radio" name="q2706" value="C"> C. Lytton Strachey</label></li>
+<li><label><input type="radio" name="q2706" value="D"> D. Arnold Bennett</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 287 - Virginia Woolf and E.M. Forster</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. For most readers, Virginia Woolf&#x27;s easiest book is:</div>
+<ul class="options">
+<li><label><input type="radio" name="q2716" value="A"> A. The Waves</label></li>
+<li><label><input type="radio" name="q2716" value="B"> B. The Years</label></li>
+<li><label><input type="radio" name="q2716" value="C"> C. Orlando</label></li>
+<li><label><input type="radio" name="q2716" value="D"> D. To the Lighthouse</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 288 - James Joyce and Somerset Maugham</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. The works of James Joyce have attracted a small army of expositors and explainers, and his greatest novel is considered to be:</div>
+<ul class="options">
+<li><label><input type="radio" name="q2726" value="A"> A. Dubliners</label></li>
+<li><label><input type="radio" name="q2726" value="B"> B. Ulysses</label></li>
+<li><label><input type="radio" name="q2726" value="C"> C. Finnegans Wake</label></li>
+<li><label><input type="radio" name="q2726" value="D"> D. Portrait of the Artist as a Young Man</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 289 - Satirists and Younger Novelists</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. In the 1920s, Aldous Huxley appeared like a modern:</div>
+<ul class="options">
+<li><label><input type="radio" name="q2736" value="A"> A. Shakespeare</label></li>
+<li><label><input type="radio" name="q2736" value="B"> B. Jonathan Swift</label></li>
+<li><label><input type="radio" name="q2736" value="C"> C. Charles Dickens</label></li>
+<li><label><input type="radio" name="q2736" value="D"> D. Alexander Pope</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 290 - Later Novelists and Women Writers</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Evelyn Waugh began as a farcical humorist in stories such as:</div>
+<ul class="options">
+<li><label><input type="radio" name="q2746" value="A"> A. Brighton Rock and The Heart of the Matter</label></li>
+<li><label><input type="radio" name="q2746" value="B"> B. Decline and Fall and Vile Bodies</label></li>
+<li><label><input type="radio" name="q2746" value="C"> C. Animal Farm and Nineteen Eighty-Four</label></li>
+<li><label><input type="radio" name="q2746" value="D"> D. Of Human Bondage and Cakes and Ale</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 291 - The Short Story and Prose Drama</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. The English short story ventured into different paths in the 1920s, largely under the influence of the Russian writer:</div>
+<ul class="options">
+<li><label><input type="radio" name="q2756" value="A"> A. Tolstoy</label></li>
+<li><label><input type="radio" name="q2756" value="B"> B. Dostoevsky</label></li>
+<li><label><input type="radio" name="q2756" value="C"> C. Tchekov (Chekhov)</label></li>
+<li><label><input type="radio" name="q2756" value="D"> D. Pushkin</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 292 - James Bridie and Noel Coward</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. James Bridie chose his themes from a more varied field than Bernard Shaw and was more restlessly:</div>
+<ul class="options">
+<li><label><input type="radio" name="q2766" value="A"> A. Political</label></li>
+<li><label><input type="radio" name="q2766" value="B"> B. Experimental</label></li>
+<li><label><input type="radio" name="q2766" value="C"> C. Sentimental</label></li>
+<li><label><input type="radio" name="q2766" value="D"> D. Religious</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 293 - Noel Coward, Terence Rattigan, and J.B. Priestley</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Noel Coward wrote brittle comedies about trivial leisured people, characterized by:</div>
+<ul class="options">
+<li><label><input type="radio" name="q2776" value="A"> A. Deep philosophical themes</label></li>
+<li><label><input type="radio" name="q2776" value="B"> B. The clipped style and conventionally unconventional behavior then fashionable</label></li>
+<li><label><input type="radio" name="q2776" value="C"> C. Somber and tragic tones</label></li>
+<li><label><input type="radio" name="q2776" value="D"> D. Lengthy poetic monologues</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 294 - Statesmen-Authors and Historians</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Laurence Housman wrote &#x27;Happy and Glorious&#x27;, a series of episodes in the life of:</div>
+<ul class="options">
+<li><label><input type="radio" name="q2786" value="A"> A. St. Francis</label></li>
+<li><label><input type="radio" name="q2786" value="B"> B. Queen Victoria</label></li>
+<li><label><input type="radio" name="q2786" value="C"> C. Lord Marlborough</label></li>
+<li><label><input type="radio" name="q2786" value="D"> D. William the Silent</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 295 - Biography, Philosophy, and Travel</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. C.V. Wedgwood&#x27;s excellent biography &#x27;William the Silent&#x27; was followed by a larger history of the:</div>
+<ul class="options">
+<li><label><input type="radio" name="q2796" value="A"> A. English Civil War</label></li>
+<li><label><input type="radio" name="q2796" value="B"> B. French Revolution</label></li>
+<li><label><input type="radio" name="q2796" value="C"> C. Hundred Years&#x27; War</label></li>
+<li><label><input type="radio" name="q2796" value="D"> D. Wars of the Roses</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'A')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 296 - T.E. Lawrence, Belloc, and Chesterton</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. T.E. Lawrence developed remarkable gifts of military leadership when he headed the desert Arabs against:</div>
+<ul class="options">
+<li><label><input type="radio" name="q2806" value="A"> A. Germany</label></li>
+<li><label><input type="radio" name="q2806" value="B"> B. Turkey</label></li>
+<li><label><input type="radio" name="q2806" value="C"> C. France</label></li>
+<li><label><input type="radio" name="q2806" value="D"> D. Egypt</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 297 - Chesterton, Belloc, and Chronological Table</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. &#x27;The Path to Rome&#x27; is a travel book written by:</div>
+<ul class="options">
+<li><label><input type="radio" name="q2816" value="A"> A. Hilaire Belloc</label></li>
+<li><label><input type="radio" name="q2816" value="B"> B. G.K. Chesterton</label></li>
+<li><label><input type="radio" name="q2816" value="C"> C. T.E. Lawrence</label></li>
+<li><label><input type="radio" name="q2816" value="D"> D. Peter Fleming</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'A')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 298 - Table of the Present Age (Contd.)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Virginia Woolf&#x27;s &#x27;The Years&#x27; and Priestley&#x27;s &#x27;Time and the Conways&#x27; were published in:</div>
+<ul class="options">
+<li><label><input type="radio" name="q2826" value="A"> A. 1935</label></li>
+<li><label><input type="radio" name="q2826" value="B"> B. 1936</label></li>
+<li><label><input type="radio" name="q2826" value="C"> C. 1937</label></li>
+<li><label><input type="radio" name="q2826" value="D"> D. 1938</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 299 - Table of the Present Age (Contd.)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. James Bridie died in:</div>
+<ul class="options">
+<li><label><input type="radio" name="q2836" value="A"> A. 1950</label></li>
+<li><label><input type="radio" name="q2836" value="B"> B. 1951</label></li>
+<li><label><input type="radio" name="q2836" value="C"> C. 1952</label></li>
+<li><label><input type="radio" name="q2836" value="D"> D. 1953</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 300 - General Review of The Present Age</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. The period from 1930 to 1955 in English literature is often referred to as:</div>
+<ul class="options">
+<li><label><input type="radio" name="q2846" value="A"> A. The Victorian Age</label></li>
+<li><label><input type="radio" name="q2846" value="B"> B. The Romantic Age</label></li>
+<li><label><input type="radio" name="q2846" value="C"> C. The Present Age</label></li>
+<li><label><input type="radio" name="q2846" value="D"> D. The Edwardian Age</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+
+</body>
+</html>

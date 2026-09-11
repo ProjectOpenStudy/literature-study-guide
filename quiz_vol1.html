@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Literature MCQs - Volume 1</title>
+<style>
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f5f5f5; }
+    h1 { text-align: center; color: #333; }
+    .page-section { background-color: white; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .page-title { color: #0056b3; border-bottom: 2px solid #0056b3; padding-bottom: 5px; cursor: pointer; user-select: none; }
+    .page-title:hover { color: #004494; }
+    .arrow { display: inline-block; width: 25px; transition: transform 0.2s; font-size: 0.8em; }
+    .arrow.open { transform: rotate(90deg); }
+    .page-content { display: none; margin-top: 15px; }
+    
+    .question-container { margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
+    .question-container:last-child { border-bottom: none; }
+    .question { font-weight: bold; margin-bottom: 10px; }
+    .options { list-style-type: none; padding-left: 0; }
+    .options li { margin-bottom: 8px; }
+    label { cursor: pointer; display: block; padding: 5px; border-radius: 4px; transition: background-color 0.2s; }
+    label:hover { background-color: #f0f8ff; }
+    input[type="radio"] { margin-right: 10px; }
+    .answer-section { margin-top: 10px; }
+    .reveal-btn { background-color: #0056b3; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 14px; }
+    .reveal-btn:hover { background-color: #004494; }
+    .hidden-answer { display: none; margin-top: 10px; padding: 8px; border-radius: 4px; }
+    .correct-answer-box { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+    .incorrect-answer-box { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+    .correct-label { background-color: #d4edda; }
+    .incorrect-label { background-color: #f8d7da; }
+    
+    .controls { display: flex; justify-content: space-between; margin-bottom: 20px; position: sticky; top: 0; background: #f5f5f5; padding: 10px 0; z-index: 100; border-bottom: 1px solid #ddd; }
+    .global-btn { background-color: #28a745; color: white; border: none; padding: 10px 15px; border-radius: 4px; cursor: pointer; font-size: 16px; font-weight: bold; }
+    .global-btn:hover { background-color: #218838; }
+</style>
+<script>
+    function toggleSection(header) {
+        const content = header.nextElementSibling;
+        const arrow = header.querySelector('.arrow');
+        if (content.style.display === 'none' || content.style.display === '') {
+            content.style.display = 'block';
+            arrow.classList.add('open');
+        } else {
+            content.style.display = 'none';
+            arrow.classList.remove('open');
+        }
+    }
+
+    function checkAnswer(btn, correctAnswer) {
+        const container = btn.closest('.question-container');
+        const selected = container.querySelector('input[type="radio"]:checked');
+        const answerDiv = container.querySelector('.hidden-answer');
+        
+        answerDiv.style.display = 'block';
+        answerDiv.innerHTML = "Correct Answer: " + correctAnswer;
+        
+        if (selected) {
+            const label = selected.closest('label');
+            if (selected.value === correctAnswer) {
+                answerDiv.className = 'hidden-answer correct-answer-box';
+                answerDiv.innerHTML += " (You got it right!)";
+                label.classList.add('correct-label');
+            } else {
+                answerDiv.className = 'hidden-answer incorrect-answer-box';
+                answerDiv.innerHTML += " (You answered " + selected.value + ")";
+                label.classList.add('incorrect-label');
+                
+                // Highlight correct option
+                const allLabels = container.querySelectorAll('label');
+                allLabels.forEach(l => {
+                    const input = l.querySelector('input');
+                    if(input && input.value === correctAnswer) {
+                        l.classList.add('correct-label');
+                    }
+                });
+            }
+        } else {
+            answerDiv.className = 'hidden-answer correct-answer-box';
+        }
+    }
+    
+    function revealAll() {
+        document.querySelectorAll('.page-content').forEach(c => c.style.display = 'block');
+        document.querySelectorAll('.arrow').forEach(a => a.classList.add('open'));
+        document.querySelectorAll('.reveal-btn').forEach(btn => {
+            btn.click();
+        });
+    }
+    
+    function resetAll() {
+        document.querySelectorAll('input[type="radio"]').forEach(radio => radio.checked = false);
+        document.querySelectorAll('.hidden-answer').forEach(div => div.style.display = 'none');
+        document.querySelectorAll('label').forEach(label => {
+            label.classList.remove('correct-label');
+            label.classList.remove('incorrect-label');
+        });
+        document.querySelectorAll('.page-content').forEach(c => c.style.display = 'none');
+        document.querySelectorAll('.arrow').forEach(a => a.classList.remove('open'));
+    }
+</script>
+</head>
+<body>
+    <h1>Interactive Literature MCQs</h1>
+    <div class="controls">
+        <button class="global-btn" onclick="revealAll()">Check All Answers</button>
+        <button class="global-btn" style="background-color: #dc3545;" onclick="resetAll()">Reset All</button>
+    </div>
+    
+    <div id="content">
+
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 10 - Introductory (Part 1)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. According to the text, a history of English literature is fundamentally an account of what?</div>
+<ul class="options">
+<li><label><input type="radio" name="q1" value="A"> A. Chronological books and their authors</label></li>
+<li><label><input type="radio" name="q1" value="B"> B. The evolution of English grammar</label></li>
+<li><label><input type="radio" name="q1" value="C"> C. Important political events</label></li>
+<li><label><input type="radio" name="q1" value="D"> D. The history of printing presses</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'A')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 11 - Introductory (Part 2)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. What is the one absolutely new thing every great writer brings into the world?</div>
+<ul class="options">
+<li><label><input type="radio" name="q11" value="A"> A. A new vocabulary</label></li>
+<li><label><input type="radio" name="q11" value="B"> B. Himself</label></li>
+<li><label><input type="radio" name="q11" value="C"> C. A new literary genre</label></li>
+<li><label><input type="radio" name="q11" value="D"> D. A different political view</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 12 - Introductory (Part 3)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Whose movement in verse was Alexander Pope carrying to perfection?</div>
+<ul class="options">
+<li><label><input type="radio" name="q21" value="A"> A. Shakespeare&#x27;s</label></li>
+<li><label><input type="radio" name="q21" value="B"> B. Scott&#x27;s</label></li>
+<li><label><input type="radio" name="q21" value="C"> C. Spenser&#x27;s</label></li>
+<li><label><input type="radio" name="q21" value="D"> D. Dryden&#x27;s</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'D')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 13 - Introductory (Part 4)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. According to the text, a writer&#x27;s work is largely determined by what?</div>
+<ul class="options">
+<li><label><input type="radio" name="q31" value="A"> A. The amount of money he makes</label></li>
+<li><label><input type="radio" name="q31" value="B"> B. The moral and intellectual tendencies of his world</label></li>
+<li><label><input type="radio" name="q31" value="C"> C. The length of his life</label></li>
+<li><label><input type="radio" name="q31" value="D"> D. The geographical region he lives in</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 14 - Introductory (Part 5)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. What is the principal object of a history of English literature?</div>
+<ul class="options">
+<li><label><input type="radio" name="q41" value="A"> A. To memorize dates of publication</label></li>
+<li><label><input type="radio" name="q41" value="B"> B. To trace the progress of English literature through all its transformations</label></li>
+<li><label><input type="radio" name="q41" value="C"> C. To judge the moral character of authors</label></li>
+<li><label><input type="radio" name="q41" value="D"> D. To list the most popular books of each century</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 15 - Introductory (Part 6)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Why is the history of English literature always divided into periods?</div>
+<ul class="options">
+<li><label><input type="radio" name="q51" value="A"> A. Because books were only published in certain years</label></li>
+<li><label><input type="radio" name="q51" value="B"> B. Because authors demanded it</label></li>
+<li><label><input type="radio" name="q51" value="C"> C. Primarily as a matter of convenience for study</label></li>
+<li><label><input type="radio" name="q51" value="D"> D. Because different languages were spoken in each period</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 16 - Introductory (Conclusion)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Because the book is described as &#x27;a little book on a big subject,&#x27; how will the various questions of English literature be treated?</div>
+<ul class="options">
+<li><label><input type="radio" name="q61" value="A"> A. Exhaustively and in great detail</label></li>
+<li><label><input type="radio" name="q61" value="B"> B. Very briefly</label></li>
+<li><label><input type="radio" name="q61" value="C"> C. Through extensive footnotes</label></li>
+<li><label><input type="radio" name="q61" value="D"> D. By focusing only on the 19th century</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 17 - English Literature Before Chaucer (Part 1)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. What are the dates given for the period &#x27;English Literature Before Chaucer&#x27;?</div>
+<ul class="options">
+<li><label><input type="radio" name="q71" value="A"> A. 1340-1400</label></li>
+<li><label><input type="radio" name="q71" value="B"> B. 500-1340</label></li>
+<li><label><input type="radio" name="q71" value="C"> C. 1066-1500</label></li>
+<li><label><input type="radio" name="q71" value="D"> D. 400-1066</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 18 - English Literature Before Chaucer (Part 2)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Who is mentioned as using an early form of English some seven centuries before Chaucer?</div>
+<ul class="options">
+<li><label><input type="radio" name="q81" value="A"> A. Shakespeare</label></li>
+<li><label><input type="radio" name="q81" value="B"> B. Caedmon</label></li>
+<li><label><input type="radio" name="q81" value="C"> C. Beowulf</label></li>
+<li><label><input type="radio" name="q81" value="D"> D. Grendel</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 19 - English Literature Before Chaucer (Part 3)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Apart from Beowulf, who are the most important surviving examples of the oldest English poetry?</div>
+<ul class="options">
+<li><label><input type="radio" name="q91" value="A"> A. Chaucer and Shakespeare</label></li>
+<li><label><input type="radio" name="q91" value="B"> B. Caedmon and Cynewulf</label></li>
+<li><label><input type="radio" name="q91" value="C"> C. King Alfred and Bede</label></li>
+<li><label><input type="radio" name="q91" value="D"> D. Layamon and Orm</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 20 - English Literature Before Chaucer (Part 4)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Despite being sacred in subject, what is Anglo-Saxon poetry full of?</div>
+<ul class="options">
+<li><label><input type="radio" name="q101" value="A"> A. Political satire</label></li>
+<li><label><input type="radio" name="q101" value="B"> B. Romantic love stories</label></li>
+<li><label><input type="radio" name="q101" value="C"> C. A love of adventure and fighting</label></li>
+<li><label><input type="radio" name="q101" value="D"> D. Detailed economic records</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 21 - English Literature Before Chaucer (Part 5)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. What happened to English literature for about a hundred and fifty years after the Norman Conquest?</div>
+<ul class="options">
+<li><label><input type="radio" name="q111" value="A"> A. It reached its golden age</label></li>
+<li><label><input type="radio" name="q111" value="B"> B. It almost ceased to exist</label></li>
+<li><label><input type="radio" name="q111" value="C"> C. It became entirely French</label></li>
+<li><label><input type="radio" name="q111" value="D"> D. It was written exclusively in Latin</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 22 - The Making of the English Language</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Which of the following works is a versified account of scripture history and saint legends?</div>
+<ul class="options">
+<li><label><input type="radio" name="q121" value="A"> A. Handlyng Synne</label></li>
+<li><label><input type="radio" name="q121" value="B"> B. Ayenbite of Inwyt</label></li>
+<li><label><input type="radio" name="q121" value="C"> C. Cursor Mundi</label></li>
+<li><label><input type="radio" name="q121" value="D"> D. Ormulum</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 23 - Table of English Literature Before Chaucer</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. When were the Jutes, Saxons, and Angles settling in Britain?</div>
+<ul class="options">
+<li><label><input type="radio" name="q131" value="A"> A. 449-547</label></li>
+<li><label><input type="radio" name="q131" value="B"> B. 1066-1154</label></li>
+<li><label><input type="radio" name="q131" value="C"> C. 1340-1400</label></li>
+<li><label><input type="radio" name="q131" value="D"> D. 597-635</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'A')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 24 - The Age of Chaucer (Part 1)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. During the reigns of which English kings did Chaucer live?</div>
+<ul class="options">
+<li><label><input type="radio" name="q141" value="A"> A. John, Henry III, Edward I</label></li>
+<li><label><input type="radio" name="q141" value="B"> B. Edward III, Richard II, Henry IV</label></li>
+<li><label><input type="radio" name="q141" value="C"> C. Henry V, Henry VI, Edward IV</label></li>
+<li><label><input type="radio" name="q141" value="D"> D. Henry VII, Henry VIII, Edward VI</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 25 - The Age of Chaucer (Part 2)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. What was the immediate cause of the general rising of the common folk under Wat Tyler?</div>
+<ul class="options">
+<li><label><input type="radio" name="q151" value="A"> A. The desire for a new king</label></li>
+<li><label><input type="radio" name="q151" value="B"> B. Heavy taxation burdens from the French wars</label></li>
+<li><label><input type="radio" name="q151" value="C"> C. The introduction of the printing press</label></li>
+<li><label><input type="radio" name="q151" value="D"> D. A dispute over the Bible&#x27;s translation</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 26 - The Age of Chaucer (Part 3)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. What third influence did much to change the current of intellectual interests in Chaucer&#x27;s age?</div>
+<ul class="options">
+<li><label><input type="radio" name="q161" value="A"> A. The Industrial Revolution</label></li>
+<li><label><input type="radio" name="q161" value="B"> B. The new learning (Humanism)</label></li>
+<li><label><input type="radio" name="q161" value="C"> C. The discovery of America</label></li>
+<li><label><input type="radio" name="q161" value="D"> D. The Norman Conquest</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 27 - The Age of Chaucer (Part 4)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Chaucer was brought into direct touch with Italian culture during the days of what?</div>
+<ul class="options">
+<li><label><input type="radio" name="q171" value="A"> A. The late Renaissance</label></li>
+<li><label><input type="radio" name="q171" value="B"> B. The early Renaissance</label></li>
+<li><label><input type="radio" name="q171" value="C"> C. The Industrial Revolution</label></li>
+<li><label><input type="radio" name="q171" value="D"> D. The Protestant Reformation</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 28 - The Age of Chaucer (Part 5)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Which of the following is an early work of Chaucer done on French models?</div>
+<ul class="options">
+<li><label><input type="radio" name="q181" value="A"> A. The Canterbury Tales</label></li>
+<li><label><input type="radio" name="q181" value="B"> B. The Boke of the Duchesse</label></li>
+<li><label><input type="radio" name="q181" value="C"> C. Troylus and Cryseyde</label></li>
+<li><label><input type="radio" name="q181" value="D"> D. The House of Fame</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 29 - The Age of Chaucer (Part 6)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. What is the proposal made by Harry Bailly to the pilgrims?</div>
+<ul class="options">
+<li><label><input type="radio" name="q191" value="A"> A. That they race to Canterbury</label></li>
+<li><label><input type="radio" name="q191" value="B"> B. That each member shall tell two tales on the way and two on the way back</label></li>
+<li><label><input type="radio" name="q191" value="C"> C. That they must all pray in silence</label></li>
+<li><label><input type="radio" name="q191" value="D"> D. That they take turns driving the horses</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 30 - The Age of Chaucer (Part 7)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Which characters tell coarse farcical stories?</div>
+<ul class="options">
+<li><label><input type="radio" name="q201" value="A"> A. The Knight and the Clerk</label></li>
+<li><label><input type="radio" name="q201" value="B"> B. The Miller and the Reeve</label></li>
+<li><label><input type="radio" name="q201" value="C"> C. The Prioress and the Nun</label></li>
+<li><label><input type="radio" name="q201" value="D"> D. The Lawyer and the Physician</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 31 - The Age of Chaucer (Conclusion)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Was Chaucer considered a poet of the people?</div>
+<ul class="options">
+<li><label><input type="radio" name="q211" value="A"> A. Yes, he wrote entirely for the lower classes</label></li>
+<li><label><input type="radio" name="q211" value="B"> B. No, he was a court poet who wrote for cultured readers</label></li>
+<li><label><input type="radio" name="q211" value="C"> C. Yes, his poetry was sung by peasants</label></li>
+<li><label><input type="radio" name="q211" value="D"> D. He wrote equally for all classes</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 32 - Other Poets of Chaucer&#x27;s Age (Part 1)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. If Wyclif was &#x27;the morning star of the Reformation&#x27;, what may Chaucer be called?</div>
+<ul class="options">
+<li><label><input type="radio" name="q221" value="A"> A. The morning star of the Renaissance</label></li>
+<li><label><input type="radio" name="q221" value="B"> B. The father of English drama</label></li>
+<li><label><input type="radio" name="q221" value="C"> C. The creator of the English novel</label></li>
+<li><label><input type="radio" name="q221" value="D"> D. The last of the medieval bards</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'A')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 33 - Other Poets of Chaucer&#x27;s Age (Part 2)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Where did Gower stand politically, despite his criticisms?</div>
+<ul class="options">
+<li><label><input type="radio" name="q231" value="A"> A. He was a radical revolutionary like Wat Tyler</label></li>
+<li><label><input type="radio" name="q231" value="B"> B. He was a follower of Wyclif and the Lollards</label></li>
+<li><label><input type="radio" name="q231" value="C"> C. He was a strong conservative</label></li>
+<li><label><input type="radio" name="q231" value="D"> D. He was a French sympathizer</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 34 - Prose of Chaucer&#x27;s Age</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. How are Chaucer&#x27;s own few prose writings described in importance?</div>
+<ul class="options">
+<li><label><input type="radio" name="q241" value="A"> A. They are his greatest achievements</label></li>
+<li><label><input type="radio" name="q241" value="B"> B. They are not important</label></li>
+<li><label><input type="radio" name="q241" value="C"> C. They revolutionized science</label></li>
+<li><label><input type="radio" name="q241" value="D"> D. They are still used as textbooks today</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 35 - Table of the Age of Chaucer</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. According to the table, when was the Battle of Crecy fought?</div>
+<ul class="options">
+<li><label><input type="radio" name="q251" value="A"> A. 1338</label></li>
+<li><label><input type="radio" name="q251" value="B"> B. 1346</label></li>
+<li><label><input type="radio" name="q251" value="C"> C. 1356</label></li>
+<li><label><input type="radio" name="q251" value="D"> D. 1381</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 36 - From Chaucer to Tottel&#x27;s Miscellany (Part 1)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. What period follows the brilliant beginning made by Chaucer in English literature?</div>
+<ul class="options">
+<li><label><input type="radio" name="q261" value="A"> A. An immediate golden age</label></li>
+<li><label><input type="radio" name="q261" value="B"> B. A long barren period in its history (the 15th century)</label></li>
+<li><label><input type="radio" name="q261" value="C"> C. The Romantic era</label></li>
+<li><label><input type="radio" name="q261" value="D"> D. The Victorian age</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 37 - Poetry of the Fifteenth Century (Part 1)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. How was mental activity in the universities largely wasted during the fifteenth century?</div>
+<ul class="options">
+<li><label><input type="radio" name="q271" value="A"> A. By engaging in wars</label></li>
+<li><label><input type="radio" name="q271" value="B"> B. In endless and profitless controversies over the dry abstractions of medieval philosophy</label></li>
+<li><label><input type="radio" name="q271" value="C"> C. By banning all books</label></li>
+<li><label><input type="radio" name="q271" value="D"> D. Through studying classical Greek</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 38 - Poetry of the Fifteenth Century (Part 2)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. What is the title of the long poem written by James I of Scotland?</div>
+<ul class="options">
+<li><label><input type="radio" name="q281" value="A"> A. The Thistle and the Rose</label></li>
+<li><label><input type="radio" name="q281" value="B"> B. The King&#x27;s Quair</label></li>
+<li><label><input type="radio" name="q281" value="C"> C. Palice of Honour</label></li>
+<li><label><input type="radio" name="q281" value="D"> D. Testament of Cresseid</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 39 - Prose of the Fifteenth Century (Part 1)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. During the 15th century, what type of literature was showing more promising work than verse?</div>
+<ul class="options">
+<li><label><input type="radio" name="q291" value="A"> A. Drama</label></li>
+<li><label><input type="radio" name="q291" value="B"> B. Prose</label></li>
+<li><label><input type="radio" name="q291" value="C"> C. Sonnets</label></li>
+<li><label><input type="radio" name="q291" value="D"> D. Elegies</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 40 - Prose of the Fifteenth Century (Part 2)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Why did Malory look back with sentimental regret while writing his book?</div>
+<ul class="options">
+<li><label><input type="radio" name="q301" value="A"> A. Because he missed his childhood</label></li>
+<li><label><input type="radio" name="q301" value="B"> B. Because the medieval spirit was dying and the old feudal order was becoming a thing of the past</label></li>
+<li><label><input type="radio" name="q301" value="C"> C. Because he wanted to be king</label></li>
+<li><label><input type="radio" name="q301" value="D"> D. Because he was exiled in France</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 41 - The Revival of Learning</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. How did the revival of learning emancipate thought from medieval theology?</div>
+<ul class="options">
+<li><label><input type="radio" name="q311" value="A"> A. By burning all theological books</label></li>
+<li><label><input type="radio" name="q311" value="B"> B. By restoring the generous spirit and ideals of pagan antiquity</label></li>
+<li><label><input type="radio" name="q311" value="C"> C. By enforcing strict new religious laws</label></li>
+<li><label><input type="radio" name="q311" value="D"> D. By moving the Pope to England</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 42 - Literature of the Early Renaissance in England</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Which classical work heavily influenced the description of an ideal state in More&#x27;s Utopia?</div>
+<ul class="options">
+<li><label><input type="radio" name="q321" value="A"> A. Aristotle&#x27;s Poetics</label></li>
+<li><label><input type="radio" name="q321" value="B"> B. Plato&#x27;s Republic</label></li>
+<li><label><input type="radio" name="q321" value="C"> C. Homer&#x27;s Odyssey</label></li>
+<li><label><input type="radio" name="q321" value="D"> D. Ovid&#x27;s Metamorphoses</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 43 - Table of English Literature (1400-1557)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. What topic does the author state has been omitted so far and will be covered in the next chapter?</div>
+<ul class="options">
+<li><label><input type="radio" name="q331" value="A"> A. The development of the novel</label></li>
+<li><label><input type="radio" name="q331" value="B"> B. The development of the drama</label></li>
+<li><label><input type="radio" name="q331" value="C"> C. The history of scientific writing</label></li>
+<li><label><input type="radio" name="q331" value="D"> D. The evolution of English dictionaries</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 44 - Table of English Literature (Conclusion)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. During what years did Queen Mary reign?</div>
+<ul class="options">
+<li><label><input type="radio" name="q341" value="A"> A. 1509-1547</label></li>
+<li><label><input type="radio" name="q341" value="B"> B. 1547-1553</label></li>
+<li><label><input type="radio" name="q341" value="C"> C. 1553-1558</label></li>
+<li><label><input type="radio" name="q341" value="D"> D. 1558-1603</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 45 - Development of Drama to 1561 (Part 1)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. The earliest mention of dramatic representation in England refers to a play in honor of whom?</div>
+<ul class="options">
+<li><label><input type="radio" name="q351" value="A"> A. St. George</label></li>
+<li><label><input type="radio" name="q351" value="B"> B. St. Katherine</label></li>
+<li><label><input type="radio" name="q351" value="C"> C. King Arthur</label></li>
+<li><label><input type="radio" name="q351" value="D"> D. The Virgin Mary</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 46 - Development of Drama to 1561 (Part 2)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. In what century did the religious drama in England reach its height?</div>
+<ul class="options">
+<li><label><input type="radio" name="q361" value="A"> A. The 12th century</label></li>
+<li><label><input type="radio" name="q361" value="B"> B. The 13th century</label></li>
+<li><label><input type="radio" name="q361" value="C"> C. The 14th century</label></li>
+<li><label><input type="radio" name="q361" value="D"> D. The 16th century</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 47 - Morality Plays and Interludes</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Who was a prominent humorous character introduced later into morality plays, often serving as the fun-maker?</div>
+<ul class="options">
+<li><label><input type="radio" name="q371" value="A"> A. The Devil</label></li>
+<li><label><input type="radio" name="q371" value="B"> B. The Vice</label></li>
+<li><label><input type="radio" name="q371" value="C"> C. The Hero</label></li>
+<li><label><input type="radio" name="q371" value="D"> D. The King</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 48 - The Beginnings of Regular Comedy and Tragedy</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Why are early experiments in play-writing (miracle/morality plays) historically important?</div>
+<ul class="options">
+<li><label><input type="radio" name="q381" value="A"> A. They provided a kind of &#x27;Dame School&#x27; for English dramatic genius, preparing the way for regular drama</label></li>
+<li><label><input type="radio" name="q381" value="B"> B. They were all written by Shakespeare</label></li>
+<li><label><input type="radio" name="q381" value="C"> C. They were the only literature allowed to be printed</label></li>
+<li><label><input type="radio" name="q381" value="D"> D. They completely destroyed classical literature</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'A')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 49 - Table of the Development of the Drama</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. According to the table, what was the first recorded dramatic performance in England?</div>
+<ul class="options">
+<li><label><input type="radio" name="q391" value="A"> A. Gorboduc</label></li>
+<li><label><input type="radio" name="q391" value="B"> B. Ludus de S. Katherina</label></li>
+<li><label><input type="radio" name="q391" value="C"> C. Roister Doister</label></li>
+<li><label><input type="radio" name="q391" value="D"> D. The Four Ps</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 50 - The Age of Shakespeare (Part 1)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. What period of time does the &#x27;Shakespearean Age&#x27; broadly cover?</div>
+<ul class="options">
+<li><label><input type="radio" name="q401" value="A"> A. The entire 15th century</label></li>
+<li><label><input type="radio" name="q401" value="B"> B. From the Norman Conquest to the Black Death</label></li>
+<li><label><input type="radio" name="q401" value="C"> C. From the accession of Elizabeth in 1558 to the death of James I in 1625</label></li>
+<li><label><input type="radio" name="q401" value="D"> D. The reign of Queen Victoria</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 51 - The Age of Shakespeare (Part 2)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. How did the revival of learning affect the general public during this era?</div>
+<ul class="options">
+<li><label><input type="radio" name="q411" value="A"> A. It remained limited to the scholarly few at universities</label></li>
+<li><label><input type="radio" name="q411" value="B"> B. Innumerable translations carried classic treasures far and wide to a large miscellaneous public</label></li>
+<li><label><input type="radio" name="q411" value="C"> C. It was banned by the Queen</label></li>
+<li><label><input type="radio" name="q411" value="D"> D. Only French literature was translated</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 52 - Elizabethan Poetry Before Spenser</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. How is the spirit of Shakespeare&#x27;s age described?</div>
+<ul class="options">
+<li><label><input type="radio" name="q421" value="A"> A. An age in which &#x27;men lived intensely, thought intensely, and wrote intensely&#x27;</label></li>
+<li><label><input type="radio" name="q421" value="B"> B. An age of darkness and silence</label></li>
+<li><label><input type="radio" name="q421" value="C"> C. An age solely focused on monastic life</label></li>
+<li><label><input type="radio" name="q421" value="D"> D. An age of complete scientific rationality</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'A')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 53 - Spenser and His Poetry</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Where did Spenser pass the remainder of his life from 1580 onward, which he viewed as a miserable exile?</div>
+<ul class="options">
+<li><label><input type="radio" name="q431" value="A"> A. France</label></li>
+<li><label><input type="radio" name="q431" value="B"> B. Ireland</label></li>
+<li><label><input type="radio" name="q431" value="C"> C. Scotland</label></li>
+<li><label><input type="radio" name="q431" value="D"> D. Italy</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 54 - The Faery Queene (Part 1)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. To whom did Spenser explain the underlying scheme of The Faery Queene in a prefatory letter?</div>
+<ul class="options">
+<li><label><input type="radio" name="q441" value="A"> A. Sir Philip Sidney</label></li>
+<li><label><input type="radio" name="q441" value="B"> B. Queen Elizabeth</label></li>
+<li><label><input type="radio" name="q441" value="C"> C. Sir Walter Raleigh</label></li>
+<li><label><input type="radio" name="q441" value="D"> D. Earl of Leicester</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 55 - The Faery Queene (Part 2)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Who represents Justice in the fifth book of The Faery Queene?</div>
+<ul class="options">
+<li><label><input type="radio" name="q451" value="A"> A. Triamond</label></li>
+<li><label><input type="radio" name="q451" value="B"> B. Artegall</label></li>
+<li><label><input type="radio" name="q451" value="C"> C. Sir Calidore</label></li>
+<li><label><input type="radio" name="q451" value="D"> D. Red Cross Knight</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 56 - Spenserian Stanza and Other Poets</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Was the language used in The Faery Queene the actual English spoken in Spenser&#x27;s day?</div>
+<ul class="options">
+<li><label><input type="radio" name="q461" value="A"> A. Yes, it was identical</label></li>
+<li><label><input type="radio" name="q461" value="B"> B. No, he employed a dialect of his own which he purposely made archaic</label></li>
+<li><label><input type="radio" name="q461" value="C"> C. Yes, it was standard Elizabethan English</label></li>
+<li><label><input type="radio" name="q461" value="D"> D. No, it was pure Old English from before the Conquest</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 57 - Other Elizabethan Poetry and John Donne</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Which Italian poetic form, introduced by Wyatt and Surrey, established itself and was used by Spenser, Shakespeare, and others?</div>
+<ul class="options">
+<li><label><input type="radio" name="q471" value="A"> A. The Epic</label></li>
+<li><label><input type="radio" name="q471" value="B"> B. The Sonnet</label></li>
+<li><label><input type="radio" name="q471" value="C"> C. The Ode</label></li>
+<li><label><input type="radio" name="q471" value="D"> D. Blank Verse</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 58 - Note on Poetry</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Based on the text on page 58, what is provided on pages 76-8 of the book?</div>
+<ul class="options">
+<li><label><input type="radio" name="q481" value="A"> A. A detailed biography of Shakespeare</label></li>
+<li><label><input type="radio" name="q481" value="B"> B. A Table of the Poetry of the Age of Shakespeare</label></li>
+<li><label><input type="radio" name="q481" value="C"> C. A map of Elizabethan London</label></li>
+<li><label><input type="radio" name="q481" value="D"> D. An index of classical playwrights</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 59 - The Elizabethan Romantic Drama (Part 1)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. What term describes the quarter-century following the production of Gorboduc in English drama?</div>
+<ul class="options">
+<li><label><input type="radio" name="q486" value="A"> A. A period of absolute perfection</label></li>
+<li><label><input type="radio" name="q486" value="B"> B. A period of great confusion</label></li>
+<li><label><input type="radio" name="q486" value="C"> C. The golden age of classicism</label></li>
+<li><label><input type="radio" name="q486" value="D"> D. The death of the theater</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 60 - Classic vs. Romantic Drama</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. How does the &#x27;classic&#x27; drama treat the spheres of tragedy and comedy?</div>
+<ul class="options">
+<li><label><input type="radio" name="q496" value="A"> A. It blends them constantly</label></li>
+<li><label><input type="radio" name="q496" value="B"> B. It keeps them entirely separate (no humor in tragedy, no tragedy in comedy)</label></li>
+<li><label><input type="radio" name="q496" value="C"> C. It only recognizes comedy</label></li>
+<li><label><input type="radio" name="q496" value="D"> D. It insists that all tragedies must end happily</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 61 - Shakespeare&#x27;s Predecessors</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. What did Shakespeare&#x27;s predecessors achieve for him?</div>
+<ul class="options">
+<li><label><input type="radio" name="q506" value="A"> A. They wrote all of his plays for him</label></li>
+<li><label><input type="radio" name="q506" value="B"> B. They prepared the way for him by ensuring the triumph of the free and flexible &#x27;romantic&#x27; form of drama</label></li>
+<li><label><input type="radio" name="q506" value="C"> C. They built the Globe Theatre</label></li>
+<li><label><input type="radio" name="q506" value="D"> D. They convinced the Queen to fund his work</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 62 - Lyly, Marlowe, and Shakespeare&#x27;s Early Life</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. John Lyly&#x27;s comedies (like Campaspe and Endymion) were written for performance at court. What did the interest in them depend on?</div>
+<ul class="options">
+<li><label><input type="radio" name="q516" value="A"> A. The complex plot</label></li>
+<li><label><input type="radio" name="q516" value="B"> B. Deep characterization</label></li>
+<li><label><input type="radio" name="q516" value="C"> C. Language (wit, point, ingenuity, and grace of dialogue)</label></li>
+<li><label><input type="radio" name="q516" value="D"> D. Spectacular stage effects</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 63 - Shakespeare&#x27;s Life (Part 2)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. How is Shakespeare&#x27;s marriage to Anne Hathaway described?</div>
+<ul class="options">
+<li><label><input type="radio" name="q526" value="A"> A. Hasty, ill-advised, and apparently unhappy</label></li>
+<li><label><input type="radio" name="q526" value="B"> B. The happiest marriage of the century</label></li>
+<li><label><input type="radio" name="q526" value="C"> C. A politically arranged marriage</label></li>
+<li><label><input type="radio" name="q526" value="D"> D. A purely business transaction</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'A')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 64 - Shakespeare&#x27;s Character and Early Works</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. What does Shakespeare&#x27;s biography prove conclusively about his character?</div>
+<ul class="options">
+<li><label><input type="radio" name="q536" value="A"> A. He was a pure dreamer</label></li>
+<li><label><input type="radio" name="q536" value="B"> B. Like Chaucer, he was no dreamer but a practical man of affairs</label></li>
+<li><label><input type="radio" name="q536" value="C"> C. He was hopelessly inept with money</label></li>
+<li><label><input type="radio" name="q536" value="D"> D. He hated writing plays</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 65 - Shakespeare&#x27;s First Two Periods</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. What years constitute Shakespeare&#x27;s First Period (the period of early and experimental work)?</div>
+<ul class="options">
+<li><label><input type="radio" name="q546" value="A"> A. 1588-1593</label></li>
+<li><label><input type="radio" name="q546" value="B"> B. 1594-1600</label></li>
+<li><label><input type="radio" name="q546" value="C"> C. 1601-1608</label></li>
+<li><label><input type="radio" name="q546" value="D"> D. 1608-1612</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'A')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 66 - Shakespeare&#x27;s Last Two Periods</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. What years constitute Shakespeare&#x27;s Third Period (the period of great tragedies and sombre comedies)?</div>
+<ul class="options">
+<li><label><input type="radio" name="q556" value="A"> A. 1588-1593</label></li>
+<li><label><input type="radio" name="q556" value="B"> B. 1594-1600</label></li>
+<li><label><input type="radio" name="q556" value="C"> C. 1601-1608</label></li>
+<li><label><input type="radio" name="q556" value="D"> D. 1608-1612</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 67 - Characteristics of Shakespeare&#x27;s Works</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. How does Shakespeare&#x27;s body of work rank in English literature?</div>
+<ul class="options">
+<li><label><input type="radio" name="q566" value="A"> A. As the most obscure</label></li>
+<li><label><input type="radio" name="q566" value="B"> B. As the greatest single body of work contributed by any writer</label></li>
+<li><label><input type="radio" name="q566" value="C"> C. As historically inaccurate</label></li>
+<li><label><input type="radio" name="q566" value="D"> D. As purely derivative of French plays</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 68 - Ben Jonson (Part 1)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Who is considered the most important of Shakespeare&#x27;s contemporaries in the annals of the stage?</div>
+<ul class="options">
+<li><label><input type="radio" name="q576" value="A"> A. Christopher Marlowe</label></li>
+<li><label><input type="radio" name="q576" value="B"> B. Ben Jonson</label></li>
+<li><label><input type="radio" name="q576" value="C"> C. John Webster</label></li>
+<li><label><input type="radio" name="q576" value="D"> D. Francis Beaumont</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 69 - Ben Jonson (Part 2) &amp; Other Dramatists</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. On what idea is Jonson&#x27;s characterization based?</div>
+<ul class="options">
+<li><label><input type="radio" name="q586" value="A"> A. That men are complex and unpredictable</label></li>
+<li><label><input type="radio" name="q586" value="B"> B. That each man is possessed and governed by some one particular quality or &#x27;master passion&#x27;</label></li>
+<li><label><input type="radio" name="q586" value="C"> C. That everyone is entirely good or entirely evil</label></li>
+<li><label><input type="radio" name="q586" value="D"> D. That characters must be based on real historical kings</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 70 - End of the Drama &amp; Playhouses (Part 1)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Who was referred to by Charles Lamb as &#x27;the last of a great race&#x27; of dramatists, belonging to Charles I&#x27;s reign?</div>
+<ul class="options">
+<li><label><input type="radio" name="q596" value="A"> A. John Ford</label></li>
+<li><label><input type="radio" name="q596" value="B"> B. James Shirley</label></li>
+<li><label><input type="radio" name="q596" value="C"> C. John Webster</label></li>
+<li><label><input type="radio" name="q596" value="D"> D. Philip Massinger</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 71 - Playhouses (Part 2)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. What was the shape and primary building material of these early playhouses?</div>
+<ul class="options">
+<li><label><input type="radio" name="q606" value="A"> A. Square and made of stone</label></li>
+<li><label><input type="radio" name="q606" value="B"> B. Round or hexagonal, mainly of wood</label></li>
+<li><label><input type="radio" name="q606" value="C"> C. Triangular and made of brick</label></li>
+<li><label><input type="radio" name="q606" value="D"> D. Rectangular and made of glass</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 72 - Note on the Drama</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. According to the note on page 72, where can the Table of the Drama of the Age of Shakespeare be found?</div>
+<ul class="options">
+<li><label><input type="radio" name="q616" value="A"> A. Pages 1-5</label></li>
+<li><label><input type="radio" name="q616" value="B"> B. Pages 76-8</label></li>
+<li><label><input type="radio" name="q616" value="C"> C. Pages 100-105</label></li>
+<li><label><input type="radio" name="q616" value="D"> D. At the very end of the book</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 73 - Prose Fiction and Romance</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Did the Age of Shakespeare produce what we specifically call the &#x27;novel&#x27; (the long story of contemporary life)?</div>
+<ul class="options">
+<li><label><input type="radio" name="q621" value="A"> A. Yes, it was invented by Shakespeare</label></li>
+<li><label><input type="radio" name="q621" value="B"> B. No, this was not established in English literature until more than a century later</label></li>
+<li><label><input type="radio" name="q621" value="C"> C. Yes, Ben Jonson wrote the first one</label></li>
+<li><label><input type="radio" name="q621" value="D"> D. No, novels have never existed in English literature</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 74 - Euphuism</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. In the second part of Euphues, how does the protagonist describe England?</div>
+<ul class="options">
+<li><label><input type="radio" name="q631" value="A"> A. As a terrible, savage wasteland</label></li>
+<li><label><input type="radio" name="q631" value="B"> B. So unqualified in its praise that it seems like a paradise with inhabitants embodying all virtues</label></li>
+<li><label><input type="radio" name="q631" value="C"> C. As completely ordinary and boring</label></li>
+<li><label><input type="radio" name="q631" value="D"> D. As constantly at war</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 75 - Sidney, Lodge, Greene, and Nash</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. What famous Shakespearean quote is an example of the same fantastic pseudo-science found in Euphuism?</div>
+<ul class="options">
+<li><label><input type="radio" name="q641" value="A"> A. &#x27;A horse, a horse, my kingdom for a horse!&#x27;</label></li>
+<li><label><input type="radio" name="q641" value="B"> B. Describing the toad as &#x27;ugly and venomous&#x27; but wearing &#x27;a precious jewel in his head&#x27;</label></li>
+<li><label><input type="radio" name="q641" value="C"> C. &#x27;Romeo, Romeo, wherefore art thou Romeo?&#x27;</label></li>
+<li><label><input type="radio" name="q641" value="D"> D. &#x27;Beware the Ides of March&#x27;</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 76 - Francis Bacon (Part 1)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Was the English literature of the Age of Shakespeare entirely a literature of the imagination?</div>
+<ul class="options">
+<li><label><input type="radio" name="q651" value="A"> A. Yes, completely</label></li>
+<li><label><input type="radio" name="q651" value="B"> B. No, the Renaissance stimulated intellectual prose works as well</label></li>
+<li><label><input type="radio" name="q651" value="C"> C. No, imagination was outlawed</label></li>
+<li><label><input type="radio" name="q651" value="D"> D. Yes, science did not exist yet</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 77 - Francis Bacon (Part 2)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Despite his stated purpose of serving mankind, what did Bacon often sacrifice his ideals for in practice?</div>
+<ul class="options">
+<li><label><input type="radio" name="q661" value="A"> A. The pursuit of pure poetry</label></li>
+<li><label><input type="radio" name="q661" value="B"> B. Wealth, power, and the satisfaction of his inordinate ambitions</label></li>
+<li><label><input type="radio" name="q661" value="C"> C. A quiet life in the country</label></li>
+<li><label><input type="radio" name="q661" value="D"> D. Religious devotion</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 78 - Other Prose of the Period &amp; Tables</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. Who wrote the vast and uncritical &#x27;History of the World&#x27; (1614)?</div>
+<ul class="options">
+<li><label><input type="radio" name="q671" value="A"> A. Francis Bacon</label></li>
+<li><label><input type="radio" name="q671" value="B"> B. Sir Walter Raleigh</label></li>
+<li><label><input type="radio" name="q671" value="C"> C. John Foxe</label></li>
+<li><label><input type="radio" name="q671" value="D"> D. Raphael Holinshed</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 79 - Tables of the Age of Shakespeare (Part 1)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. According to the table, what event occurred in 1576 under the Drama column?</div>
+<ul class="options">
+<li><label><input type="radio" name="q681" value="A"> A. Shakespeare was born</label></li>
+<li><label><input type="radio" name="q681" value="B"> B. First London playhouses built</label></li>
+<li><label><input type="radio" name="q681" value="C"> C. The Globe Theatre was built</label></li>
+<li><label><input type="radio" name="q681" value="D"> D. The theatres were closed</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 80 - Tables of the Age of Shakespeare (Part 2)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. In what year were the first three books of Spenser&#x27;s Faery Queene published?</div>
+<ul class="options">
+<li><label><input type="radio" name="q691" value="A"> A. 1586</label></li>
+<li><label><input type="radio" name="q691" value="B"> B. 1590</label></li>
+<li><label><input type="radio" name="q691" value="C"> C. 1596</label></li>
+<li><label><input type="radio" name="q691" value="D"> D. 1599</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'B')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 81 - Tables &amp; Notes (Jacobean Period)</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. What years span Shakespeare&#x27;s Fourth Period (his final period of dramatic romances)?</div>
+<ul class="options">
+<li><label><input type="radio" name="q701" value="A"> A. 1594-1600</label></li>
+<li><label><input type="radio" name="q701" value="B"> B. 1600-1608</label></li>
+<li><label><input type="radio" name="q701" value="C"> C. 1608-1612</label></li>
+<li><label><input type="radio" name="q701" value="D"> D. 1612-1616</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+<div class="page-section">
+<h2 class="page-title" onclick="toggleSection(this)"><span class="arrow">▶</span> Page 82 - The Age of Milton and Puritanism</h2>
+<div class="page-content">
+<div class="question-container">
+<div class="question">Q1. What period of time does the &#x27;Age of Milton&#x27; cover in the text?</div>
+<ul class="options">
+<li><label><input type="radio" name="q711" value="A"> A. 1558-1603</label></li>
+<li><label><input type="radio" name="q711" value="B"> B. 1603-1625</label></li>
+<li><label><input type="radio" name="q711" value="C"> C. 1625-1660</label></li>
+<li><label><input type="radio" name="q711" value="D"> D. 1660-1700</label></li>
+</ul>
+<div class="answer-section">
+<button class="reveal-btn" onclick="checkAnswer(this, 'C')">Check Answer</button>
+<div class="hidden-answer"></div>
+</div>
+
+</body>
+</html>
